@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#14233b">
+<title>Anamur Gençlik | Faaliyet Takip</title>
+<style>
+:root{--navy:#14233b;--navy2:#203958;--bg:#f3f5f8;--card:#fff;--text:#1e293b;--muted:#718096;--line:#e5eaf0;--green:#18794e;--greenbg:#e8f5ee;--red:#b33b3b;--redbg:#fff0f0;--amber:#936515;--amberbg:#fff7e5}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding-bottom:calc(78px + env(safe-area-inset-bottom))}
+header{background:linear-gradient(140deg,var(--navy),#263e60);color:#fff;padding:20px 18px 24px;padding-top:calc(18px + env(safe-area-inset-top));border-radius:0 0 22px 22px}
+.brand{font-size:11px;letter-spacing:.14em;color:#b9c7d9;font-weight:700}.headrow{display:flex;justify-content:space-between;align-items:center}.headrow h1{font-size:24px;margin:8px 0 3px}.sub{font-size:12px;color:#c5d0df}
+main{max-width:760px;margin:auto;padding:16px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:-5px}.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 10px;box-shadow:0 4px 14px #1c2c4210}.stat b{display:block;font-size:23px}.stat span{font-size:11px;color:var(--muted)}
+.tabs{position:fixed;bottom:0;left:0;right:0;z-index:5;background:#ffffffed;backdrop-filter:blur(14px);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);padding:8px 8px calc(8px + env(safe-area-inset-bottom))}
+.tab{border:0;background:none;color:#718096;padding:7px 2px;font-size:10px;font-weight:600}.tab strong{display:block;font-size:19px;margin-bottom:2px}.tab.active{color:var(--navy)}
+.page{display:none}.page.active{display:block}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin:13px 0;box-shadow:0 3px 12px #1c2c4208}
+h2{font-size:17px;margin:0 0 12px}.muted{color:var(--muted);font-size:12px;line-height:1.5}.row{display:flex;align-items:center;justify-content:space-between;gap:10px}.btn{border:0;border-radius:10px;background:var(--navy2);color:white;padding:12px 15px;font-weight:650;font-size:14px}.btn.secondary{background:#edf1f6;color:#26364d}.btn.danger{background:var(--redbg);color:var(--red)}.btn.full{width:100%}
+label{display:block;font-size:12px;font-weight:650;color:#526075;margin:12px 0 6px}input,select,textarea{width:100%;border:1px solid #dce2ea;border-radius:10px;padding:12px;font:15px -apple-system,BlinkMacSystemFont,sans-serif;background:white;color:var(--text);margin-top:5px}textarea{min-height:70px;resize:vertical}
+.task{border:1px solid var(--line);border-radius:13px;padding:13px;margin:10px 0;background:#fff}.task h3{font-size:15px;margin:0 0 5px}.pill{font-size:10px;font-weight:700;padding:4px 8px;border-radius:20px;background:#edf1f6;color:#536176;white-space:nowrap}.good{background:var(--greenbg);color:var(--green)}.bad{background:var(--redbg);color:var(--red)}.wait{background:var(--amberbg);color:var(--amber)}
+.member{padding:12px 0;border-bottom:1px solid var(--line)}.member:last-child{border:0}.membername{font-weight:700;font-size:14px}.platform{font-size:11px;color:var(--muted);margin-top:3px}.choices{display:flex;gap:6px;margin-top:9px}.choice{flex:1;border:1px solid var(--line);border-radius:9px;padding:9px 4px;background:#fff;color:#64748b;font-size:11px;font-weight:700}.choice.selected.yes{background:var(--greenbg);border-color:#b8e0c8;color:var(--green)}.choice.selected.no{background:var(--redbg);border-color:#f0c2c2;color:var(--red)}.choice.selected.pending{background:var(--amberbg);border-color:#ead7a8;color:var(--amber)}
+.smalllink{font-size:12px;color:#315b8d;text-decoration:none;word-break:break-all}.empty{text-align:center;padding:24px 12px;color:var(--muted);font-size:13px}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap}.toolbar>*{flex:1}.reportline{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);font-size:13px}.reportline:last-child{border:0}.notice{background:#fff7e5;border:1px solid #f0dfb8;color:#725317;padding:11px;border-radius:10px;font-size:12px;line-height:1.45;margin:12px 0}
+@media(min-width:600px){main{padding:22px}.stats{gap:14px}.stat{padding:16px}}
+@media print{body{background:white;padding:0}header,.tabs,.no-print,.btn{display:none!important}main{padding:0;max-width:none}.card{box-shadow:none;break-inside:avoid}.page{display:none!important}#report.page{display:block!important}.reportline{font-size:11px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="headrow"><div><div class="brand">ANAMUR AK GENÇLİK</div><h1>Faaliyet Takip</h1><div class="sub">Sosyal medya görev ve arşiv paneli</div></div><div style="font-size:28px">▦</div></div>
+</header>
+<main>
+<section id="home" class="page active">
+ <div class="stats">
+  <div class="stat"><b id="statTasks">0</b><span>Toplam görev</span></div>
+  <div class="stat"><b id="statDone">0</b><span>Paylaştı işareti</span></div>
+  <div class="stat"><b id="statPending">0</b><span>Bekleyen kontrol</span></div>
+ </div>
+ <div class="card"><div class="row"><h2>Son görevler</h2><button class="btn" onclick="showPage('new')">+ Görev ekle</button></div><div id="recentTasks"></div></div>
+ <div class="notice">Bu uygulama kayıtları yalnızca bu iPhone'daki tarayıcı hafızasında saklar. Safari geçmişi/site verileri temizlenirse kayıtlar silinebilir. Düzenli yedek alın.</div>
+</section>
+<section id="new" class="page">
+ <div class="card">
+  <h2>Yeni paylaşım görevi</h2>
+  <label>Paylaşım başlığı</label><input id="taskTitle" placeholder="Örn. Haftalık faaliyet duyurusu">
+  <label>Gönderi bağlantısı (URL)</label><input id="taskUrl" type="url" placeholder="https://x.com/... veya instagram.com/...">
+  <label>Platform</label><select id="taskPlatform"><option>Instagram</option><option>X</option><option>Her ikisi</option></select>
+  <label>Görev tarihi</label><input id="taskDate" type="date">
+  <label>Not (isteğe bağlı)</label><textarea id="taskNotes" placeholder="Görevle ilgili not..."></textarea>
+  <button class="btn full" onclick="addTask()">Görevi kaydet</button>
+ </div>
+</section>
+<section id="archive" class="page">
+ <div class="card"><div class="row"><h2>Görev geçmişi</h2><span class="pill" id="archiveCount">0 görev</span></div><label>Aya göre filtrele</label><input type="month" id="filterMonth" onchange="renderArchive()"><div id="archiveList"></div></div>
+</section>
+<section id="report" class="page">
+ <div class="card">
+  <div class="row"><h2>Aylık toplantı raporu</h2><button class="btn secondary no-print" onclick="window.print()">PDF / Yazdır</button></div>
+  <label>Rapor ayı</label><input type="month" id="reportMonth" onchange="renderReport()">
+  <div id="reportContent"></div>
+ </div>
+</section>
+</main>
+<nav class="tabs">
+ <button class="tab active" data-page="home" onclick="showPage('home')"><strong>⌂</strong>Ana sayfa</button>
+ <button class="tab" data-page="new" onclick="showPage('new')"><strong>＋</strong>Görev ekle</button>
+ <button class="tab" data-page="archive" onclick="showPage('archive')"><strong>▤</strong>Geçmiş</button>
+ <button class="tab" data-page="report" onclick="showPage('report')"><strong>▦</strong>Rapor</button>
+</nav>
+<script>
+const KEY='anamur_genclik_offline_v1';
+const initialMembers=[
+ {id:'m1',name:'Kader Naz',instagram:'kadernaztr',x:'kaderNazz_',facebook:'kader naz'},
+ {id:'m2',name:'Havva Demir Derya',instagram:'havvademirtr',x:'havvaddmr1'},
+ {id:'m3',name:'Beyza Yılmaz',instagram:'byzaa.ylmaz',x:'byzaaylmaztr'},
+ {id:'m4',name:'Hümeyra Şimşek',instagram:'humeyrasimsektr',x:'humeyra_smsk'},
+ {id:'m5',name:'Emir Hakan Taş',instagram:'emirhakantas',x:'emirhtas',facebook:'Emir Taş'},
+ {id:'m6',name:'Buket Bostan',instagram:'@buketbostan_',x:'@buketbostantr'},
+ {id:'m7',name:'Emirhan Akgöz',instagram:'akgzz_emirhn1'},
+ {id:'m8',name:'İdal Burhan',instagram:'idall.d'},
+ {id:'m9',name:'Ali Kara',instagram:'ali_33karaa'}
+];
+let db=load();
+function load(){try{let d=JSON.parse(localStorage.getItem(KEY));if(d&&Array.isArray(d.tasks)&&Array.isArray(d.members))return d}catch(e){}return {members:initialMembers,tasks:[]};}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(db));return true}catch(e){alert('Telefon hafızasına kaydedilemedi. Yer açıp tekrar deneyin.');return false}}
+function today(){let d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function showPage(id){document.querySelectorAll('.page').forEach(x=>x.classList.toggle('active',x.id===id));document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x.dataset.page===id));if(id==='archive')renderArchive();if(id==='report')renderReport();if(id==='home')renderHome();window.scrollTo(0,0)}
+document.getElementById('taskDate').value=today();document.getElementById('filterMonth').value=today().slice(0,7);document.getElementById('reportMonth').value=today().slice(0,7);
+function addTask(){
+ let title=document.getElementById('taskTitle').value.trim(),url=document.getElementById('taskUrl').value.trim(),platform=document.getElementById('taskPlatform').value,date=document.getElementById('taskDate').value,notes=document.getElementById('taskNotes').value.trim();
+ if(!title||!url||!date){alert('Başlık, bağlantı ve tarih alanlarını doldurun.');return}
+ try{new URL(url)}catch(e){alert('Geçerli bir URL girin.');return}
+ let plats=platform==='Her ikisi'?['Instagram','X']:[platform];
+ let task={id:Date.now().toString(),title,url,platform,date,notes,created:new Date().toISOString(),statuses:{}};
+ db.members.forEach(m=>plats.forEach(p=>task.statuses[m.id+'_'+p]='Bekliyor'));
+ db.tasks.unshift(task);if(save()){document.getElementById('taskTitle').value='';document.getElementById('taskUrl').value='';document.getElementById('taskNotes').value='';showPage('archive')}
+}
+function taskCounts(t){let vals=Object.values(t.statuses||{});return {yes:vals.filter(x=>x==='Paylaştı').length,no:vals.filter(x=>x==='Paylaşmadı').length,pending:vals.filter(x=>x==='Bekliyor').length}}
+function renderHome(){
+ document.getElementById('statTasks').textContent=db.tasks.length;
+ let all=db.tasks.flatMap(t=>Object.values(t.statuses||{}));document.getElementById('statDone').textContent=all.filter(x=>x==='Paylaştı').length;document.getElementById('statPending').textContent=all.filter(x=>x==='Bekliyor').length;
+ let box=document.getElementById('recentTasks');box.innerHTML=db.tasks.slice(0,4).map(t=>taskCard(t)).join('')||'<div class="empty">Henüz görev yok. İlk paylaşım görevini ekleyebilirsin.</div>';
+}
+function taskCard(t){let c=taskCounts(t);return `<div class="task"><div class="row"><span class="pill">${esc(t.platform)}</span><span class="muted">${esc(t.date.split('-').reverse().join('.'))}</span></div><h3 style="margin-top:8px">${esc(t.title)}</h3><div class="muted">${c.yes} paylaştı · ${c.no} paylaşmadı · ${c.pending} bekliyor</div><div class="row" style="margin-top:10px"><a class="smalllink" href="${esc(t.url)}" target="_blank" rel="noopener">Gönderiyi aç ↗</a><button class="btn secondary" onclick="openTask('${t.id}')">Durumları işle</button></div></div>`}
+function renderArchive(){let month=document.getElementById('filterMonth').value;let list=db.tasks.filter(t=>!month||t.date.startsWith(month));document.getElementById('archiveCount').textContent=list.length+' görev';document.getElementById('archiveList').innerHTML=list.map(t=>taskCard(t)).join('')||'<div class="empty">Bu ay için kayıt bulunamadı.</div>'}
+function openTask(id){
+ let t=db.tasks.find(x=>x.id===id);if(!t)return;
+ let plats=t.platform==='Her ikisi'?['Instagram','X']:[t.platform];
+ let html=`<div class="card"><div class="row"><h2>${esc(t.title)}</h2><span class="pill">${esc(t.date)}</span></div><p><a class="smalllink" href="${esc(t.url)}" target="_blank" rel="noopener">Paylaşım bağlantısını aç ↗</a></p>${t.notes?`<p class="muted">${esc(t.notes)}</p>`:''}`;
+ plats.forEach(p=>{
+  html+=`<h2 style="margin-top:18px">${p}</h2>`;
+  db.members.forEach(m=>{
+   let key=m.id+'_'+p,st=t.statuses[key]||'Bekliyor';
+   html+=`<div class="member"><div class="membername">${esc(m.name)}</div><div class="platform">${esc(p)} ${m[p==='X'?'x':'instagram']?'· @'+esc(m[p==='X'?'x':'instagram']):''}</div><div class="choices">
+    <button class="choice ${st==='Paylaştı'?'selected yes':''}" onclick="setStatus('${t.id}','${key}','Paylaştı')">✓ Paylaştı</button>
+    <button class="choice ${st==='Paylaşmadı'?'selected no':''}" onclick="setStatus('${t.id}','${key}','Paylaşmadı')">✕ Paylaşmadı</button>
+    <button class="choice ${st==='Bekliyor'?'selected pending':''}" onclick="setStatus('${t.id}','${key}','Bekliyor')">… Bekliyor</button>
+   </div></div>`;
+  });
+ });
+ html+=`<div class="toolbar" style="margin-top:15px"><button class="btn secondary" onclick="renderArchive()">Listeye dön</button><button class="btn danger" onclick="deleteTask('${t.id}')">Görevi sil</button></div></div>`;
+ let area=document.getElementById('archiveList');area.innerHTML=html;document.getElementById('archiveCount').textContent='Görev detayı';window.scrollTo(0,0);
+}
+function setStatus(id,key,status){let t=db.tasks.find(x=>x.id===id);if(!t)return;t.statuses[key]=status;save();openTask(id)}
+function deleteTask(id){if(!confirm('Bu görev ve durum kayıtları silinsin mi?'))return;db.tasks=db.tasks.filter(t=>t.id!==id);save();renderArchive()}
+function renderReport(){
+ let month=document.getElementById('reportMonth').value||today().slice(0,7),tasks=db.tasks.filter(t=>t.date.startsWith(month));
+ let html=`<p class="muted">${tasks.length} görev · ${month}</p>`;
+ let totalYes=0,totalNo=0,totalWait=0;
+ db.members.forEach(m=>{
+  let vals=tasks.flatMap(t=>Object.entries(t.statuses||{}).filter(([k])=>k.startsWith(m.id+'_')).map(([k,v])=>({p:k.split('_').slice(1).join('_'),v})));
+  let yes=vals.filter(x=>x.v==='Paylaştı').length,no=vals.filter(x=>x.v==='Paylaşmadı').length,wait=vals.filter(x=>x.v==='Bekliyor').length;totalYes+=yes;totalNo+=no;totalWait+=wait;
+  html+=`<div class="reportline"><strong>${esc(m.name)}</strong><span>✓ ${yes} · ✕ ${no} · Bekliyor ${wait}</span></div>`;
+ });
+ html+=`<div class="card" style="margin:14px 0 0;background:#f8fafc"><div class="reportline"><strong>Toplam işaretleme</strong><span>${totalYes+totalNo+totalWait}</span></div><div class="reportline"><span>Paylaştı</span><b>${totalYes}</b></div><div class="reportline"><span>Paylaşmadı</span><b>${totalNo}</b></div><div class="reportline"><span>Bekliyor</span><b>${totalWait}</b></div></div><h2 style="margin-top:20px">Görev arşivi</h2>`;
+ tasks.forEach(t=>{let c=taskCounts(t);html+=`<div class="reportline"><span>${esc(t.date.split('-').reverse().join('.'))} · ${esc(t.title)} (${esc(t.platform)})</span><b>${c.yes}/${c.no}/${c.pending}</b></div>`});
+ html+=`<p class="muted" style="margin-top:14px">Rapor, yönetici tarafından işaretlenen kayıtları gösterir; paylaşımın kendisini otomatik doğrulamaz.</p>`;
+ document.getElementById('reportContent').innerHTML=html;
+}
+renderHome();renderArchive();renderReport();
+</script>
+</body></html>
