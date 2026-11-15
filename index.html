@@ -83,22 +83,50 @@ h1{font-size:26px;letter-spacing:-.8px;margin:6px 0 4px;color:var(--navy);font-w
 .btn.orange{background:#dce4ef;color:#172b49;box-shadow:none}
 .record:hover{border-color:rgba(82,109,145,.35);background:rgba(255,255,255,.88)}
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.panel,.metric,.sidebar,.mobile-nav{background:#fff}}
-</style></head>
+
+.calendar-layout{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(260px,.75fr);gap:14px;margin-bottom:14px}
+.calendar-toolbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:17px}
+.month-title{display:flex;align-items:center;gap:12px}.month-title h2{font-size:17px;color:var(--navy);margin:0;min-width:150px;text-align:center}
+.month-arrow{width:31px;height:31px;border:1px solid var(--line);border-radius:9px;background:rgba(255,255,255,.7);color:var(--blue-dark);font-size:22px;line-height:1}
+.calendar-weekdays,.calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}
+.calendar-weekdays{margin-bottom:7px}.calendar-weekdays span{text-align:center;color:#93a0b1;font-size:9px;font-weight:850;padding:7px 0}
+.cal-day{position:relative;min-height:69px;border:1px solid transparent;border-radius:10px;background:rgba(255,255,255,.5);padding:8px 7px;text-align:left;color:#526176;font-size:11px}
+.cal-day:hover{background:#fff;border-color:#dce5f0}.cal-day.muted{opacity:.35}.cal-day.today{border-color:#8298b5;background:#edf3fa}.cal-day.selected{background:#1b3558;color:white;border-color:#1b3558}
+.cal-day .day-num{font-weight:800}.cal-dots{display:flex;gap:3px;margin-top:9px;flex-wrap:wrap}.dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#8296b4}.dot.meeting{background:#6c86a9}.dot.activity{background:#4d987d}.dot.other{background:#c39b58}
+.calendar-legend{display:flex;gap:16px;margin-top:13px;color:#8c98a8;font-size:9px}.calendar-legend span{display:flex;align-items:center;gap:6px}
+.day-panel{min-height:260px}.day-events{display:grid;gap:8px}.day-event{border:1px solid var(--line);border-radius:10px;padding:11px;background:rgba(255,255,255,.55);cursor:pointer}.day-event:hover{background:#fff;border-color:#cbd7e6}.day-event b{font-size:11px;color:var(--navy);display:block}.day-event small{display:block;color:#8b98a9;font-size:9px;margin-top:5px}.day-event p{font-size:10px;color:#63738a;line-height:1.5;margin:8px 0 0;white-space:pre-wrap;overflow-wrap:anywhere}
+.event-editor{margin-top:14px}.event-editor textarea{width:100%;border:1px solid #dfe5ed;border-radius:8px;padding:12px;background:#fff;color:var(--ink);outline:none;font:inherit;font-size:12px;resize:vertical;min-height:100px}.event-editor textarea:focus{border-color:#78a8dc;box-shadow:0 0 0 3px #0066cc12}
+@media(max-width:850px){.calendar-layout{grid-template-columns:1fr}.cal-day{min-height:58px}}
+@media(max-width:650px){.calendar-weekdays,.calendar-grid{gap:3px}.cal-day{min-height:49px;padding:6px 4px;border-radius:7px;font-size:10px}.cal-dots{margin-top:7px}.month-title h2{font-size:15px;min-width:130px}.calendar-legend{gap:10px}.calendar-panel{padding:11px}.calendar-toolbar .btn{padding:9px 10px}.mobile-nav{grid-template-columns:repeat(5,1fr)}.mobile-nav button{font-size:8px}}
+
+</style>
+<style>
+/* Final visual cleanup */
+.brand, .brand-logo, .logo-placeholder, .prototype-notice, .info-notice, .notice-banner { display:none !important; }
+.topbar { min-height: 54px; }
+.page-header { padding-top: 8px; }
+.card, .panel, .stat-card { backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px); }
+button, .nav-item { -webkit-tap-highlight-color: transparent; }
+input, select, textarea { font-size: 16px; }
+</style>
+
+</head>
 <body>
 <div class="app">
 <aside class="sidebar">
- <div class="brand"><div class="brandmark">AK</div><div class="brandname">AK PARTİ<br>ANAMUR GENÇLİK KOLLARI<small>MEDYA FAALİYET MERKEZİ</small></div></div>
+ </div>
  <div class="nav-title">YÖNETİM</div>
  <button class="nav active" data-page="overview"><span class="ico">⌂</span> Genel Bakış</button>
  <button class="nav" data-page="add"><span class="ico">＋</span> Yeni Faaliyet</button>
+ <button class="nav" data-page="calendar"><span class="ico">▦</span> Faaliyet Takvimi</button>
  <button class="nav" data-page="records"><span class="ico">◫</span> Faaliyet Arşivi</button>
  <button class="nav" data-page="reports"><span class="ico">▱</span> Rapor Merkezi</button>
  <div class="side-bottom">ANAMUR / MERSİN<br><a href="https://www.akparti.org.tr/" target="_blank" rel="noopener">AK Parti resmî sitesi ↗</a><br>Yalnızca yönetim amaçlı yerel panel</div>
 </aside>
 <main class="main">
- <div class="mobile-head"><div class="brandmark">AK</div><div><b>AK PARTİ ANAMUR GENÇLİK KOLLARI</b><small>MEDYA FAALİYET MERKEZİ</small></div></div>
+ <div class="mobile-head"><div><b>AK PARTİ ANAMUR GENÇLİK KOLLARI</b><small>MEDYA FAALİYET MERKEZİ</small></div></div>
  <div class="topbar"><div class="crumb">ANAMUR <span style="color:#7185a2">/</span> <b id="crumb">GENEL BAKIŞ</b></div><div class="top-right"><div class="today" id="today"></div><div class="avatar">YK</div></div></div>
- <div class="privacy" style="font-size:10px;color:#60718a;background:rgba(255,255,255,.55);border:1px solid rgba(143,160,184,.22);border-radius:8px;padding:9px 12px;margin-bottom:17px">Bu dosya yerel prototiptir: kayıtlar bu tarayıcıda saklanır. Tek başına parola koruması veya çevrimiçi erişim kontrolü sağlamaz.</div>
+ <div class="privacy" style="font-size:10px;color:#60718a;background:rgba(255,255,255,.55);border:1px solid rgba(143,160,184,.22);border-radius:8px;padding:9px 12px;margin-bottom:17px"></div>
 
  <section id="overview" class="page active">
   <div class="pagehead"><div><div class="kicker">YÖNETİM PANELİ</div><h1>Genel Bakış</h1><p class="sub">Sosyal medya faaliyetlerinin genel özeti.</p></div><button class="btn" data-goto="add">＋ Faaliyet ekle</button></div>
@@ -129,6 +157,44 @@ h1{font-size:26px;letter-spacing:-.8px;margin:6px 0 4px;color:var(--navy);font-w
   </div>
  </section>
 
+
+ <section id="calendar" class="page">
+  <div class="pagehead">
+   <div><div class="kicker">PLANLAMA & TOPLANTI</div><h1>Faaliyet Takvimi</h1><p class="sub">Toplantıları, programları ve alınan kararları tek yerde planlayın.</p></div>
+   <button class="btn" id="newEventBtn">＋ Etkinlik ekle</button>
+  </div>
+  <div class="calendar-layout">
+   <div class="panel calendar-panel">
+    <div class="calendar-toolbar">
+     <div class="month-title"><button class="month-arrow" id="prevMonth" aria-label="Önceki ay">‹</button><h2 id="monthLabel"></h2><button class="month-arrow" id="nextMonth" aria-label="Sonraki ay">›</button></div>
+     <button class="btn light" id="todayBtn">Bugün</button>
+    </div>
+    <div class="calendar-weekdays"><span>Pzt</span><span>Sal</span><span>Çar</span><span>Per</span><span>Cum</span><span>Cmt</span><span>Paz</span></div>
+    <div class="calendar-grid" id="calendarGrid"></div>
+    <div class="calendar-legend"><span><i class="dot meeting"></i>Toplantı</span><span><i class="dot activity"></i>Faaliyet</span><span><i class="dot other"></i>Diğer</span></div>
+   </div>
+   <div class="panel day-panel">
+    <div class="panel-head"><h3 id="selectedDayTitle">Günün planı</h3><span id="selectedDayCount">0 kayıt</span></div>
+    <div id="dayEvents" class="day-events"></div>
+   </div>
+  </div>
+  <div class="panel event-editor" id="eventEditor">
+   <div class="panel-head"><h3 id="eventFormTitle">Yeni etkinlik / toplantı</h3><span>Takvime kaydet</span></div>
+   <form id="eventForm">
+    <input type="hidden" id="eventId">
+    <div class="form-grid">
+     <div class="field"><label>ETKİNLİK / TOPLANTI BAŞLIĞI</label><input id="eventTitle" maxlength="100" placeholder="Örn. Haftalık yönetim toplantısı" required></div>
+     <div class="field"><label>TÜR</label><select id="eventType"><option>Toplantı</option><option>Faaliyet</option><option>Ziyaret</option><option>Eğitim</option><option>Diğer</option></select></div>
+     <div class="field"><label>TARİH</label><input id="eventDate" type="date" required></div>
+     <div class="field"><label>SAAT</label><input id="eventTime" type="time"></div>
+     <div class="field full"><label>YER / KONUM</label><input id="eventPlace" maxlength="120" placeholder="Toplantı yeri veya adres"></div>
+     <div class="field full"><label>TOPLANTI NOTLARI / GÜNDEM / ALINAN KARARLAR</label><textarea id="eventNotes" rows="4" maxlength="4000" placeholder="Gündem maddeleri, alınan kararlar, sonraki adımlar..."></textarea></div>
+    </div>
+    <div class="form-actions"><button class="btn" type="submit">Kaydet</button><button class="btn light" type="button" id="clearEventForm">Temizle</button><button class="btn red" type="button" id="deleteEventBtn" style="display:none">Sil</button></div>
+   </form>
+  </div>
+ </section>
+
  <section id="records" class="page">
   <div class="pagehead"><div><div class="kicker">KAYIT ARŞİVİ</div><h1>Faaliyet Arşivi</h1><p class="sub">Eklenen faaliyet kayıtlarını görüntüleyin ve yönetin.</p></div></div>
   <div class="panel"><div class="panel-head"><h3>Tüm kayıtlar</h3><span id="recordCount">0 kayıt</span></div>
@@ -149,16 +215,18 @@ h1{font-size:26px;letter-spacing:-.8px;margin:6px 0 4px;color:var(--navy);font-w
  </section>
 </main>
 </div>
-<nav class="mobile-nav"><button class="active" data-page="overview"><span>⌂</span>Özet</button><button data-page="add"><span>＋</span>Ekle</button><button data-page="records"><span>◫</span>Arşiv</button><button data-page="reports"><span>▱</span>Rapor</button></nav>
+<nav class="mobile-nav"><button class="active" data-page="overview"><span>⌂</span>Özet</button><button data-page="calendar"><span>▦</span>Takvim</button><button data-page="add"><span>＋</span>Ekle</button><button data-page="records"><span>◫</span>Arşiv</button><button data-page="reports"><span>▱</span>Rapor</button></nav>
 <script>
 const KEY='anamur_social_activity_v1';
+const EVENT_KEY='anamur_calendar_events_v1';
+let calendarEvents=[];try{calendarEvents=JSON.parse(localStorage.getItem(EVENT_KEY)||'[]')}catch(e){calendarEvents=[]}
 let entries=[];try{entries=JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){entries=[]}
 const $=id=>document.getElementById(id),fmt=n=>Number(n||0).toLocaleString('tr-TR');
 const today=new Date(),iso=today.toISOString().slice(0,10);
 $('date').value=iso;$('startDate').value=new Date(today.getFullYear(),today.getMonth(),1).toISOString().slice(0,10);$('endDate').value=iso;
 $('today').textContent=today.toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric'});
-const titles={overview:'GENEL BAKIŞ',add:'YENİ FAALİYET',records:'FAALİYET ARŞİVİ',reports:'RAPOR MERKEZİ'};
-function go(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));$(id).classList.add('active');document.querySelectorAll('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===id));$('crumb').textContent=titles[id];render();window.scrollTo({top:0,behavior:'smooth'})}
+const titles={overview:'GENEL BAKIŞ',add:'YENİ FAALİYET',calendar:'FAALİYET TAKVİMİ',records:'FAALİYET ARŞİVİ',reports:'RAPOR MERKEZİ'};
+function go(id){if(id==='calendar' && typeof renderCalendar==='function')renderCalendar();document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));$(id).classList.add('active');document.querySelectorAll('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===id));$('crumb').textContent=titles[id];render();window.scrollTo({top:0,behavior:'smooth'})}
 document.querySelectorAll('[data-page]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.page)));
 document.querySelectorAll('[data-goto]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.goto)));
 function sum(a){return a.reduce((n,e)=>n+Number(e.count||1),0)}
@@ -200,7 +268,18 @@ $('exportPdf').onclick=()=>{
 .btn.orange{background:#dce4ef;color:#172b49;box-shadow:none}
 .record:hover{border-color:rgba(82,109,145,.35);background:rgba(255,255,255,.88)}
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.panel,.metric,.sidebar,.mobile-nav{background:#fff}}
-</style></head><body>
+</style>
+<style>
+/* Final visual cleanup */
+.brand, .brand-logo, .logo-placeholder, .prototype-notice, .info-notice, .notice-banner { display:none !important; }
+.topbar { min-height: 54px; }
+.page-header { padding-top: 8px; }
+.card, .panel, .stat-card { backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px); }
+button, .nav-item { -webkit-tap-highlight-color: transparent; }
+input, select, textarea { font-size: 16px; }
+</style>
+
+</head><body>
  <h1>AK PARTİ ANAMUR GENÇLİK KOLLARI</h1><p>SOSYAL MEDYA FAALİYET RAPORU</p><div class="line"></div>
  <div class="meta"><b>Rapor aralığı:</b> ${safe(s)} – ${safe(e)}<br><b>Oluşturulma tarihi:</b> ${new Date().toLocaleDateString('tr-TR')}</div>
  <div class="stats"><div class="stat"><small>Toplam faaliyet</small><b>${fmt(sum(a))}</b></div><div class="stat"><small>Instagram</small><b>${fmt(sum(a.filter(x=>x.platform==='Instagram')))}</b></div><div class="stat"><small>X</small><b>${fmt(sum(a.filter(x=>x.platform==='X')))}</b></div></div>
@@ -209,5 +288,62 @@ $('exportPdf').onclick=()=>{
  <div class="foot">Bu belge, yönetim paneline girilen faaliyet kayıtlarının dönemsel özetidir.</div><button class="noprint" onclick="window.print()">Yazdır / PDF olarak kaydet</button><script>setTimeout(()=>window.print(),450)<\/script></body></html>`);
  w.document.close();
 };
-render();
+
+// Takvim ve toplantı notları
+let calendarCursor=new Date(today.getFullYear(),today.getMonth(),1);
+let selectedCalendarDate=iso;
+const pad=n=>String(n).padStart(2,'0');
+const dateKey=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+const monthNames=['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'];
+function saveCalendar(){localStorage.setItem(EVENT_KEY,JSON.stringify(calendarEvents));renderCalendar()}
+function renderCalendar(){
+ $('monthLabel').textContent=monthNames[calendarCursor.getMonth()]+' '+calendarCursor.getFullYear();
+ const first=new Date(calendarCursor.getFullYear(),calendarCursor.getMonth(),1);
+ const offset=(first.getDay()+6)%7;
+ const start=new Date(first);start.setDate(first.getDate()-offset);
+ let cells='';
+ for(let i=0;i<42;i++){
+  const d=new Date(start);d.setDate(start.getDate()+i);const key=dateKey(d);
+  const dayEvents=calendarEvents.filter(x=>x.date===key);
+  const classes=['cal-day',d.getMonth()!==calendarCursor.getMonth()?'muted':'',key===iso?'today':'',key===selectedCalendarDate?'selected':''].filter(Boolean).join(' ');
+  const dots=dayEvents.slice(0,4).map(x=>`<i class="dot ${x.type==='Toplantı'?'meeting':x.type==='Faaliyet'?'activity':'other'}"></i>`).join('');
+  cells+=`<button class="${classes}" data-caldate="${key}"><span class="day-num">${d.getDate()}</span><span class="cal-dots">${dots}</span></button>`;
+ }
+ $('calendarGrid').innerHTML=cells;
+ $('calendarGrid').querySelectorAll('[data-caldate]').forEach(b=>b.addEventListener('click',()=>{selectedCalendarDate=b.dataset.caldate;renderCalendar()}));
+ const chosen=new Date(selectedCalendarDate+'T12:00:00');
+ $('selectedDayTitle').textContent=chosen.toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric'});
+ const list=calendarEvents.filter(x=>x.date===selectedCalendarDate).sort((a,b)=>(a.time||'').localeCompare(b.time||''));
+ $('selectedDayCount').textContent=list.length+' kayıt';
+ $('dayEvents').innerHTML=list.length?list.map(x=>`<div class="day-event" data-eventid="${esc(x.id)}"><b>${esc(x.title)}</b><small>${esc(x.type)} · ${esc(x.time||'Saat belirtilmedi')}${x.place?' · '+esc(x.place):''}</small>${x.notes?`<p>${esc(x.notes)}</p>`:''}</div>`).join(''):'<div class="empty">Bu gün için planlanmış etkinlik yok.</div>';
+ $('dayEvents').querySelectorAll('[data-eventid]').forEach(el=>el.addEventListener('click',()=>editCalendarEvent(el.dataset.eventid)));
+}
+function resetEventForm(){
+ $('eventForm').reset();$('eventId').value='';$('eventDate').value=selectedCalendarDate;$('eventFormTitle').textContent='Yeni etkinlik / toplantı';$('deleteEventBtn').style.display='none';
+}
+function editCalendarEvent(id){
+ const x=calendarEvents.find(e=>e.id===id);if(!x)return;
+ $('eventId').value=x.id;$('eventTitle').value=x.title;$('eventType').value=x.type;$('eventDate').value=x.date;$('eventTime').value=x.time||'';$('eventPlace').value=x.place||'';$('eventNotes').value=x.notes||'';
+ $('eventFormTitle').textContent='Etkinliği düzenle';$('deleteEventBtn').style.display='inline-block';
+ $('eventEditor').scrollIntoView({behavior:'smooth',block:'start'});
+}
+$('prevMonth').addEventListener('click',()=>{calendarCursor.setMonth(calendarCursor.getMonth()-1);renderCalendar()});
+$('nextMonth').addEventListener('click',()=>{calendarCursor.setMonth(calendarCursor.getMonth()+1);renderCalendar()});
+$('todayBtn').addEventListener('click',()=>{calendarCursor=new Date(today.getFullYear(),today.getMonth(),1);selectedCalendarDate=iso;resetEventForm();renderCalendar()});
+$('newEventBtn').addEventListener('click',()=>{resetEventForm();$('eventEditor').scrollIntoView({behavior:'smooth',block:'start'});$('eventTitle').focus()});
+$('clearEventForm').addEventListener('click',resetEventForm);
+$('eventForm').addEventListener('submit',ev=>{
+ ev.preventDefault();
+ const id=$('eventId').value||Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+ const item={id,title:$('eventTitle').value.trim(),type:$('eventType').value,date:$('eventDate').value,time:$('eventTime').value,place:$('eventPlace').value.trim(),notes:$('eventNotes').value.trim(),updated:Date.now()};
+ if(!item.title||!item.date)return;
+ const index=calendarEvents.findIndex(x=>x.id===id);if(index>=0)calendarEvents[index]=item;else calendarEvents.push(item);
+ selectedCalendarDate=item.date;calendarCursor=new Date(item.date+'T12:00:00');resetEventForm();saveCalendar();
+});
+$('deleteEventBtn').addEventListener('click',()=>{
+ const id=$('eventId').value;if(!id)return;
+ if(confirm('Bu etkinliği ve toplantı notlarını silmek istiyor musunuz?')){calendarEvents=calendarEvents.filter(x=>x.id!==id);resetEventForm();saveCalendar()}
+});
+
+render();renderCalendar();
 </script></body></html>
