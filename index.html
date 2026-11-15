@@ -174,7 +174,102 @@ h1{font-size:28px;letter-spacing:-1.1px;color:var(--navy);margin:6px 0 5px;font-
 }
 @media(max-width:390px){.day{min-height:58px}.day-event-chip{font-size:5.5px}.hero p{max-width:210px}.hero-mark{width:45px;height:45px}}
 @media print{.sidebar,.topbar,.mobile-nav,.btn,.login-screen,.overlay{display:none!important}.app{display:block}.main{padding:0}.page{display:none!important}#reports{display:block!important}.glass{box-shadow:none;border:0;background:white}}
+
+/* Responsive refinement and editable site profile */
+:root{scroll-padding-top:18px}
+body{min-width:320px;-webkit-text-size-adjust:100%;overscroll-behavior-x:none}
+button,.btn,.nav button,.mobile-nav button{ -webkit-tap-highlight-color:transparent;touch-action:manipulation}
+input,select,textarea{max-width:100%;min-width:0}
+table{max-width:100%}
+.panel,.glass,.calendar-panel,.social-layout>*{min-width:0}
+.site-profile-panel{margin-bottom:16px}.side-foot .site-foot-label{display:block;margin:4px 0 9px;color:#9eacbd;font-size:8px;letter-spacing:.06em;line-height:1.4}
+.site-profile-panel .profile-mark{display:grid;place-items:center;width:38px;height:38px;border-radius:13px;background:linear-gradient(145deg,#c5ad83,#76664b);color:#fff;font-weight:800;letter-spacing:.04em}
+.site-profile-panel .form-grid{margin-top:16px}
+.site-profile-panel textarea{resize:vertical;min-height:68px}
+@media(max-width:900px){
+ .app{grid-template-columns:205px minmax(0,1fr)}
+ .main{min-width:0}
+ .table-wrap,.record-table-wrap,.social-table-wrap{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+}
+@media(max-width:700px){
+ html,body{width:100%;overflow-x:hidden}
+ .main{width:100%;min-width:0;padding-left:12px;padding-right:12px;padding-bottom:calc(92px + env(safe-area-inset-bottom))}
+ .topbar{position:sticky;top:0;z-index:20;background:rgba(233,237,242,.84);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);padding:0 2px}
+ .mobile-brand{padding:3px 2px 8px}
+ .mobile-nav{padding-left:max(5px,env(safe-area-inset-left));padding-right:max(5px,env(safe-area-inset-right));padding-bottom:calc(7px + env(safe-area-inset-bottom));min-height:64px}
+ .mobile-nav button{min-height:45px;font-size:clamp(6px,1.7vw,8px);letter-spacing:-.1px}
+ .mobile-nav svg{width:19px;height:19px}
+ .page{min-width:0}
+ .page-head{gap:7px}
+ .page-head .btn,.page-head button{max-width:100%}
+ .settings-grid{gap:11px}
+ .setting-row{gap:10px;align-items:center}
+ .setting-row>div{min-width:0}
+ .setting-row b{font-size:12px}
+ .setting-row small{font-size:10px;line-height:1.45}
+ .setting-input{max-width:46%;font-size:12px}
+ .site-profile-panel{padding:15px}
+ .site-profile-panel .form-grid{grid-template-columns:1fr;gap:11px}
+ .site-profile-panel .field.full{grid-column:auto}
+ .site-profile-panel .form-actions{display:grid;grid-template-columns:1fr}
+ .site-profile-panel .form-actions .btn{width:100%;justify-content:center}
+ .form-actions{flex-wrap:wrap}
+ .form-actions .btn{flex:1 1 135px}
+ .filters,.social-filters{min-width:0}
+ .filters input,.filters select,.social-filters input,.social-filters select{min-width:0;width:100%}
+ .modal,.login-card{width:min(100% - 20px,520px);max-height:calc(100dvh - 24px);overflow-y:auto}
+}
+@media(max-width:380px){
+ .main{padding-left:9px;padding-right:9px}
+ .stats{gap:7px}
+ .stat{padding:10px}
+ .stat strong{font-size:20px}
+ .mobile-nav button{font-size:6px}
+ .mobile-nav svg{width:17px;height:17px}
+}
+
 </style>
+
+<style>
+:root{--navy:#101a2a;--navy2:#1b2b40;--blue:#344b68;--blue2:#a88e63;--ink:#1c2938;--muted:#788496;--bg:#e9edf2;--line:rgba(99,116,137,.17);--glass:rgba(255,255,255,.76);--shadow:0 16px 42px rgba(18,30,46,.075)}
+body{background:radial-gradient(ellipse at 10% 0%,#d9e0e9 0%,transparent 38%),radial-gradient(ellipse at 100% 15%,#e4e0d8 0%,transparent 30%),#e9edf2;color:#1c2938}
+.sidebar{background:linear-gradient(180deg,rgba(17,29,46,.97),rgba(24,39,59,.97));border-right:1px solid #ffffff12;color:#fff}
+.identity{border-bottom-color:#ffffff18}.identity strong{color:#f2f5f8}.identity small{color:#9eacbd}
+.mark{background:linear-gradient(145deg,#b69b6c,#756347);box-shadow:inset 0 1px 0 #ffffff55,0 7px 18px #0003}
+.nav-caption{color:#8190a4}.nav{color:#b0bdcc}.nav:hover{background:#ffffff0d;color:#fff}
+.nav.active{background:linear-gradient(100deg,#ffffff18,#ffffff08);border-color:#ffffff12;color:#fff;box-shadow:inset 3px 0 #c4a979}
+.side-foot{border-top-color:#ffffff18;color:#8d9caf}.side-foot button{color:#d4bd93}
+.topbar{border-bottom-color:#cdd5df}.breadcrumb b{color:#172a40}
+.date-chip,.icon-btn{background:#ffffff8c;border-color:#ffffff}
+.hero{background:linear-gradient(112deg,#111d2d 0%,#243a54 67%,#78684f 140%);box-shadow:0 18px 38px #14263b25}
+.hero-mark{border-color:#c7b48d66;background:#c7b48d16}
+.btn{background:linear-gradient(145deg,#293e57,#14263b);box-shadow:0 7px 17px #182b431c}
+.btn:hover{background:linear-gradient(145deg,#3a526f,#1a304a)}
+.btn.secondary{background:#fff;color:#344b68;border-color:#e5e9ee}
+.btn.soft{background:#eee9df;color:#6f5d40}
+.nav svg{stroke-width:1.65}
+.glass{background:rgba(255,255,255,.72);border-color:#ffffffd9;box-shadow:0 16px 42px rgba(18,30,46,.065)}
+.stat-icon{background:#f0ede7;color:#7c6848}
+.day.selected{background:linear-gradient(145deg,#263d58,#53647a);box-shadow:0 6px 15px #1b35552a}
+.day-event-chip{background:#eceff3;color:#40546c;border-color:#8b9bb0}
+.day-event-chip.meeting{background:#e9edf5;color:#526587;border-color:#788ba9}
+.day-event-chip.activity{background:#e8f0ec;color:#47745f;border-color:#769d88}
+.day-event-chip.visit{background:#f3eee5;color:#8b7049;border-color:#b69b6c}
+.day-event-chip.training{background:#eeebf2;color:#746185;border-color:#9b8aaa}
+.mobile-nav{background:rgba(22,35,52,.90)!important;border-top-color:#ffffff1c!important}
+.mobile-nav button{color:#aab6c5}.mobile-nav button.active{color:#e3c99b}
+.mobile-brand .mark{background:linear-gradient(145deg,#b69b6c,#756347)}
+.social-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:14px}
+.social-stat{padding:15px 16px;border-radius:16px;background:linear-gradient(145deg,rgba(255,255,255,.88),rgba(255,255,255,.60));border:1px solid #fff;box-shadow:0 12px 30px rgba(18,30,46,.055)}
+.social-stat small{display:block;color:#8793a3;font-size:9px;font-weight:800}.social-stat strong{display:block;color:#182b43;font-size:25px;letter-spacing:-.8px;margin:8px 0 3px}.social-stat span{color:#a1aab6;font-size:8px}
+.social-layout{display:grid;grid-template-columns:minmax(340px,.9fr) minmax(0,1.1fr);gap:14px;align-items:start}
+.social-mini-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.social-mini-grid>div{padding:11px;border-radius:11px;background:#f3f5f7;border:1px solid #fff}
+.social-mini-grid small{display:block;color:#8793a3;font-size:8px}.social-mini-grid b{display:block;color:#1d334e;font-size:18px;margin-top:5px}
+@media(max-width:1000px){.social-layout{grid-template-columns:1fr}}
+@media(max-width:700px){.social-stats{grid-template-columns:repeat(2,1fr);gap:8px}.social-stat{padding:12px}.social-stat strong{font-size:22px}.social-layout{grid-template-columns:1fr}.social-filters{grid-template-columns:1fr 1fr}.social-filters .field:last-child{grid-column:1/-1}.social-mini-grid{grid-template-columns:repeat(2,1fr)}.mobile-nav{grid-template-columns:repeat(6,1fr)!important}.mobile-nav button{font-size:6.5px}}
+</style>
+
 </head>
 <body>
 <div class="login-screen" id="loginScreen">
@@ -196,6 +291,7 @@ h1{font-size:28px;letter-spacing:-1.1px;color:var(--navy);margin:6px 0 5px;font-
   <div class="nav-caption">ÇALIŞMA ALANI</div>
   <button class="nav active" data-page="overview"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-6v-7h-4v7H4a1 1 0 0 1-1-1z"/></svg>Genel Bakış</button>
   <button class="nav" data-page="calendar"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18M8 14h3M8 17h7"/></svg>Faaliyet Takvimi</button>
+  <button class="nav" data-page="social"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 16V9m4 7V6m4 10v-4"/></svg>Sosyal Medya Takibi</button>
   <button class="nav" data-page="add"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Yeni Etkinlik</button>
   <button class="nav" data-page="records"><svg viewBox="0 0 24 24"><path d="M5 4h14v17H5zM8 8h8M8 12h8M8 16h5"/></svg>Etkinlik Arşivi</button>
   <button class="nav" data-page="reports"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h17M8 15v-4M13 15V7M18 15V3"/></svg>Raporlar</button>
@@ -226,6 +322,11 @@ h1{font-size:28px;letter-spacing:-1.1px;color:var(--navy);margin:6px 0 5px;font-
      <button class="quick" data-goto="reports"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h17M8 15v-4M13 15V7M18 15V3"/></svg><b>Rapor hazırla</b><small>Dönemlik çıktı al</small></button>
     </div></div>
    </div>
+
+   <div class="panel glass" style="margin-top:14px">
+    <div class="panel-head"><h3>Sosyal medya içerik özeti</h3><button class="btn secondary small" data-goto="social">İçerik takibine git</button></div>
+    <div class="social-mini-grid"><div><small>İçerik</small><b id="dashSocialTotal">0</b></div><div><small>Görüntülenme</small><b id="dashSocialViews">0</b></div><div><small>Beğeni</small><b id="dashSocialLikes">0</b></div><div><small>Yorum</small><b id="dashSocialComments">0</b></div></div>
+   </div>
   </section>
 
   <section class="page" id="calendar">
@@ -238,6 +339,49 @@ h1{font-size:28px;letter-spacing:-1.1px;color:var(--navy);margin:6px 0 5px;font-
      <div class="legend"><span><i class="meeting"></i>Toplantı</span><span><i class="activity"></i>Faaliyet</span><span><i class="visit"></i>Ziyaret</span><span><i class="training"></i>Eğitim / Diğer</span></div>
     </div>
     <aside class="agenda glass"><div class="panel-head"><h3 id="agendaTitle">Günün ajandası</h3><small id="agendaCount">0 kayıt</small></div><div class="agenda-date" id="agendaDate"></div><div id="agendaList"></div><button class="btn secondary" style="width:100%;margin-top:8px" id="addForDay">＋ Bu güne etkinlik ekle</button></aside>
+   </div>
+  </section>
+
+
+  <section class="page" id="social">
+   <div class="page-head"><div><div class="eyebrow">İÇERİK PERFORMANSI</div><h1>Sosyal Medya Takibi</h1><p class="sub">Yayınlanan içerikleri ve toplam etkileşim sayılarını kayıt altında tut.</p></div><button class="btn" id="newSocialBtn">＋ İçerik ekle</button></div>
+   <div class="social-stats">
+    <div class="social-stat"><small>Toplam içerik</small><strong id="socialTotal">0</strong><span>Kayıtlı yayın</span></div>
+    <div class="social-stat"><small>Toplam görüntülenme</small><strong id="socialViews">0</strong><span>İçeriklerin toplamı</span></div>
+    <div class="social-stat"><small>Toplam beğeni</small><strong id="socialLikes">0</strong><span>İçerik bazında</span></div>
+    <div class="social-stat"><small>Toplam yorum + paylaşım</small><strong id="socialEngagement">0</strong><span>Toplam etkileşim</span></div>
+   </div>
+   <div class="social-layout">
+    <div class="panel glass">
+     <div class="panel-head"><h3>Yeni içerik kaydı</h3><small>Yayın bilgileri</small></div>
+     <form id="socialForm">
+      <input type="hidden" id="socialId">
+      <div class="form-grid">
+       <div class="field"><label>İÇERİK BAŞLIĞI *</label><input id="socialTitle" maxlength="140" placeholder="Örn. Genç Kürsü programı" required></div>
+       <div class="field"><label>PLATFORM</label><select id="socialPlatform"><option>Instagram</option><option>Facebook</option><option>X</option><option>YouTube</option><option>TikTok</option><option>Diğer</option></select></div>
+       <div class="field"><label>YAYIN TARİHİ *</label><input id="socialDate" type="date" required></div>
+       <div class="field"><label>İÇERİK TÜRÜ</label><select id="socialType"><option>Reels / Video</option><option>Gönderi</option><option>Hikâye</option><option>Canlı yayın</option><option>Duyuru</option><option>Diğer</option></select></div>
+       <div class="field full"><label>İÇERİK BAĞLANTISI</label><input id="socialUrl" type="url" placeholder="https://..."></div>
+       <div class="field"><label>GÖRÜNTÜLENME</label><input id="socialViewsInput" type="number" min="0" value="0"></div>
+       <div class="field"><label>ERİŞİM</label><input id="socialReach" type="number" min="0" value="0"></div>
+       <div class="field"><label>BEĞENİ</label><input id="socialLikesInput" type="number" min="0" value="0"></div>
+       <div class="field"><label>YORUM</label><input id="socialComments" type="number" min="0" value="0"></div>
+       <div class="field"><label>PAYLAŞIM</label><input id="socialShares" type="number" min="0" value="0"></div>
+       <div class="field"><label>KAYDETME</label><input id="socialSaves" type="number" min="0" value="0"></div>
+       <div class="field full"><label>İÇERİK NOTU</label><textarea id="socialNote" rows="3" maxlength="1200" placeholder="Kampanya, içerik konusu veya kısa değerlendirme..."></textarea></div>
+      </div>
+      <div class="form-actions"><button class="btn" type="submit">İçeriği kaydet</button><button class="btn secondary" type="button" id="socialReset">Temizle</button></div>
+     </form>
+    </div>
+    <div class="panel glass">
+     <div class="panel-head"><h3>İçerik arşivi</h3><small id="socialCount">0 kayıt</small></div>
+     <div class="filters social-filters">
+      <div class="field"><label>PLATFORM</label><select id="socialFilterPlatform"><option value="">Tüm platformlar</option><option>Instagram</option><option>Facebook</option><option>X</option><option>YouTube</option><option>TikTok</option><option>Diğer</option></select></div>
+      <div class="field"><label>İÇERİK TÜRÜ</label><select id="socialFilterType"><option value="">Tüm türler</option><option>Reels / Video</option><option>Gönderi</option><option>Hikâye</option><option>Canlı yayın</option><option>Duyuru</option><option>Diğer</option></select></div>
+      <div class="field"><label>ARAMA</label><input id="socialSearch" placeholder="Başlık veya bağlantı"></div>
+     </div>
+     <div class="record-list" id="socialList"></div>
+    </div>
    </div>
   </section>
 
@@ -296,6 +440,19 @@ h1{font-size:28px;letter-spacing:-1.1px;color:var(--navy);margin:6px 0 5px;font-
 
   <section class="page" id="settings">
    <div class="page-head"><div><div class="eyebrow">KİŞİSELLEŞTİRME</div><h1>Ayarlar</h1><p class="sub">Panel tercihlerini, kilidi ve veri yedeklerini yönet.</p></div></div>
+   <div class="panel glass site-profile-panel">
+    <div class="panel-head"><div><h3>Site kimliği ve içerik</h3><small>Panelde görünen bilgileri düzenle</small></div><span class="profile-mark">AY</span></div>
+    <div class="form-grid">
+     <div class="field"><label for="siteTitle">KURUM / PANEL ADI</label><input id="siteTitle" maxlength="42" placeholder="ANAMUR GENÇLİK"></div>
+     <div class="field"><label for="siteSubtitle">ALT BAŞLIK</label><input id="siteSubtitle" maxlength="48" placeholder="YÖNETİM MERKEZİ"></div>
+     <div class="field"><label for="siteLocation">KONUM / BÖLGE</label><input id="siteLocation" maxlength="60" placeholder="ANAMUR · MERSİN"></div>
+     <div class="field"><label for="siteFooter">ALT BİLGİ</label><input id="siteFooter" maxlength="70" placeholder="ANAMUR GENÇLİK YÖNETİM MERKEZİ"></div>
+     <div class="field full"><label for="heroTitle">ANA SAYFA BAŞLIĞI</label><input id="heroTitle" maxlength="90" placeholder="Günün planı, yarının hazırlığı."></div>
+     <div class="field full"><label for="heroDescription">ANA SAYFA AÇIKLAMASI</label><textarea id="heroDescription" rows="2" maxlength="180" placeholder="Panelin kısa açıklaması"></textarea></div>
+    </div>
+    <div class="form-actions" style="margin-top:14px"><button class="btn" id="saveSiteProfile">Site bilgilerini kaydet</button><button class="btn secondary" id="resetSiteProfile">Varsayılana dön</button></div>
+    <p class="sub" style="margin-top:10px">Bu bilgiler yalnızca bu tarayıcıda saklanır. Site adı, alt başlık, konum ve ana sayfa metinleri panelde otomatik güncellenir.</p>
+   </div>
    <div class="settings-grid">
     <div class="panel glass"><div class="panel-head"><h3>Panel tercihleri</h3><small>Görünüm</small></div>
      <div class="setting-row"><div><b>Haftanın ilk günü</b><small>Takvimde haftanın hangi gün başlayacağı</small></div><select id="weekStart" class="setting-input" style="width:120px"><option value="1">Pazartesi</option><option value="0">Pazar</option></select></div>
@@ -323,6 +480,7 @@ h1{font-size:28px;letter-spacing:-1.1px;color:var(--navy);margin:6px 0 5px;font-
 <nav class="mobile-nav">
  <button class="active" data-page="overview"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10h-7v-7h-4v7H3z"/></svg>Özet</button>
  <button data-page="calendar"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4m8-4v4M3 10h18"/></svg>Takvim</button>
+ <button data-page="social"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 16V9m4 7V6m4 10v-4"/></svg>Sosyal</button>
  <button data-page="add"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Ekle</button>
  <button data-page="notes"><svg viewBox="0 0 24 24"><path d="M5 3h14v18H5zM8 8h8M8 12h8"/></svg>Notlar</button>
  <button data-page="settings"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19 13.5 21 15l-2 3-2.2-.4a7 7 0 0 1-1.5.8L14.5 21h-4l-.8-2.6a7 7 0 0 1-1.5-.8L6 18l-2-3 2-1.5a7 7 0 0 1 0-1.8L4 10l2-3 2.2.4a7 7 0 0 1 1.5-.8L10.5 4h4l.8 2.6a7 7 0 0 1 1.5.8L19 7l2 3-2 1.5a7 7 0 0 1 0 2z"/></svg>Ayarlar</button>
@@ -337,10 +495,10 @@ h1{font-size:28px;letter-spacing:-1.1px;color:var(--navy);margin:6px 0 5px;font-
 <script>
 (()=> {
 'use strict';
-const EVENT_KEY='anamur_calendar_events_v1', NOTE_KEY='anamur_private_notes_v1', SETTINGS_KEY='anamur_panel_settings_v1', OLD_MEDIA_KEY='anamur_social_activity_v1';
+const EVENT_KEY='anamur_calendar_events_v1', NOTE_KEY='anamur_private_notes_v1', SETTINGS_KEY='anamur_panel_settings_v1', OLD_MEDIA_KEY='anamur_social_activity_v1', SOCIAL_KEY='anamur_content_performance_v1';
 const $=id=>document.getElementById(id);
 const now=new Date(),todayKey=keyDate(now);
-let events=read(EVENT_KEY,[]),notes=read(NOTE_KEY,[]),settings=Object.assign({weekStart:1,defaultReminder:0,dailySummary:true,pinEnabled:false,pin:''},read(SETTINGS_KEY,{}));
+let events=read(EVENT_KEY,[]),notes=read(NOTE_KEY,[]),socialItems=read(SOCIAL_KEY,[]),settings=Object.assign({weekStart:1,defaultReminder:0,dailySummary:true,pinEnabled:false,pin:'',siteTitle:'ANAMUR GENÇLİK',siteSubtitle:'YÖNETİM MERKEZİ',siteLocation:'ANAMUR · MERSİN',heroTitle:'Günün planı, yarının hazırlığı.',heroDescription:'Toplantıları düzenle, kararları kaydet, faaliyetleri takip et.',siteFooter:'ANAMUR GENÇLİK YÖNETİM MERKEZİ'},read(SETTINGS_KEY,{}));
 let cursor=new Date(now.getFullYear(),now.getMonth(),1),selectedDate=todayKey,editingId=null,toastTimer=null;
 function read(k,f){try{const x=JSON.parse(localStorage.getItem(k)||'null');return x??f}catch(e){return f}}
 function write(k,v){localStorage.setItem(k,JSON.stringify(v))}
@@ -352,8 +510,8 @@ function typeClass(t){return t==='Toplantı'?'meeting':t==='Faaliyet'?'activity'
 function persist(){write(EVENT_KEY,events)}
 function persistSettings(){write(SETTINGS_KEY,settings)}
 function toast(msg){const el=$('toast');el.textContent=msg;el.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('show'),2600)}
-const pageTitles={overview:'GENEL BAKIŞ',calendar:'FAALİYET TAKVİMİ',add:'YENİ ETKİNLİK',records:'ETKİNLİK ARŞİVİ',notes:'NOT DEFTERİ',reports:'RAPORLAR',settings:'AYARLAR'};
-function go(id){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===id));$('crumb').textContent=pageTitles[id]||'';if(id==='calendar')renderCalendar();if(id==='overview')renderDashboard();if(id==='records')renderRecords();if(id==='notes')renderNotes();if(id==='reports')renderReport();if(id==='settings')loadSettings();window.scrollTo({top:0,behavior:'smooth'})}
+const pageTitles={overview:'GENEL BAKIŞ',calendar:'FAALİYET TAKVİMİ',social:'SOSYAL MEDYA TAKİBİ',add:'YENİ ETKİNLİK',records:'ETKİNLİK ARŞİVİ',notes:'NOT DEFTERİ',reports:'RAPORLAR',settings:'AYARLAR'};
+function go(id){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===id));$('crumb').textContent=pageTitles[id]||'';if(id==='calendar')renderCalendar();if(id==='social')renderSocial();if(id==='overview')renderDashboard();if(id==='records')renderRecords();if(id==='notes')renderNotes();if(id==='reports')renderReport();if(id==='settings')loadSettings();window.scrollTo({top:0,behavior:'smooth'})}
 document.querySelectorAll('[data-page]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.page)));
 document.querySelectorAll('[data-goto]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.goto)));
 $('todayLabel').textContent=now.toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric'});
@@ -364,6 +522,7 @@ function renderDashboard(){
  $('upcomingCount').textContent=events.filter(e=>e.date>=todayKey&&e.status!=='İptal'&&e.status!=='Tamamlandı').length;
  $('meetingCount').textContent=events.filter(e=>e.type==='Toplantı').length;
  $('noteCount').textContent=notes.length;
+ const sm=socialMetrics();$('dashSocialTotal').textContent=sm.total.toLocaleString('tr-TR');$('dashSocialViews').textContent=sm.views.toLocaleString('tr-TR');$('dashSocialLikes').textContent=sm.likes.toLocaleString('tr-TR');$('dashSocialComments').textContent=sm.comments.toLocaleString('tr-TR');
  const upcoming=sortedEvents(events.filter(e=>e.date>=todayKey&&e.status!=='İptal'&&e.status!=='Tamamlandı')).slice(0,5);
  $('upcomingList').innerHTML=upcoming.length?upcoming.map(e=>`<div class="upcoming-item"><div class="date-block"><b>${parseDate(e.date).getDate()}</b><small>${parseDate(e.date).toLocaleDateString('tr-TR',{month:'short'})}</small></div><div class="upcoming-copy"><b>${esc(e.title)}</b><small>${esc(e.time||'Saat belirtilmedi')}${e.place?' · '+esc(e.place):''}</small></div><span class="type-tag ${typeClass(e.type)}">${esc(e.type)}</span></div>`).join(''):'<div class="empty">Yaklaşan etkinlik bulunmuyor.<br>Takvime yeni bir kayıt ekleyebilirsin.</div>';
 }
@@ -422,6 +581,38 @@ function renderRecords(){
  $('recordList').querySelectorAll('[data-edit]').forEach(b=>b.addEventListener('click',()=>editEvent(b.dataset.edit)));
 }
 ['filterType','filterStatus'].forEach(id=>$(id).addEventListener('change',renderRecords));$('recordSearch').addEventListener('input',renderRecords);
+
+function socialMetrics(list=socialItems){
+ return list.reduce((a,x)=>{a.total++;a.views+=Number(x.views||0);a.reach+=Number(x.reach||0);a.likes+=Number(x.likes||0);a.comments+=Number(x.comments||0);a.shares+=Number(x.shares||0);a.saves+=Number(x.saves||0);return a},{total:0,views:0,reach:0,likes:0,comments:0,shares:0,saves:0});
+}
+function resetSocialForm(){ $('socialForm').reset();$('socialId').value='';$('socialDate').value=todayKey;$('socialViewsInput').value=0;$('socialReach').value=0;$('socialLikesInput').value=0;$('socialComments').value=0;$('socialShares').value=0;$('socialSaves').value=0; }
+function renderSocial(){
+ const m=socialMetrics();
+ $('socialTotal').textContent=m.total.toLocaleString('tr-TR');$('socialViews').textContent=m.views.toLocaleString('tr-TR');$('socialLikes').textContent=m.likes.toLocaleString('tr-TR');$('socialEngagement').textContent=(m.comments+m.shares).toLocaleString('tr-TR');
+ const q=$('socialSearch').value.trim().toLocaleLowerCase('tr-TR'),platform=$('socialFilterPlatform').value,type=$('socialFilterType').value;
+ const list=[...socialItems].filter(x=>(!platform||x.platform===platform)&&(!type||x.type===type)&&(!q||[x.title,x.url,x.note].join(' ').toLocaleLowerCase('tr-TR').includes(q))).sort((a,b)=>b.date.localeCompare(a.date));
+ $('socialCount').textContent=list.length+' içerik';
+ $('socialList').innerHTML=list.length?list.map(x=>`<div class="record"><div class="record-main"><div class="record-title">${esc(x.title)} <span class="pill">${esc(x.platform)}</span><span class="pill">${esc(x.type)}</span></div><div class="record-meta">${esc(fmtDate(x.date))} · Görüntülenme ${Number(x.views||0).toLocaleString('tr-TR')} · Erişim ${Number(x.reach||0).toLocaleString('tr-TR')}</div><div class="record-meta">♥ ${Number(x.likes||0).toLocaleString('tr-TR')}　Yorum ${Number(x.comments||0).toLocaleString('tr-TR')}　Paylaşım ${Number(x.shares||0).toLocaleString('tr-TR')}　Kaydetme ${Number(x.saves||0).toLocaleString('tr-TR')}</div>${x.note?`<div class="record-note">${esc(x.note)}</div>`:''}${x.url?`<a href="${esc(x.url)}" target="_blank" rel="noopener">İçeriği aç ↗</a>`:''}</div><div style="display:grid;gap:6px"><button class="btn secondary small" data-social-edit="${esc(x.id)}">Düzenle</button><button class="btn danger small" data-social-delete="${esc(x.id)}">Sil</button></div></div>`).join(''):'<div class="empty">Henüz içerik kaydı yok. İlk yayınını ekleyebilirsin.</div>';
+ $('socialList').querySelectorAll('[data-social-edit]').forEach(b=>b.addEventListener('click',()=>editSocial(b.dataset.socialEdit)));
+ $('socialList').querySelectorAll('[data-social-delete]').forEach(b=>b.addEventListener('click',()=>{if(confirm('Bu içerik kaydı silinsin mi?')){socialItems=socialItems.filter(x=>x.id!==b.dataset.socialDelete);write(SOCIAL_KEY,socialItems);renderSocial();renderDashboard();toast('İçerik kaydı silindi.')}}));
+}
+function editSocial(id){
+ const x=socialItems.find(v=>v.id===id);if(!x)return;
+ $('socialId').value=x.id;$('socialTitle').value=x.title;$('socialPlatform').value=x.platform;$('socialDate').value=x.date;$('socialType').value=x.type;$('socialUrl').value=x.url||'';$('socialViewsInput').value=x.views||0;$('socialReach').value=x.reach||0;$('socialLikesInput').value=x.likes||0;$('socialComments').value=x.comments||0;$('socialShares').value=x.shares||0;$('socialSaves').value=x.saves||0;$('socialNote').value=x.note||'';
+ $('socialTitle').focus();toast('İçerik bilgileri düzenleme alanına alındı.');
+}
+$('socialForm').addEventListener('submit',ev=>{
+ ev.preventDefault();
+ const url=$('socialUrl').value.trim();if(url&&!/^https?:\/\//i.test(url)){toast('Bağlantı https:// veya http:// ile başlamalı.');return}
+ const id=$('socialId').value||Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+ const item={id,title:$('socialTitle').value.trim(),platform:$('socialPlatform').value,date:$('socialDate').value,type:$('socialType').value,url,views:Math.max(0,Number($('socialViewsInput').value)||0),reach:Math.max(0,Number($('socialReach').value)||0),likes:Math.max(0,Number($('socialLikesInput').value)||0),comments:Math.max(0,Number($('socialComments').value)||0),shares:Math.max(0,Number($('socialShares').value)||0),saves:Math.max(0,Number($('socialSaves').value)||0),note:$('socialNote').value.trim(),updated:Date.now()};
+ if(!item.title||!item.date){toast('Başlık ve yayın tarihi zorunlu.');return}
+ socialItems=socialItems.filter(x=>x.id!==id);socialItems.push(item);write(SOCIAL_KEY,socialItems);resetSocialForm();renderSocial();renderDashboard();toast('Sosyal medya içeriği kaydedildi.');
+});
+$('socialReset').addEventListener('click',resetSocialForm);
+$('newSocialBtn').addEventListener('click',()=>{resetSocialForm();$('socialTitle').focus()});
+['socialFilterPlatform','socialFilterType'].forEach(id=>$(id).addEventListener('change',renderSocial));$('socialSearch').addEventListener('input',renderSocial);
+
 function renderNotes(){
  $('notesCount').textContent=notes.length+' not';
  $('notesList').innerHTML=notes.length?[...notes].sort((a,b)=>b.updated-a.updated).map(n=>`<div class="record"><div class="record-main"><div class="record-title">${esc(n.title||'Başlıksız not')}</div><div class="record-meta">${new Date(n.updated).toLocaleString('tr-TR')}</div><div class="record-note">${esc((n.body||'').slice(0,140))}</div></div><button class="btn secondary small" data-note="${esc(n.id)}">Aç</button></div>`).join(''):'<div class="empty">Henüz not eklenmedi.</div>';
@@ -449,16 +640,41 @@ $('pdfBtn').addEventListener('click',()=>{
  w.document.write(`<!doctype html><html lang="tr"><meta charset="utf-8"><title>Etkinlik Raporu</title><style>body{font-family:Arial,sans-serif;margin:32px;color:#1b2d45}h1{font-size:22px;color:#102b4b}p{font-size:11px;color:#66768b}.rule{height:4px;background:#203e62;margin:15px 0}table{border-collapse:collapse;width:100%;font-size:10px;margin-top:20px}th,td{padding:8px;border-bottom:1px solid #dfe5ed;text-align:left}th{background:#edf2f8;color:#2d4766}.summary{background:#f2f5f9;padding:12px;border-radius:8px;font-size:11px}@media print{body{margin:15mm}}</style><h1>ANAMUR GENÇLİK · ETKİNLİK RAPORU</h1><p>Rapor dönemi: ${esc(s)} – ${esc(e)} · Oluşturulma: ${new Date().toLocaleDateString('tr-TR')}</p><div class="rule"></div><div class="summary">Toplam etkinlik: <b>${a.length}</b> · Toplantı: <b>${a.filter(x=>x.type==='Toplantı').length}</b> · Tamamlanan: <b>${a.filter(x=>x.status==='Tamamlandı').length}</b></div><table><tr><th>Tarih</th><th>Saat</th><th>Etkinlik</th><th>Tür</th><th>Durum</th><th>Yer</th></tr>${rows||'<tr><td colspan="6">Kayıt bulunamadı.</td></tr>'}</table><script>window.onload=()=>window.print()<\/script></html>`);
  w.document.close();
 });
-function loadSettings(){$('weekStart').value=String(settings.weekStart);$('defaultReminder').value=String(settings.defaultReminder);$('dailySummary').classList.toggle('on',!!settings.dailySummary);$('pinEnabled').classList.toggle('on',!!settings.pinEnabled)}
+function applySiteProfile(){
+ const title=settings.siteTitle||'ANAMUR GENÇLİK',subtitle=settings.siteSubtitle||'YÖNETİM MERKEZİ';
+ document.querySelectorAll('.identity strong,.mobile-brand b').forEach(el=>el.textContent=title);
+ document.querySelectorAll('.identity small,.mobile-brand small').forEach(el=>el.textContent=subtitle);
+ const loc=document.querySelector('.side-foot');
+ if(loc){
+  const first=loc.childNodes[0];if(first&&first.nodeType===3)first.textContent=(settings.siteLocation||'ANAMUR · MERSİN')+'\\n';
+  let foot=loc.querySelector('.site-foot-label');if(!foot){foot=document.createElement('small');foot.className='site-foot-label';loc.insertBefore(foot,loc.querySelector('button'));}
+  foot.textContent=settings.siteFooter||'ANAMUR GENÇLİK YÖNETİM MERKEZİ';
+ }
+ const hero=document.querySelector('.hero');
+ if(hero){const h=hero.querySelector('h2'),p=hero.querySelector('p'),k=hero.querySelector('.hero-kicker');if(h)h.textContent=settings.heroTitle||'Günün planı, yarının hazırlığı.';if(p)p.textContent=settings.heroDescription||'Toplantıları düzenle, kararları kaydet, faaliyetleri takip et.';if(k)k.textContent=(settings.siteTitle||'ANAMUR GENÇLİK')+' · PLANLAMA';}
+ document.title=(settings.siteTitle||'ANAMUR GENÇLİK')+' | '+(settings.siteSubtitle||'YÖNETİM MERKEZİ');
+ const fields={siteTitle:'siteTitle',siteSubtitle:'siteSubtitle',siteLocation:'siteLocation',siteFooter:'siteFooter',heroTitle:'heroTitle',heroDescription:'heroDescription'};
+ Object.entries(fields).forEach(([id,key])=>{const el=$(id);if(el)el.value=settings[key]||''});
+}
+function loadSettings(){$('weekStart').value=String(settings.weekStart);$('defaultReminder').value=String(settings.defaultReminder);$('dailySummary').classList.toggle('on',!!settings.dailySummary);$('pinEnabled').classList.toggle('on',!!settings.pinEnabled);applySiteProfile()}
+$('saveSiteProfile').addEventListener('click',()=>{
+ ['siteTitle','siteSubtitle','siteLocation','siteFooter','heroTitle','heroDescription'].forEach(id=>{settings[id]=$(id).value.trim()});
+ if(!settings.siteTitle){toast('Panel adı boş bırakılamaz.');return}
+ persistSettings();applySiteProfile();toast('Site bilgileri kaydedildi.');
+});
+$('resetSiteProfile').addEventListener('click',()=>{
+ Object.assign(settings,{siteTitle:'ANAMUR GENÇLİK',siteSubtitle:'YÖNETİM MERKEZİ',siteLocation:'ANAMUR · MERSİN',siteFooter:'ANAMUR GENÇLİK YÖNETİM MERKEZİ',heroTitle:'Günün planı, yarının hazırlığı.',heroDescription:'Toplantıları düzenle, kararları kaydet, faaliyetleri takip et.'});
+ persistSettings();applySiteProfile();toast('Site bilgileri varsayılana döndürüldü.');
+});
 $('weekStart').addEventListener('change',()=>{settings.weekStart=Number($('weekStart').value);persistSettings();renderCalendar();toast('Takvim tercihi kaydedildi.')});
 $('defaultReminder').addEventListener('change',()=>{settings.defaultReminder=Number($('defaultReminder').value);persistSettings();toast('Varsayılan hatırlatma güncellendi.')});
 $('dailySummary').addEventListener('click',()=>{settings.dailySummary=!settings.dailySummary;persistSettings();loadSettings()});
 $('pinEnabled').addEventListener('click',()=>{settings.pinEnabled=!settings.pinEnabled;if(settings.pinEnabled&&!settings.pin){settings.pinEnabled=false;toast('Önce bir PIN belirlemelisin.')}persistSettings();loadSettings()});
 $('savePin').addEventListener('click',()=>{const pin=$('newPin').value.trim();if(!/^\d{4,8}$/.test(pin)){toast('PIN 4-8 rakam olmalı.');return}settings.pin=pin;persistSettings();$('newPin').value='';toast('PIN kaydedildi.');loadSettings()});
-function backupData(){return {product:'Anamur Gençlik Yönetim Merkezi',version:2,exportedAt:new Date().toISOString(),events,notes,settings,legacyMedia:read(OLD_MEDIA_KEY,[])}}
+function backupData(){return {product:'Anamur Gençlik Yönetim Merkezi',version:4,exportedAt:new Date().toISOString(),events,notes,socialItems,settings,legacyMedia:read(OLD_MEDIA_KEY,[])}}
 $('backupBtn').addEventListener('click',()=>{const blob=new Blob([JSON.stringify(backupData(),null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='anamur-yonetim-yedegi-'+todayKey+'.json';a.click();URL.revokeObjectURL(url);toast('Yedek dosyası indirildi.')});
-$('restoreFile').addEventListener('change',async ev=>{const f=ev.target.files[0];if(!f)return;try{const d=JSON.parse(await f.text());if(!d||!Array.isArray(d.events)||!Array.isArray(d.notes))throw Error('format');if(!confirm('Yedek mevcut panel verilerinin üzerine yazılsın mı?'))return;events=d.events;notes=d.notes;settings=Object.assign(settings,d.settings||{});persist();write(NOTE_KEY,notes);persistSettings();renderDashboard();renderCalendar();renderNotes();toast('Yedek başarıyla yüklendi.')}catch(e){toast('Yedek dosyası okunamadı veya formatı geçersiz.')}finally{ev.target.value=''}});
-$('clearAll').addEventListener('click',()=>{if(!confirm('Tüm etkinlikleri, notları ve ayarları silmek istediğine emin misin? Önce yedek alman önerilir.'))return;if(!confirm('Bu işlem geri alınamaz. Devam edilsin mi?'))return;events=[];notes=[];settings={weekStart:1,defaultReminder:0,dailySummary:true,pinEnabled:false,pin:''};persist();write(NOTE_KEY,notes);persistSettings();renderDashboard();renderCalendar();renderNotes();loadSettings();toast('Panel verileri temizlendi.')});
+$('restoreFile').addEventListener('change',async ev=>{const f=ev.target.files[0];if(!f)return;try{const d=JSON.parse(await f.text());if(!d||!Array.isArray(d.events)||!Array.isArray(d.notes))throw Error('format');if(!confirm('Yedek mevcut panel verilerinin üzerine yazılsın mı?'))return;events=d.events;notes=d.notes;socialItems=Array.isArray(d.socialItems)?d.socialItems:[];settings=Object.assign(settings,d.settings||{});persist();write(NOTE_KEY,notes);write(SOCIAL_KEY,socialItems);persistSettings();renderDashboard();renderCalendar();renderSocial();renderNotes();loadSettings();toast('Yedek başarıyla yüklendi.')}catch(e){toast('Yedek dosyası okunamadı veya formatı geçersiz.')}finally{ev.target.value=''}});
+$('clearAll').addEventListener('click',()=>{if(!confirm('Tüm etkinlikleri, notları ve ayarları silmek istediğine emin misin? Önce yedek alman önerilir.'))return;if(!confirm('Bu işlem geri alınamaz. Devam edilsin mi?'))return;events=[];notes=[];socialItems=[];settings={weekStart:1,defaultReminder:0,dailySummary:true,pinEnabled:false,pin:''};persist();write(NOTE_KEY,notes);write(SOCIAL_KEY,socialItems);persistSettings();renderDashboard();renderCalendar();renderSocial();renderNotes();loadSettings();toast('Panel verileri temizlendi.')});
 function showLogin(){if(settings.pinEnabled&&settings.pin){$('loginTitle').textContent='Yönetim Merkezi';$('loginDesc').textContent='Devam etmek için PIN kodunu gir.';$('loginBtn').textContent='Panele giriş yap';$('loginScreen').classList.add('show')}else{$('loginScreen').classList.remove('show')}}
 $('loginBtn').addEventListener('click',()=>{if($('pinInput').value===settings.pin){$('loginScreen').classList.remove('show');$('pinInput').value='';sessionStorage.setItem('anamur_unlocked','1')}else toast('PIN kodu hatalı.')});
 $('pinInput').addEventListener('keydown',e=>{if(e.key==='Enter')$('loginBtn').click()});
@@ -473,7 +689,7 @@ function checkReminders(){
 function init(){
  // Migrate earlier calendar prototype records without discarding existing fields.
  events=events.map(e=>Object.assign({status:'Planlandı',endTime:'',description:'',reminder:0},e));
- persist();renderDashboard();renderCalendar();renderRecords();renderNotes();renderReport();loadSettings();
+ persist();renderDashboard();renderCalendar();renderSocial();renderRecords();renderNotes();renderReport();loadSettings();resetSocialForm();
  if(settings.pinEnabled&&sessionStorage.getItem('anamur_unlocked')!=='1')showLogin();
  setTimeout(checkReminders,900);
 }
