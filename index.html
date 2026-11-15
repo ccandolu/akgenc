@@ -2,141 +2,212 @@
 <html lang="tr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#14233b">
-<title>Anamur Gençlik | Faaliyet Takip</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<title>Anamur AK Gençlik | Medya Faaliyet Yönetimi</title>
 <style>
-:root{--navy:#14233b;--navy2:#203958;--bg:#f3f5f8;--card:#fff;--text:#1e293b;--muted:#718096;--line:#e5eaf0;--green:#18794e;--greenbg:#e8f5ee;--red:#b33b3b;--redbg:#fff0f0;--amber:#936515;--amberbg:#fff7e5}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding-bottom:calc(78px + env(safe-area-inset-bottom))}
-header{background:linear-gradient(140deg,var(--navy),#263e60);color:#fff;padding:20px 18px 24px;padding-top:calc(18px + env(safe-area-inset-top));border-radius:0 0 22px 22px}
-.brand{font-size:11px;letter-spacing:.14em;color:#b9c7d9;font-weight:700}.headrow{display:flex;justify-content:space-between;align-items:center}.headrow h1{font-size:24px;margin:8px 0 3px}.sub{font-size:12px;color:#c5d0df}
-main{max-width:760px;margin:auto;padding:16px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:-5px}.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 10px;box-shadow:0 4px 14px #1c2c4210}.stat b{display:block;font-size:23px}.stat span{font-size:11px;color:var(--muted)}
-.tabs{position:fixed;bottom:0;left:0;right:0;z-index:5;background:#ffffffed;backdrop-filter:blur(14px);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);padding:8px 8px calc(8px + env(safe-area-inset-bottom))}
-.tab{border:0;background:none;color:#718096;padding:7px 2px;font-size:10px;font-weight:600}.tab strong{display:block;font-size:19px;margin-bottom:2px}.tab.active{color:var(--navy)}
-.page{display:none}.page.active{display:block}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin:13px 0;box-shadow:0 3px 12px #1c2c4208}
-h2{font-size:17px;margin:0 0 12px}.muted{color:var(--muted);font-size:12px;line-height:1.5}.row{display:flex;align-items:center;justify-content:space-between;gap:10px}.btn{border:0;border-radius:10px;background:var(--navy2);color:white;padding:12px 15px;font-weight:650;font-size:14px}.btn.secondary{background:#edf1f6;color:#26364d}.btn.danger{background:var(--redbg);color:var(--red)}.btn.full{width:100%}
-label{display:block;font-size:12px;font-weight:650;color:#526075;margin:12px 0 6px}input,select,textarea{width:100%;border:1px solid #dce2ea;border-radius:10px;padding:12px;font:15px -apple-system,BlinkMacSystemFont,sans-serif;background:white;color:var(--text);margin-top:5px}textarea{min-height:70px;resize:vertical}
-.task{border:1px solid var(--line);border-radius:13px;padding:13px;margin:10px 0;background:#fff}.task h3{font-size:15px;margin:0 0 5px}.pill{font-size:10px;font-weight:700;padding:4px 8px;border-radius:20px;background:#edf1f6;color:#536176;white-space:nowrap}.good{background:var(--greenbg);color:var(--green)}.bad{background:var(--redbg);color:var(--red)}.wait{background:var(--amberbg);color:var(--amber)}
-.member{padding:12px 0;border-bottom:1px solid var(--line)}.member:last-child{border:0}.membername{font-weight:700;font-size:14px}.platform{font-size:11px;color:var(--muted);margin-top:3px}.choices{display:flex;gap:6px;margin-top:9px}.choice{flex:1;border:1px solid var(--line);border-radius:9px;padding:9px 4px;background:#fff;color:#64748b;font-size:11px;font-weight:700}.choice.selected.yes{background:var(--greenbg);border-color:#b8e0c8;color:var(--green)}.choice.selected.no{background:var(--redbg);border-color:#f0c2c2;color:var(--red)}.choice.selected.pending{background:var(--amberbg);border-color:#ead7a8;color:var(--amber)}
-.smalllink{font-size:12px;color:#315b8d;text-decoration:none;word-break:break-all}.empty{text-align:center;padding:24px 12px;color:var(--muted);font-size:13px}
-.toolbar{display:flex;gap:8px;flex-wrap:wrap}.toolbar>*{flex:1}.reportline{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);font-size:13px}.reportline:last-child{border:0}.notice{background:#fff7e5;border:1px solid #f0dfb8;color:#725317;padding:11px;border-radius:10px;font-size:12px;line-height:1.45;margin:12px 0}
-@media(min-width:600px){main{padding:22px}.stats{gap:14px}.stat{padding:16px}}
-@media print{body{background:white;padding:0}header,.tabs,.no-print,.btn{display:none!important}main{padding:0;max-width:none}.card{box-shadow:none;break-inside:avoid}.page{display:none!important}#report.page{display:block!important}.reportline{font-size:11px}}
-</style>
-</head>
+:root{--blue:#243f68;--blue-dark:#142b4d;--navy:#0b1d36;--orange:#8296b4;--ink:#17243a;--muted:#8390a3;--line:rgba(133,153,181,.20);--bg:#eef2f7;--white:rgba(255,255,255,.72);--green:#397d68;--red:#a85a66;--shadow:0 12px 34px rgba(24,43,70,.075)}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 12% 0%,#e3eaf3 0%,transparent 36%),radial-gradient(ellipse at 90% 22%,#e5ebf3 0%,transparent 32%),var(--bg);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:14px}
+button,input,select{font:inherit}button{cursor:pointer}
+.app{min-height:100vh;display:grid;grid-template-columns:252px minmax(0,1fr);max-width:1500px;margin:auto;background:var(--bg)}
+.sidebar{background:rgba(255,255,255,.72);backdrop-filter:blur(24px) saturate(160%);-webkit-backdrop-filter:blur(24px) saturate(160%);border-right:1px solid var(--line);padding:24px 17px;display:flex;flex-direction:column;position:sticky;top:0;height:100vh}
+.brand{display:flex;align-items:center;gap:12px;padding:5px 8px 25px;border-bottom:1px solid var(--line)}
+.brandmark{width:47px;height:47px;border-radius:13px;background:linear-gradient(145deg,#0d2342,#314d75);display:grid;place-items:center;color:#fff;font-weight:900;font-size:15px;letter-spacing:-1px;position:relative;overflow:hidden}
+.brandmark:after{content:"";position:absolute;width:60px;height:8px;background:#a8b8cc;transform:rotate(-42deg);bottom:7px;right:-20px}
+.brandname{font-size:12px;font-weight:850;letter-spacing:.25px;line-height:1.35}.brandname small{display:block;color:#8995a6;font-size:9px;letter-spacing:1.25px;margin-top:5px;font-weight:750}
+.nav-title{font-size:9px;color:#a0aaba;letter-spacing:1.5px;font-weight:850;padding:23px 11px 9px}
+.nav{display:flex;align-items:center;gap:12px;width:100%;border:0;background:transparent;color:#66758a;text-align:left;padding:12px 13px;border-radius:9px;margin:2px 0;font-size:12px;font-weight:700;transition:.15s}
+.nav .ico{width:19px;text-align:center;font-size:16px}.nav:hover{background:#f5f8fc;color:var(--blue)}.nav.active{background:rgba(35,62,99,.09);color:var(--blue-dark);box-shadow:inset 2px 0 #526d94}
+.side-bottom{margin-top:auto;border-top:1px solid var(--line);padding:15px 10px 0;color:#9aa5b4;font-size:10px;line-height:1.7}
+.side-bottom a{color:var(--blue);text-decoration:none}
+.main{min-width:0;padding:0 34px 50px}
+.topbar{height:73px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);margin-bottom:27px}
+.crumb{font-size:10px;color:#9aa5b4;letter-spacing:1.1px;font-weight:800}.crumb b{color:var(--blue-dark)}
+.top-right{display:flex;align-items:center;gap:12px}.today{font-size:11px;color:#778499;background:rgba(255,255,255,.58);backdrop-filter:blur(14px);border:1px solid var(--line);padding:9px 12px;border-radius:10px}
+.avatar{width:34px;height:34px;border-radius:50%;background:#eaf2fc;color:var(--blue-dark);display:grid;place-items:center;font-size:11px;font-weight:850;border:1px solid #dbe7f5}
+.page{display:none}.page.active{display:block}
+.pagehead{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:20px;gap:15px}
+.kicker{color:#7185a2;font-size:9px;font-weight:900;letter-spacing:1.8px;text-transform:uppercase}
+h1{font-size:26px;letter-spacing:-.8px;margin:6px 0 4px;color:var(--navy);font-weight:800}
+.sub{font-size:12px;color:var(--muted);margin:0}
+.btn{border:0;border-radius:8px;padding:11px 15px;background:var(--blue);color:#fff;font-size:11px;font-weight:800;box-shadow:0 4px 10px #0066cc20}
+.btn:hover{background:var(--blue-dark)}.btn.orange{background:#dce4ef;color:#172b49;box-shadow:none}.btn.light{background:#fff;color:var(--blue-dark);border:1px solid var(--line);box-shadow:none}.btn.red{background:#fff0f1;color:var(--red);box-shadow:none}
+.banner{position:relative;overflow:hidden;background:linear-gradient(115deg,#0b1d36 0%,#183456 62%,#2c4568 100%);border-radius:15px;padding:25px 28px;color:#fff;margin-bottom:17px;min-height:146px;display:flex;align-items:center;justify-content:space-between}
+.banner:before{content:"";position:absolute;right:110px;top:-100px;width:300px;height:300px;border:1px solid #ffffff19;border-radius:50%}.banner:after{content:"";position:absolute;right:-55px;top:-105px;width:245px;height:245px;border:34px solid #ffffff0d;border-radius:50%}
+.banner-copy{position:relative;z-index:1}.banner-label{font-size:9px;letter-spacing:1.8px;color:#c5dbf4;font-weight:850}.banner h2{font-size:21px;margin:8px 0 6px;letter-spacing:-.5px}.banner p{font-size:11px;color:#d8e7f7;margin:0}
+.banner-seal{position:relative;z-index:1;width:72px;height:72px;border-radius:18px;border:1px solid #ffffff45;background:#ffffff12;display:grid;place-items:center;font-size:20px;font-weight:900;letter-spacing:-1px}
+.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin-bottom:16px}
+.metric{background:#fff;border:1px solid rgba(255,255,255,.82);border-radius:15px;padding:16px 17px;box-shadow:var(--shadow);background:rgba(255,255,255,.76);backdrop-filter:blur(18px) saturate(150%);-webkit-backdrop-filter:blur(18px) saturate(150%);min-width:0}
+.metric-head{display:flex;justify-content:space-between;align-items:center;color:#7b8798;font-size:10px;font-weight:750}.metric-icon{width:29px;height:29px;border-radius:8px;background:rgba(35,62,99,.08);color:var(--blue-dark);display:grid;place-items:center;font-size:14px}
+.metric strong{display:block;font-size:27px;color:var(--navy);letter-spacing:-1px;margin:10px 0 2px}.metric small{color:#a0aaba;font-size:10px}
+.content-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:15px}
+.panel{background:rgba(255,255,255,.68);border:1px solid rgba(255,255,255,.88);border-radius:15px;padding:18px;box-shadow:var(--shadow);backdrop-filter:blur(20px) saturate(150%);-webkit-backdrop-filter:blur(20px) saturate(150%);min-width:0}
+.panel-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:15px}.panel-head h3{font-size:13px;margin:0;color:var(--navy);font-weight:800}.panel-head span{font-size:10px;color:#9aa5b4}
+.barrow{display:grid;grid-template-columns:85px 1fr 30px;align-items:center;gap:10px;margin:17px 0;color:#69788c;font-size:11px}
+.bar{height:7px;background:#edf1f6;border-radius:20px;overflow:hidden}.bar>i{height:100%;display:block;border-radius:20px;background:linear-gradient(90deg,#1a3152,#607895)}
+.barrow b{text-align:right;color:var(--ink);font-size:11px}
+.recent-item{display:flex;align-items:center;gap:10px;padding:11px 0;border-top:1px solid #f0f2f6}.recent-item:first-child{border-top:0}
+.recent-icon{height:33px;width:33px;border-radius:9px;background:#edf4fc;color:var(--blue-dark);display:grid;place-items:center;font-size:14px;flex-shrink:0}
+.recent-text{min-width:0;flex:1}.recent-text b{font-size:11px;display:block}.recent-text small{display:block;color:#98a3b2;font-size:9px;margin-top:4px}.recent-item a{color:#526d91;font-size:10px;text-decoration:none;font-weight:800}
+.form-panel{max-width:760px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}.field{margin-bottom:13px}.field.full{grid-column:1/-1}.field label{display:block;color:#68778b;font-size:9px;font-weight:850;letter-spacing:.8px;margin-bottom:7px}
+.field input,.field select{width:100%;border:1px solid #dfe5ed;border-radius:8px;padding:12px;background:#fff;color:var(--ink);outline:none;font-size:12px}
+.field input:focus,.field select:focus{border-color:#78a8dc;box-shadow:0 0 0 3px #0066cc12}
+.form-actions{display:flex;gap:9px;align-items:center;margin-top:5px}
+.filters{display:grid;grid-template-columns:1fr 1fr 1.3fr;gap:10px;margin-bottom:15px}
+.record-list{display:grid;gap:8px}
+.record{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px;border:1px solid var(--line);border-radius:9px}
+.record-main{min-width:0}.record-title{font-size:11px;font-weight:850;color:var(--navy)}.record-meta{font-size:9px;color:#97a2b1;margin-top:5px}.record a{display:inline-block;font-size:10px;color:var(--blue);text-decoration:none;margin-top:5px;overflow-wrap:anywhere}
+.pill{display:inline-block;padding:4px 7px;border-radius:30px;background:#edf4fc;color:var(--blue-dark);font-size:9px;font-weight:850;margin-left:5px}
+.empty{padding:26px;text-align:center;color:#9aa5b4;font-size:11px}
+.report-tools{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.report-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:15px 0}
+.report-cards .metric{box-shadow:none;padding:13px}.report-cards .metric strong{font-size:22px}
+.report-note{font-size:10px;color:#8a96a7;line-height:1.6;margin-top:14px}
+.mobile-head{display:none}.mobile-nav{display:none}
+@media(max-width:900px){.app{grid-template-columns:220px 1fr}.main{padding:0 22px 40px}.metrics{grid-template-columns:repeat(2,1fr)}.content-grid{grid-template-columns:1fr}}
+@media(max-width:650px){
+ .app{display:block}.sidebar{display:none}.main{padding:0 14px 95px}.topbar{height:58px;margin-bottom:20px}.crumb{font-size:9px}.today{display:none}.avatar{width:31px;height:31px}
+ .pagehead{align-items:flex-start;flex-direction:column;margin-bottom:15px}h1{font-size:23px}.banner{padding:19px;border-radius:12px;min-height:132px}.banner h2{font-size:17px}.banner-seal{width:54px;height:54px;font-size:16px}
+ .metrics{gap:8px}.metric{padding:13px}.metric strong{font-size:24px}.metric-head{font-size:9px}.metric-icon{width:25px;height:25px}
+ .panel{padding:14px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.filters{grid-template-columns:1fr 1fr}.filters .field:last-child{grid-column:1/-1}.report-tools{grid-template-columns:1fr 1fr}
+ .mobile-head{display:flex;align-items:center;gap:9px;margin:14px 0 0}.mobile-head .brandmark{width:35px;height:35px;border-radius:10px;font-size:12px}.mobile-head b{font-size:11px}.mobile-head small{display:block;color:#929eae;font-size:8px;letter-spacing:1px;margin-top:3px}
+ .mobile-nav{display:grid;position:fixed;z-index:9;bottom:0;left:0;right:0;grid-template-columns:repeat(4,1fr);background:rgba(247,249,252,.78);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);border-top:1px solid rgba(255,255,255,.8);padding:7px 5px calc(7px + env(safe-area-inset-bottom))}
+ .mobile-nav button{border:0;background:none;color:#8995a6;font-size:9px;font-weight:750;display:grid;justify-items:center;gap:4px;padding:5px}.mobile-nav button span{font-size:17px}.mobile-nav button.active{color:var(--blue-dark)}
+}
+@media print{.sidebar,.topbar,.mobile-nav,.btn,.privacy{display:none!important}.app{display:block}.main{padding:0}.page{display:none!important}#reports{display:block!important}.panel{box-shadow:none;border:0}}
+
+.nav,.btn,.mobile-nav button,.record,.metric,.panel{transition:background .2s ease,border-color .2s ease,box-shadow .2s ease,transform .2s ease}
+.metric:hover{transform:translateY(-2px);box-shadow:0 16px 38px rgba(24,43,70,.10)}
+.btn{border-radius:10px;background:linear-gradient(180deg,#29476f,#172f52);box-shadow:0 5px 14px rgba(16,39,69,.14)}
+.btn:hover{background:linear-gradient(180deg,#365783,#1c385f);transform:translateY(-1px)}
+.btn.orange{background:#dce4ef;color:#172b49;box-shadow:none}
+.record:hover{border-color:rgba(82,109,145,.35);background:rgba(255,255,255,.88)}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.panel,.metric,.sidebar,.mobile-nav{background:#fff}}
+</style></head>
 <body>
-<header>
- <div class="headrow"><div><div class="brand">ANAMUR AK GENÇLİK</div><h1>Faaliyet Takip</h1><div class="sub">Sosyal medya görev ve arşiv paneli</div></div><div style="font-size:28px">▦</div></div>
-</header>
-<main>
-<section id="home" class="page active">
- <div class="stats">
-  <div class="stat"><b id="statTasks">0</b><span>Toplam görev</span></div>
-  <div class="stat"><b id="statDone">0</b><span>Paylaştı işareti</span></div>
-  <div class="stat"><b id="statPending">0</b><span>Bekleyen kontrol</span></div>
- </div>
- <div class="card"><div class="row"><h2>Son görevler</h2><button class="btn" onclick="showPage('new')">+ Görev ekle</button></div><div id="recentTasks"></div></div>
- <div class="notice">Bu uygulama kayıtları yalnızca bu iPhone'daki tarayıcı hafızasında saklar. Safari geçmişi/site verileri temizlenirse kayıtlar silinebilir. Düzenli yedek alın.</div>
-</section>
-<section id="new" class="page">
- <div class="card">
-  <h2>Yeni paylaşım görevi</h2>
-  <label>Paylaşım başlığı</label><input id="taskTitle" placeholder="Örn. Haftalık faaliyet duyurusu">
-  <label>Gönderi bağlantısı (URL)</label><input id="taskUrl" type="url" placeholder="https://x.com/... veya instagram.com/...">
-  <label>Platform</label><select id="taskPlatform"><option>Instagram</option><option>X</option><option>Her ikisi</option></select>
-  <label>Görev tarihi</label><input id="taskDate" type="date">
-  <label>Not (isteğe bağlı)</label><textarea id="taskNotes" placeholder="Görevle ilgili not..."></textarea>
-  <button class="btn full" onclick="addTask()">Görevi kaydet</button>
- </div>
-</section>
-<section id="archive" class="page">
- <div class="card"><div class="row"><h2>Görev geçmişi</h2><span class="pill" id="archiveCount">0 görev</span></div><label>Aya göre filtrele</label><input type="month" id="filterMonth" onchange="renderArchive()"><div id="archiveList"></div></div>
-</section>
-<section id="report" class="page">
- <div class="card">
-  <div class="row"><h2>Aylık toplantı raporu</h2><button class="btn secondary no-print" onclick="window.print()">PDF / Yazdır</button></div>
-  <label>Rapor ayı</label><input type="month" id="reportMonth" onchange="renderReport()">
-  <div id="reportContent"></div>
- </div>
-</section>
+<div class="app">
+<aside class="sidebar">
+ <div class="brand"><div class="brandmark">AK</div><div class="brandname">AK PARTİ<br>ANAMUR GENÇLİK KOLLARI<small>MEDYA FAALİYET MERKEZİ</small></div></div>
+ <div class="nav-title">YÖNETİM</div>
+ <button class="nav active" data-page="overview"><span class="ico">⌂</span> Genel Bakış</button>
+ <button class="nav" data-page="add"><span class="ico">＋</span> Yeni Faaliyet</button>
+ <button class="nav" data-page="records"><span class="ico">◫</span> Faaliyet Arşivi</button>
+ <button class="nav" data-page="reports"><span class="ico">▱</span> Rapor Merkezi</button>
+ <div class="side-bottom">ANAMUR / MERSİN<br><a href="https://www.akparti.org.tr/" target="_blank" rel="noopener">AK Parti resmî sitesi ↗</a><br>Yalnızca yönetim amaçlı yerel panel</div>
+</aside>
+<main class="main">
+ <div class="mobile-head"><div class="brandmark">AK</div><div><b>AK PARTİ ANAMUR GENÇLİK KOLLARI</b><small>MEDYA FAALİYET MERKEZİ</small></div></div>
+ <div class="topbar"><div class="crumb">ANAMUR <span style="color:#7185a2">/</span> <b id="crumb">GENEL BAKIŞ</b></div><div class="top-right"><div class="today" id="today"></div><div class="avatar">YK</div></div></div>
+ <div class="privacy" style="font-size:10px;color:#60718a;background:rgba(255,255,255,.55);border:1px solid rgba(143,160,184,.22);border-radius:8px;padding:9px 12px;margin-bottom:17px">Bu dosya yerel prototiptir: kayıtlar bu tarayıcıda saklanır. Tek başına parola koruması veya çevrimiçi erişim kontrolü sağlamaz.</div>
+
+ <section id="overview" class="page active">
+  <div class="pagehead"><div><div class="kicker">YÖNETİM PANELİ</div><h1>Genel Bakış</h1><p class="sub">Sosyal medya faaliyetlerinin genel özeti.</p></div><button class="btn" data-goto="add">＋ Faaliyet ekle</button></div>
+  <div class="banner"><div class="banner-copy"><div class="banner-label">ANAMUR AK GENÇLİK • MEDYA</div><h2>Faaliyet Yönetim Merkezi</h2><p>Kayıtlarınızı düzenleyin, dönemsel raporlarınızı hazırlayın.</p></div><div class="banner-seal">AK</div></div>
+  <div class="metrics">
+   <div class="metric"><div class="metric-head">Toplam faaliyet <span class="metric-icon">▤</span></div><strong id="total">0</strong><small>Kaydedilen toplam adet</small></div>
+   <div class="metric"><div class="metric-head">Instagram <span class="metric-icon">◎</span></div><strong id="ig">0</strong><small>Instagram kayıtları</small></div>
+   <div class="metric"><div class="metric-head">X platformu <span class="metric-icon">𝕏</span></div><strong id="x">0</strong><small>X kayıtları</small></div>
+   <div class="metric"><div class="metric-head">Kayıt sayısı <span class="metric-icon">＋</span></div><strong id="entryCount">0</strong><small>Arşivdeki kayıt</small></div>
+  </div>
+  <div class="content-grid">
+   <div class="panel"><div class="panel-head"><h3>Faaliyet türlerine göre dağılım</h3><span>Toplam adet</span></div><div id="breakdown"></div></div>
+   <div class="panel"><div class="panel-head"><h3>Son eklenen kayıtlar</h3><span>Son 5 kayıt</span></div><div id="recent"></div></div>
+  </div>
+ </section>
+
+ <section id="add" class="page">
+  <div class="pagehead"><div><div class="kicker">KAYIT İŞLEMLERİ</div><h1>Yeni Faaliyet</h1><p class="sub">Paylaşım bağlantısını ve faaliyet bilgilerini kaydedin.</p></div></div>
+  <div class="panel form-panel"><div class="panel-head"><h3>Faaliyet bilgileri</h3><span>Yeni kayıt</span></div>
+   <form id="entryForm"><div class="form-grid">
+    <div class="field"><label>PLATFORM</label><select id="platform"><option>Instagram</option><option>X</option></select></div>
+    <div class="field"><label>FAALİYET TÜRÜ</label><select id="kind"><option>Paylaşım</option><option>Yorum</option><option>Beğeni</option></select></div>
+    <div class="field"><label>FAALİYET TARİHİ</label><input id="date" type="date" required></div>
+    <div class="field"><label>ADET</label><input id="count" type="number" min="1" value="1" required></div>
+    <div class="field full"><label>İÇERİK BAĞLANTISI</label><input id="url" type="url" placeholder="https://..." required></div>
+    <div class="field full"><label>AÇIKLAMA <span style="color:#a5afbc;font-weight:500">(İSTEĞE BAĞLI)</span></label><input id="note" maxlength="140" placeholder="Kısa açıklama"></div>
+   </div><div class="form-actions"><button class="btn" type="submit">Kaydı kaydet</button><button class="btn light" type="reset">Temizle</button></div></form>
+  </div>
+ </section>
+
+ <section id="records" class="page">
+  <div class="pagehead"><div><div class="kicker">KAYIT ARŞİVİ</div><h1>Faaliyet Arşivi</h1><p class="sub">Eklenen faaliyet kayıtlarını görüntüleyin ve yönetin.</p></div></div>
+  <div class="panel"><div class="panel-head"><h3>Tüm kayıtlar</h3><span id="recordCount">0 kayıt</span></div>
+   <div class="filters"><div class="field"><label>PLATFORM</label><select id="filterPlatform"><option value="">Tüm platformlar</option><option>Instagram</option><option>X</option></select></div><div class="field"><label>FAALİYET TÜRÜ</label><select id="filterKind"><option value="">Tüm türler</option><option>Paylaşım</option><option>Yorum</option><option>Beğeni</option></select></div><div class="field"><label>ARAMA</label><input id="search" placeholder="Açıklama veya bağlantı ara"></div></div>
+   <div id="all" class="record-list"></div>
+  </div>
+ </section>
+
+ <section id="reports" class="page">
+  <div class="pagehead"><div><div class="kicker">RAPORLAMA</div><h1>Rapor Merkezi</h1><p class="sub">Seçtiğiniz dönem için PDF veya CSV raporu hazırlayın.</p></div></div>
+  <div class="panel"><div class="panel-head"><h3>Rapor dönemi</h3><span>Tarih aralığı</span></div>
+   <div class="report-tools"><div class="field"><label>BAŞLANGIÇ TARİHİ</label><input id="startDate" type="date"></div><div class="field"><label>BİTİŞ TARİHİ</label><input id="endDate" type="date"></div></div>
+   <div class="report-cards"><div class="metric"><div class="metric-head">Toplam faaliyet</div><strong id="mTotal">0</strong></div><div class="metric"><div class="metric-head">Instagram</div><strong id="mIg">0</strong></div><div class="metric"><div class="metric-head">X</div><strong id="mX">0</strong></div></div>
+   <div class="panel-head"><h3>Faaliyet dağılımı</h3><span>Seçilen dönem</span></div><div id="mBreakdown"></div>
+   <div class="form-actions" style="margin-top:20px"><button class="btn orange" id="exportPdf">PDF raporu oluştur</button><button class="btn light" id="exportCsv">CSV indir</button></div>
+   <p class="report-note">PDF oluştur seçeneği yazdırma penceresini açar. iPhone'da paylaş menüsünden Dosyalara Kaydet seçeneğiyle PDF olarak saklayabilirsiniz.</p>
+  </div>
+ </section>
 </main>
-<nav class="tabs">
- <button class="tab active" data-page="home" onclick="showPage('home')"><strong>⌂</strong>Ana sayfa</button>
- <button class="tab" data-page="new" onclick="showPage('new')"><strong>＋</strong>Görev ekle</button>
- <button class="tab" data-page="archive" onclick="showPage('archive')"><strong>▤</strong>Geçmiş</button>
- <button class="tab" data-page="report" onclick="showPage('report')"><strong>▦</strong>Rapor</button>
-</nav>
+</div>
+<nav class="mobile-nav"><button class="active" data-page="overview"><span>⌂</span>Özet</button><button data-page="add"><span>＋</span>Ekle</button><button data-page="records"><span>◫</span>Arşiv</button><button data-page="reports"><span>▱</span>Rapor</button></nav>
 <script>
-const KEY='anamur_genclik_offline_v1';
-const initialMembers=[
- {id:'m1',name:'Kader Naz',instagram:'kadernaztr',x:'kaderNazz_',facebook:'kader naz'},
- {id:'m2',name:'Havva Demir Derya',instagram:'havvademirtr',x:'havvaddmr1'},
- {id:'m3',name:'Beyza Yılmaz',instagram:'byzaa.ylmaz',x:'byzaaylmaztr'},
- {id:'m4',name:'Hümeyra Şimşek',instagram:'humeyrasimsektr',x:'humeyra_smsk'},
- {id:'m5',name:'Emir Hakan Taş',instagram:'emirhakantas',x:'emirhtas',facebook:'Emir Taş'},
- {id:'m6',name:'Buket Bostan',instagram:'@buketbostan_',x:'@buketbostantr'},
- {id:'m7',name:'Emirhan Akgöz',instagram:'akgzz_emirhn1'},
- {id:'m8',name:'İdal Burhan',instagram:'idall.d'},
- {id:'m9',name:'Ali Kara',instagram:'ali_33karaa'}
-];
-let db=load();
-function load(){try{let d=JSON.parse(localStorage.getItem(KEY));if(d&&Array.isArray(d.tasks)&&Array.isArray(d.members))return d}catch(e){}return {members:initialMembers,tasks:[]};}
-function save(){try{localStorage.setItem(KEY,JSON.stringify(db));return true}catch(e){alert('Telefon hafızasına kaydedilemedi. Yer açıp tekrar deneyin.');return false}}
-function today(){let d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
+const KEY='anamur_social_activity_v1';
+let entries=[];try{entries=JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){entries=[]}
+const $=id=>document.getElementById(id),fmt=n=>Number(n||0).toLocaleString('tr-TR');
+const today=new Date(),iso=today.toISOString().slice(0,10);
+$('date').value=iso;$('startDate').value=new Date(today.getFullYear(),today.getMonth(),1).toISOString().slice(0,10);$('endDate').value=iso;
+$('today').textContent=today.toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric'});
+const titles={overview:'GENEL BAKIŞ',add:'YENİ FAALİYET',records:'FAALİYET ARŞİVİ',reports:'RAPOR MERKEZİ'};
+function go(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));$(id).classList.add('active');document.querySelectorAll('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===id));$('crumb').textContent=titles[id];render();window.scrollTo({top:0,behavior:'smooth'})}
+document.querySelectorAll('[data-page]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.page)));
+document.querySelectorAll('[data-goto]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.goto)));
+function sum(a){return a.reduce((n,e)=>n+Number(e.count||1),0)}
 function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function showPage(id){document.querySelectorAll('.page').forEach(x=>x.classList.toggle('active',x.id===id));document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x.dataset.page===id));if(id==='archive')renderArchive();if(id==='report')renderReport();if(id==='home')renderHome();window.scrollTo(0,0)}
-document.getElementById('taskDate').value=today();document.getElementById('filterMonth').value=today().slice(0,7);document.getElementById('reportMonth').value=today().slice(0,7);
-function addTask(){
- let title=document.getElementById('taskTitle').value.trim(),url=document.getElementById('taskUrl').value.trim(),platform=document.getElementById('taskPlatform').value,date=document.getElementById('taskDate').value,notes=document.getElementById('taskNotes').value.trim();
- if(!title||!url||!date){alert('Başlık, bağlantı ve tarih alanlarını doldurun.');return}
- try{new URL(url)}catch(e){alert('Geçerli bir URL girin.');return}
- let plats=platform==='Her ikisi'?['Instagram','X']:[platform];
- let task={id:Date.now().toString(),title,url,platform,date,notes,created:new Date().toISOString(),statuses:{}};
- db.members.forEach(m=>plats.forEach(p=>task.statuses[m.id+'_'+p]='Bekliyor'));
- db.tasks.unshift(task);if(save()){document.getElementById('taskTitle').value='';document.getElementById('taskUrl').value='';document.getElementById('taskNotes').value='';showPage('archive')}
+function rec(e,withDelete=false){return `<div class="record"><div class="record-main"><div class="record-title">${esc(e.platform)} · ${esc(e.kind)} <span class="pill">${fmt(e.count)} adet</span></div><div class="record-meta">${esc(e.date)}${e.note?' · '+esc(e.note):''}</div><a href="${esc(e.url)}" target="_blank" rel="noopener">Bağlantıyı aç ↗</a></div>${withDelete?`<button class="btn red" onclick="removeEntry('${e.id}')">Sil</button>`:''}</div>`}
+function render(){
+ $('total').textContent=fmt(sum(entries));$('ig').textContent=fmt(sum(entries.filter(e=>e.platform==='Instagram')));$('x').textContent=fmt(sum(entries.filter(e=>e.platform==='X')));$('entryCount').textContent=fmt(entries.length);
+ const vals=['Paylaşım','Yorum','Beğeni'].map(k=>[k,sum(entries.filter(e=>e.kind===k))]),max=Math.max(1,...vals.map(v=>v[1]));
+ $('breakdown').innerHTML=vals.map(([k,n])=>`<div class="barrow"><span>${k}</span><div class="bar"><i style="width:${n/max*100}%"></i></div><b>${fmt(n)}</b></div>`).join('');
+ $('recent').innerHTML=entries.length?entries.slice().sort((a,b)=>b.created-a.created).slice(0,5).map(e=>`<div class="recent-item"><div class="recent-icon">${e.platform==='X'?'𝕏':'◎'}</div><div class="recent-text"><b>${esc(e.platform)} · ${esc(e.kind)}</b><small>${esc(e.date)} · ${fmt(e.count)} adet</small></div><a href="${esc(e.url)}" target="_blank" rel="noopener">Aç ↗</a></div>`).join(''):'<div class="empty">Henüz faaliyet kaydı eklenmedi.</div>';
+ const q=($('search').value||'').toLocaleLowerCase('tr-TR');
+ const filtered=entries.filter(e=>(!$('filterPlatform').value||e.platform===$('filterPlatform').value)&&(!$('filterKind').value||e.kind===$('filterKind').value)&&(!q||(e.note||'').toLocaleLowerCase('tr-TR').includes(q)||(e.url||'').toLocaleLowerCase('tr-TR').includes(q))).sort((a,b)=>b.date.localeCompare(a.date));
+ $('recordCount').textContent=filtered.length+' kayıt';$('all').innerHTML=filtered.length?filtered.map(e=>rec(e,true)).join(''):'<div class="empty">Aramanızla eşleşen kayıt bulunamadı.</div>';
+ report();
 }
-function taskCounts(t){let vals=Object.values(t.statuses||{});return {yes:vals.filter(x=>x==='Paylaştı').length,no:vals.filter(x=>x==='Paylaşmadı').length,pending:vals.filter(x=>x==='Bekliyor').length}}
-function renderHome(){
- document.getElementById('statTasks').textContent=db.tasks.length;
- let all=db.tasks.flatMap(t=>Object.values(t.statuses||{}));document.getElementById('statDone').textContent=all.filter(x=>x==='Paylaştı').length;document.getElementById('statPending').textContent=all.filter(x=>x==='Bekliyor').length;
- let box=document.getElementById('recentTasks');box.innerHTML=db.tasks.slice(0,4).map(t=>taskCard(t)).join('')||'<div class="empty">Henüz görev yok. İlk paylaşım görevini ekleyebilirsin.</div>';
+function report(){
+ const s=$('startDate').value,e=$('endDate').value,a=entries.filter(x=>(!s||x.date>=s)&&(!e||x.date<=e));
+ $('mTotal').textContent=fmt(sum(a));$('mIg').textContent=fmt(sum(a.filter(x=>x.platform==='Instagram')));$('mX').textContent=fmt(sum(a.filter(x=>x.platform==='X')));
+ const kinds=['Paylaşım','Yorum','Beğeni'],mx=Math.max(1,...kinds.map(k=>sum(a.filter(x=>x.kind===k))));
+ $('mBreakdown').innerHTML=kinds.map(k=>`<div class="barrow"><span>${k}</span><div class="bar"><i style="width:${sum(a.filter(x=>x.kind===k))/mx*100}%"></i></div><b>${fmt(sum(a.filter(x=>x.kind===k)))}</b></div>`).join('');
 }
-function taskCard(t){let c=taskCounts(t);return `<div class="task"><div class="row"><span class="pill">${esc(t.platform)}</span><span class="muted">${esc(t.date.split('-').reverse().join('.'))}</span></div><h3 style="margin-top:8px">${esc(t.title)}</h3><div class="muted">${c.yes} paylaştı · ${c.no} paylaşmadı · ${c.pending} bekliyor</div><div class="row" style="margin-top:10px"><a class="smalllink" href="${esc(t.url)}" target="_blank" rel="noopener">Gönderiyi aç ↗</a><button class="btn secondary" onclick="openTask('${t.id}')">Durumları işle</button></div></div>`}
-function renderArchive(){let month=document.getElementById('filterMonth').value;let list=db.tasks.filter(t=>!month||t.date.startsWith(month));document.getElementById('archiveCount').textContent=list.length+' görev';document.getElementById('archiveList').innerHTML=list.map(t=>taskCard(t)).join('')||'<div class="empty">Bu ay için kayıt bulunamadı.</div>'}
-function openTask(id){
- let t=db.tasks.find(x=>x.id===id);if(!t)return;
- let plats=t.platform==='Her ikisi'?['Instagram','X']:[t.platform];
- let html=`<div class="card"><div class="row"><h2>${esc(t.title)}</h2><span class="pill">${esc(t.date)}</span></div><p><a class="smalllink" href="${esc(t.url)}" target="_blank" rel="noopener">Paylaşım bağlantısını aç ↗</a></p>${t.notes?`<p class="muted">${esc(t.notes)}</p>`:''}`;
- plats.forEach(p=>{
-  html+=`<h2 style="margin-top:18px">${p}</h2>`;
-  db.members.forEach(m=>{
-   let key=m.id+'_'+p,st=t.statuses[key]||'Bekliyor';
-   html+=`<div class="member"><div class="membername">${esc(m.name)}</div><div class="platform">${esc(p)} ${m[p==='X'?'x':'instagram']?'· @'+esc(m[p==='X'?'x':'instagram']):''}</div><div class="choices">
-    <button class="choice ${st==='Paylaştı'?'selected yes':''}" onclick="setStatus('${t.id}','${key}','Paylaştı')">✓ Paylaştı</button>
-    <button class="choice ${st==='Paylaşmadı'?'selected no':''}" onclick="setStatus('${t.id}','${key}','Paylaşmadı')">✕ Paylaşmadı</button>
-    <button class="choice ${st==='Bekliyor'?'selected pending':''}" onclick="setStatus('${t.id}','${key}','Bekliyor')">… Bekliyor</button>
-   </div></div>`;
-  });
- });
- html+=`<div class="toolbar" style="margin-top:15px"><button class="btn secondary" onclick="renderArchive()">Listeye dön</button><button class="btn danger" onclick="deleteTask('${t.id}')">Görevi sil</button></div></div>`;
- let area=document.getElementById('archiveList');area.innerHTML=html;document.getElementById('archiveCount').textContent='Görev detayı';window.scrollTo(0,0);
-}
-function setStatus(id,key,status){let t=db.tasks.find(x=>x.id===id);if(!t)return;t.statuses[key]=status;save();openTask(id)}
-function deleteTask(id){if(!confirm('Bu görev ve durum kayıtları silinsin mi?'))return;db.tasks=db.tasks.filter(t=>t.id!==id);save();renderArchive()}
-function renderReport(){
- let month=document.getElementById('reportMonth').value||today().slice(0,7),tasks=db.tasks.filter(t=>t.date.startsWith(month));
- let html=`<p class="muted">${tasks.length} görev · ${month}</p>`;
- let totalYes=0,totalNo=0,totalWait=0;
- db.members.forEach(m=>{
-  let vals=tasks.flatMap(t=>Object.entries(t.statuses||{}).filter(([k])=>k.startsWith(m.id+'_')).map(([k,v])=>({p:k.split('_').slice(1).join('_'),v})));
-  let yes=vals.filter(x=>x.v==='Paylaştı').length,no=vals.filter(x=>x.v==='Paylaşmadı').length,wait=vals.filter(x=>x.v==='Bekliyor').length;totalYes+=yes;totalNo+=no;totalWait+=wait;
-  html+=`<div class="reportline"><strong>${esc(m.name)}</strong><span>✓ ${yes} · ✕ ${no} · Bekliyor ${wait}</span></div>`;
- });
- html+=`<div class="card" style="margin:14px 0 0;background:#f8fafc"><div class="reportline"><strong>Toplam işaretleme</strong><span>${totalYes+totalNo+totalWait}</span></div><div class="reportline"><span>Paylaştı</span><b>${totalYes}</b></div><div class="reportline"><span>Paylaşmadı</span><b>${totalNo}</b></div><div class="reportline"><span>Bekliyor</span><b>${totalWait}</b></div></div><h2 style="margin-top:20px">Görev arşivi</h2>`;
- tasks.forEach(t=>{let c=taskCounts(t);html+=`<div class="reportline"><span>${esc(t.date.split('-').reverse().join('.'))} · ${esc(t.title)} (${esc(t.platform)})</span><b>${c.yes}/${c.no}/${c.pending}</b></div>`});
- html+=`<p class="muted" style="margin-top:14px">Rapor, yönetici tarafından işaretlenen kayıtları gösterir; paylaşımın kendisini otomatik doğrulamaz.</p>`;
- document.getElementById('reportContent').innerHTML=html;
-}
-renderHome();renderArchive();renderReport();
-</script>
-</body></html>
+function save(){localStorage.setItem(KEY,JSON.stringify(entries));render()}
+$('entryForm').addEventListener('submit',ev=>{ev.preventDefault();const url=$('url').value.trim();if(!/^https?:\/\//i.test(url)){alert('Geçerli bir bağlantı girin.');return}entries.push({id:Date.now().toString(36)+Math.random().toString(36).slice(2,6),platform:$('platform').value,kind:$('kind').value,date:$('date').value,count:Math.max(1,Number($('count').value)),url,note:$('note').value,created:Date.now()});ev.target.reset();$('date').value=iso;$('count').value=1;save();go('overview')});
+window.removeEntry=id=>{if(confirm('Bu kaydı silmek istediğinizden emin misiniz?')){entries=entries.filter(x=>x.id!==id);save()}};
+['filterPlatform','filterKind','search'].forEach(id=>$(id).addEventListener(id==='search'?'input':'change',render));
+['startDate','endDate'].forEach(id=>$(id).addEventListener('change',report));
+function selected(){const s=$('startDate').value,e=$('endDate').value;return entries.filter(x=>(!s||x.date>=s)&&(!e||x.date<=e)).sort((a,b)=>a.date.localeCompare(b.date))}
+$('exportCsv').onclick=()=>{const a=selected(),rows=[['Tarih','Platform','Faaliyet','Adet','Bağlantı','Açıklama'],...a.map(x=>[x.date,x.platform,x.kind,x.count,x.url,x.note])],csv='\ufeff'+rows.map(r=>r.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(';')).join('\r\n'),u=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'})),el=document.createElement('a');el.href=u;el.download='anamur-faaliyet-raporu.csv';el.click();URL.revokeObjectURL(u)};
+$('exportPdf').onclick=()=>{
+ const a=selected(),s=$('startDate').value||'Belirtilmedi',e=$('endDate').value||'Belirtilmedi';
+ const safe=esc,detail=a.map(x=>`<tr><td>${safe(x.date)}</td><td>${safe(x.platform)}</td><td>${safe(x.kind)}</td><td>${fmt(x.count)}</td><td class="url">${safe(x.url)}</td></tr>`).join('');
+ const w=window.open('','_blank');if(!w){alert('Yeni pencere açılamadı. Safari açılır pencere iznini kontrol edin.');return}
+ w.document.write(`<!doctype html><html lang="tr"><head><meta charset="utf-8"><title>Anamur Faaliyet Raporu</title><style>
+ body{font-family:Arial,sans-serif;color:#18263b;margin:34px}h1{color:#003875;font-size:21px;margin:0 0 5px}p{font-size:11px;color:#6d7a8c}.line{height:4px;background:linear-gradient(90deg,#142b4d,#8396b1);margin:17px 0}.meta{background:#f3f6fa;padding:12px;border-radius:7px;font-size:11px;margin:15px 0}.stats{display:flex;gap:10px}.stat{border:1px solid #e3e9f0;border-radius:8px;padding:12px;flex:1}.stat small{display:block;color:#78869a;font-size:10px}.stat b{display:block;font-size:22px;color:#003875;margin-top:5px}h2{font-size:14px;color:#003875;margin:23px 0 8px}table{width:100%;border-collapse:collapse;font-size:10px}th,td{text-align:left;border-bottom:1px solid #e7ebf1;padding:8px 6px}th{background:#f1f5fa;color:#42536b}.url{overflow-wrap:anywhere;max-width:250px}.foot{margin-top:25px;border-top:1px solid #e7ebf1;padding-top:9px;font-size:9px;color:#8b96a5}@media print{body{margin:16mm}.noprint{display:none}}
+.nav,.btn,.mobile-nav button,.record,.metric,.panel{transition:background .2s ease,border-color .2s ease,box-shadow .2s ease,transform .2s ease}
+.metric:hover{transform:translateY(-2px);box-shadow:0 16px 38px rgba(24,43,70,.10)}
+.btn{border-radius:10px;background:linear-gradient(180deg,#29476f,#172f52);box-shadow:0 5px 14px rgba(16,39,69,.14)}
+.btn:hover{background:linear-gradient(180deg,#365783,#1c385f);transform:translateY(-1px)}
+.btn.orange{background:#dce4ef;color:#172b49;box-shadow:none}
+.record:hover{border-color:rgba(82,109,145,.35);background:rgba(255,255,255,.88)}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.panel,.metric,.sidebar,.mobile-nav{background:#fff}}
+</style></head><body>
+ <h1>AK PARTİ ANAMUR GENÇLİK KOLLARI</h1><p>SOSYAL MEDYA FAALİYET RAPORU</p><div class="line"></div>
+ <div class="meta"><b>Rapor aralığı:</b> ${safe(s)} – ${safe(e)}<br><b>Oluşturulma tarihi:</b> ${new Date().toLocaleDateString('tr-TR')}</div>
+ <div class="stats"><div class="stat"><small>Toplam faaliyet</small><b>${fmt(sum(a))}</b></div><div class="stat"><small>Instagram</small><b>${fmt(sum(a.filter(x=>x.platform==='Instagram')))}</b></div><div class="stat"><small>X</small><b>${fmt(sum(a.filter(x=>x.platform==='X')))}</b></div></div>
+ <h2>Faaliyet türleri</h2><table><tr><th>Faaliyet</th><th>Toplam adet</th></tr>${['Paylaşım','Yorum','Beğeni'].map(k=>`<tr><td>${k}</td><td>${fmt(sum(a.filter(x=>x.kind===k)))}</td></tr>`).join('')}</table>
+ <h2>Kayıt dökümü</h2><table><tr><th>Tarih</th><th>Platform</th><th>Tür</th><th>Adet</th><th>Bağlantı</th></tr>${detail||'<tr><td colspan="5">Bu tarih aralığında kayıt bulunamadı.</td></tr>'}</table>
+ <div class="foot">Bu belge, yönetim paneline girilen faaliyet kayıtlarının dönemsel özetidir.</div><button class="noprint" onclick="window.print()">Yazdır / PDF olarak kaydet</button><script>setTimeout(()=>window.print(),450)<\/script></body></html>`);
+ w.document.close();
+};
+render();
+</script></body></html>
