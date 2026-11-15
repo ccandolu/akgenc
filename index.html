@@ -3,347 +3,482 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#ffffff">
-<title>Anamur AK Gençlik | Medya Faaliyet Yönetimi</title>
+<meta name="theme-color" content="#0c1d35">
+<title>Anamur Gençlik | Yönetim Merkezi</title>
 <style>
-:root{--blue:#243f68;--blue-dark:#142b4d;--navy:#0b1d36;--orange:#8296b4;--ink:#17243a;--muted:#8390a3;--line:rgba(133,153,181,.20);--bg:#eef2f7;--white:rgba(255,255,255,.72);--green:#397d68;--red:#a85a66;--shadow:0 12px 34px rgba(24,43,70,.075)}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 12% 0%,#e3eaf3 0%,transparent 36%),radial-gradient(ellipse at 90% 22%,#e5ebf3 0%,transparent 32%),var(--bg);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:14px}
-button,input,select{font:inherit}button{cursor:pointer}
-.app{min-height:100vh;display:grid;grid-template-columns:252px minmax(0,1fr);max-width:1500px;margin:auto;background:var(--bg)}
-.sidebar{background:rgba(255,255,255,.72);backdrop-filter:blur(24px) saturate(160%);-webkit-backdrop-filter:blur(24px) saturate(160%);border-right:1px solid var(--line);padding:24px 17px;display:flex;flex-direction:column;position:sticky;top:0;height:100vh}
-.brand{display:flex;align-items:center;gap:12px;padding:5px 8px 25px;border-bottom:1px solid var(--line)}
-.brandmark{width:47px;height:47px;border-radius:13px;background:linear-gradient(145deg,#0d2342,#314d75);display:grid;place-items:center;color:#fff;font-weight:900;font-size:15px;letter-spacing:-1px;position:relative;overflow:hidden}
-.brandmark:after{content:"";position:absolute;width:60px;height:8px;background:#a8b8cc;transform:rotate(-42deg);bottom:7px;right:-20px}
-.brandname{font-size:12px;font-weight:850;letter-spacing:.25px;line-height:1.35}.brandname small{display:block;color:#8995a6;font-size:9px;letter-spacing:1.25px;margin-top:5px;font-weight:750}
-.nav-title{font-size:9px;color:#a0aaba;letter-spacing:1.5px;font-weight:850;padding:23px 11px 9px}
-.nav{display:flex;align-items:center;gap:12px;width:100%;border:0;background:transparent;color:#66758a;text-align:left;padding:12px 13px;border-radius:9px;margin:2px 0;font-size:12px;font-weight:700;transition:.15s}
-.nav .ico{width:19px;text-align:center;font-size:16px}.nav:hover{background:#f5f8fc;color:var(--blue)}.nav.active{background:rgba(35,62,99,.09);color:var(--blue-dark);box-shadow:inset 2px 0 #526d94}
-.side-bottom{margin-top:auto;border-top:1px solid var(--line);padding:15px 10px 0;color:#9aa5b4;font-size:10px;line-height:1.7}
-.side-bottom a{color:var(--blue);text-decoration:none}
-.main{min-width:0;padding:0 34px 50px}
-.topbar{height:73px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);margin-bottom:27px}
-.crumb{font-size:10px;color:#9aa5b4;letter-spacing:1.1px;font-weight:800}.crumb b{color:var(--blue-dark)}
-.top-right{display:flex;align-items:center;gap:12px}.today{font-size:11px;color:#778499;background:rgba(255,255,255,.58);backdrop-filter:blur(14px);border:1px solid var(--line);padding:9px 12px;border-radius:10px}
-.avatar{width:34px;height:34px;border-radius:50%;background:#eaf2fc;color:var(--blue-dark);display:grid;place-items:center;font-size:11px;font-weight:850;border:1px solid #dbe7f5}
-.page{display:none}.page.active{display:block}
-.pagehead{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:20px;gap:15px}
-.kicker{color:#7185a2;font-size:9px;font-weight:900;letter-spacing:1.8px;text-transform:uppercase}
-h1{font-size:26px;letter-spacing:-.8px;margin:6px 0 4px;color:var(--navy);font-weight:800}
-.sub{font-size:12px;color:var(--muted);margin:0}
-.btn{border:0;border-radius:8px;padding:11px 15px;background:var(--blue);color:#fff;font-size:11px;font-weight:800;box-shadow:0 4px 10px #0066cc20}
-.btn:hover{background:var(--blue-dark)}.btn.orange{background:#dce4ef;color:#172b49;box-shadow:none}.btn.light{background:#fff;color:var(--blue-dark);border:1px solid var(--line);box-shadow:none}.btn.red{background:#fff0f1;color:var(--red);box-shadow:none}
-.banner{position:relative;overflow:hidden;background:linear-gradient(115deg,#0b1d36 0%,#183456 62%,#2c4568 100%);border-radius:15px;padding:25px 28px;color:#fff;margin-bottom:17px;min-height:146px;display:flex;align-items:center;justify-content:space-between}
-.banner:before{content:"";position:absolute;right:110px;top:-100px;width:300px;height:300px;border:1px solid #ffffff19;border-radius:50%}.banner:after{content:"";position:absolute;right:-55px;top:-105px;width:245px;height:245px;border:34px solid #ffffff0d;border-radius:50%}
-.banner-copy{position:relative;z-index:1}.banner-label{font-size:9px;letter-spacing:1.8px;color:#c5dbf4;font-weight:850}.banner h2{font-size:21px;margin:8px 0 6px;letter-spacing:-.5px}.banner p{font-size:11px;color:#d8e7f7;margin:0}
-.banner-seal{position:relative;z-index:1;width:72px;height:72px;border-radius:18px;border:1px solid #ffffff45;background:#ffffff12;display:grid;place-items:center;font-size:20px;font-weight:900;letter-spacing:-1px}
-.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin-bottom:16px}
-.metric{background:#fff;border:1px solid rgba(255,255,255,.82);border-radius:15px;padding:16px 17px;box-shadow:var(--shadow);background:rgba(255,255,255,.76);backdrop-filter:blur(18px) saturate(150%);-webkit-backdrop-filter:blur(18px) saturate(150%);min-width:0}
-.metric-head{display:flex;justify-content:space-between;align-items:center;color:#7b8798;font-size:10px;font-weight:750}.metric-icon{width:29px;height:29px;border-radius:8px;background:rgba(35,62,99,.08);color:var(--blue-dark);display:grid;place-items:center;font-size:14px}
-.metric strong{display:block;font-size:27px;color:var(--navy);letter-spacing:-1px;margin:10px 0 2px}.metric small{color:#a0aaba;font-size:10px}
-.content-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:15px}
-.panel{background:rgba(255,255,255,.68);border:1px solid rgba(255,255,255,.88);border-radius:15px;padding:18px;box-shadow:var(--shadow);backdrop-filter:blur(20px) saturate(150%);-webkit-backdrop-filter:blur(20px) saturate(150%);min-width:0}
-.panel-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:15px}.panel-head h3{font-size:13px;margin:0;color:var(--navy);font-weight:800}.panel-head span{font-size:10px;color:#9aa5b4}
-.barrow{display:grid;grid-template-columns:85px 1fr 30px;align-items:center;gap:10px;margin:17px 0;color:#69788c;font-size:11px}
-.bar{height:7px;background:#edf1f6;border-radius:20px;overflow:hidden}.bar>i{height:100%;display:block;border-radius:20px;background:linear-gradient(90deg,#1a3152,#607895)}
-.barrow b{text-align:right;color:var(--ink);font-size:11px}
-.recent-item{display:flex;align-items:center;gap:10px;padding:11px 0;border-top:1px solid #f0f2f6}.recent-item:first-child{border-top:0}
-.recent-icon{height:33px;width:33px;border-radius:9px;background:#edf4fc;color:var(--blue-dark);display:grid;place-items:center;font-size:14px;flex-shrink:0}
-.recent-text{min-width:0;flex:1}.recent-text b{font-size:11px;display:block}.recent-text small{display:block;color:#98a3b2;font-size:9px;margin-top:4px}.recent-item a{color:#526d91;font-size:10px;text-decoration:none;font-weight:800}
-.form-panel{max-width:760px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}.field{margin-bottom:13px}.field.full{grid-column:1/-1}.field label{display:block;color:#68778b;font-size:9px;font-weight:850;letter-spacing:.8px;margin-bottom:7px}
-.field input,.field select{width:100%;border:1px solid #dfe5ed;border-radius:8px;padding:12px;background:#fff;color:var(--ink);outline:none;font-size:12px}
-.field input:focus,.field select:focus{border-color:#78a8dc;box-shadow:0 0 0 3px #0066cc12}
-.form-actions{display:flex;gap:9px;align-items:center;margin-top:5px}
-.filters{display:grid;grid-template-columns:1fr 1fr 1.3fr;gap:10px;margin-bottom:15px}
-.record-list{display:grid;gap:8px}
-.record{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px;border:1px solid var(--line);border-radius:9px}
-.record-main{min-width:0}.record-title{font-size:11px;font-weight:850;color:var(--navy)}.record-meta{font-size:9px;color:#97a2b1;margin-top:5px}.record a{display:inline-block;font-size:10px;color:var(--blue);text-decoration:none;margin-top:5px;overflow-wrap:anywhere}
-.pill{display:inline-block;padding:4px 7px;border-radius:30px;background:#edf4fc;color:var(--blue-dark);font-size:9px;font-weight:850;margin-left:5px}
-.empty{padding:26px;text-align:center;color:#9aa5b4;font-size:11px}
-.report-tools{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.report-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:15px 0}
-.report-cards .metric{box-shadow:none;padding:13px}.report-cards .metric strong{font-size:22px}
-.report-note{font-size:10px;color:#8a96a7;line-height:1.6;margin-top:14px}
-.mobile-head{display:none}.mobile-nav{display:none}
-@media(max-width:900px){.app{grid-template-columns:220px 1fr}.main{padding:0 22px 40px}.metrics{grid-template-columns:repeat(2,1fr)}.content-grid{grid-template-columns:1fr}}
-@media(max-width:650px){
- .app{display:block}.sidebar{display:none}.main{padding:0 14px 95px}.topbar{height:58px;margin-bottom:20px}.crumb{font-size:9px}.today{display:none}.avatar{width:31px;height:31px}
- .pagehead{align-items:flex-start;flex-direction:column;margin-bottom:15px}h1{font-size:23px}.banner{padding:19px;border-radius:12px;min-height:132px}.banner h2{font-size:17px}.banner-seal{width:54px;height:54px;font-size:16px}
- .metrics{gap:8px}.metric{padding:13px}.metric strong{font-size:24px}.metric-head{font-size:9px}.metric-icon{width:25px;height:25px}
- .panel{padding:14px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.filters{grid-template-columns:1fr 1fr}.filters .field:last-child{grid-column:1/-1}.report-tools{grid-template-columns:1fr 1fr}
- .mobile-head{display:flex;align-items:center;gap:9px;margin:14px 0 0}.mobile-head .brandmark{width:35px;height:35px;border-radius:10px;font-size:12px}.mobile-head b{font-size:11px}.mobile-head small{display:block;color:#929eae;font-size:8px;letter-spacing:1px;margin-top:3px}
- .mobile-nav{display:grid;position:fixed;z-index:9;bottom:0;left:0;right:0;grid-template-columns:repeat(4,1fr);background:rgba(247,249,252,.78);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);border-top:1px solid rgba(255,255,255,.8);padding:7px 5px calc(7px + env(safe-area-inset-bottom))}
- .mobile-nav button{border:0;background:none;color:#8995a6;font-size:9px;font-weight:750;display:grid;justify-items:center;gap:4px;padding:5px}.mobile-nav button span{font-size:17px}.mobile-nav button.active{color:var(--blue-dark)}
+:root{
+ --navy:#0b1d35;--navy2:#142d4d;--blue:#29496f;--blue2:#6d86a7;
+ --ink:#17253a;--muted:#7e8da2;--line:rgba(130,151,180,.20);
+ --glass:rgba(255,255,255,.70);--glass2:rgba(255,255,255,.52);
+ --bg:#edf2f8;--green:#3d876e;--amber:#b88742;--red:#b65d68;
+ --shadow:0 18px 48px rgba(18,39,67,.08);--radius:18px;
 }
-@media print{.sidebar,.topbar,.mobile-nav,.btn,.privacy{display:none!important}.app{display:block}.main{padding:0}.page{display:none!important}#reports{display:block!important}.panel{box-shadow:none;border:0}}
-
-.nav,.btn,.mobile-nav button,.record,.metric,.panel{transition:background .2s ease,border-color .2s ease,box-shadow .2s ease,transform .2s ease}
-.metric:hover{transform:translateY(-2px);box-shadow:0 16px 38px rgba(24,43,70,.10)}
-.btn{border-radius:10px;background:linear-gradient(180deg,#29476f,#172f52);box-shadow:0 5px 14px rgba(16,39,69,.14)}
-.btn:hover{background:linear-gradient(180deg,#365783,#1c385f);transform:translateY(-1px)}
-.btn.orange{background:#dce4ef;color:#172b49;box-shadow:none}
-.record:hover{border-color:rgba(82,109,145,.35);background:rgba(255,255,255,.88)}
-@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.panel,.metric,.sidebar,.mobile-nav{background:#fff}}
-
-.calendar-layout{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(260px,.75fr);gap:14px;margin-bottom:14px}
-.calendar-toolbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:17px}
-.month-title{display:flex;align-items:center;gap:12px}.month-title h2{font-size:17px;color:var(--navy);margin:0;min-width:150px;text-align:center}
-.month-arrow{width:31px;height:31px;border:1px solid var(--line);border-radius:9px;background:rgba(255,255,255,.7);color:var(--blue-dark);font-size:22px;line-height:1}
-.calendar-weekdays,.calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}
-.calendar-weekdays{margin-bottom:7px}.calendar-weekdays span{text-align:center;color:#93a0b1;font-size:9px;font-weight:850;padding:7px 0}
-.cal-day{position:relative;min-height:69px;border:1px solid transparent;border-radius:10px;background:rgba(255,255,255,.5);padding:8px 7px;text-align:left;color:#526176;font-size:11px}
-.cal-day:hover{background:#fff;border-color:#dce5f0}.cal-day.muted{opacity:.35}.cal-day.today{border-color:#8298b5;background:#edf3fa}.cal-day.selected{background:#1b3558;color:white;border-color:#1b3558}
-.cal-day .day-num{font-weight:800}.cal-dots{display:flex;gap:3px;margin-top:9px;flex-wrap:wrap}.dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#8296b4}.dot.meeting{background:#6c86a9}.dot.activity{background:#4d987d}.dot.other{background:#c39b58}
-.calendar-legend{display:flex;gap:16px;margin-top:13px;color:#8c98a8;font-size:9px}.calendar-legend span{display:flex;align-items:center;gap:6px}
-.day-panel{min-height:260px}.day-events{display:grid;gap:8px}.day-event{border:1px solid var(--line);border-radius:10px;padding:11px;background:rgba(255,255,255,.55);cursor:pointer}.day-event:hover{background:#fff;border-color:#cbd7e6}.day-event b{font-size:11px;color:var(--navy);display:block}.day-event small{display:block;color:#8b98a9;font-size:9px;margin-top:5px}.day-event p{font-size:10px;color:#63738a;line-height:1.5;margin:8px 0 0;white-space:pre-wrap;overflow-wrap:anywhere}
-.event-editor{margin-top:14px}.event-editor textarea{width:100%;border:1px solid #dfe5ed;border-radius:8px;padding:12px;background:#fff;color:var(--ink);outline:none;font:inherit;font-size:12px;resize:vertical;min-height:100px}.event-editor textarea:focus{border-color:#78a8dc;box-shadow:0 0 0 3px #0066cc12}
-@media(max-width:850px){.calendar-layout{grid-template-columns:1fr}.cal-day{min-height:58px}}
-@media(max-width:650px){.calendar-weekdays,.calendar-grid{gap:3px}.cal-day{min-height:49px;padding:6px 4px;border-radius:7px;font-size:10px}.cal-dots{margin-top:7px}.month-title h2{font-size:15px;min-width:130px}.calendar-legend{gap:10px}.calendar-panel{padding:11px}.calendar-toolbar .btn{padding:9px 10px}.mobile-nav{grid-template-columns:repeat(5,1fr)}.mobile-nav button{font-size:8px}}
-
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;background:
+ radial-gradient(900px 500px at 8% -10%,rgba(177,197,222,.46),transparent 65%),
+ radial-gradient(700px 500px at 100% 10%,rgba(207,219,236,.55),transparent 65%),var(--bg);font-size:14px}
+button,input,select,textarea{font:inherit}button{cursor:pointer}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid rgba(80,123,174,.25);outline-offset:2px}
+.app{min-height:100vh;max-width:1600px;margin:auto;display:grid;grid-template-columns:252px minmax(0,1fr)}
+.sidebar{height:100vh;position:sticky;top:0;padding:22px 16px 17px;background:rgba(247,250,254,.70);backdrop-filter:blur(28px) saturate(160%);-webkit-backdrop-filter:blur(28px) saturate(160%);border-right:1px solid rgba(255,255,255,.85);display:flex;flex-direction:column;z-index:5}
+.identity{display:flex;align-items:center;gap:11px;padding:4px 8px 23px;border-bottom:1px solid var(--line)}
+.mark{width:43px;height:43px;border-radius:14px;background:linear-gradient(145deg,#0b1d35,#34547d);box-shadow:inset 0 1px 0 #ffffff40,0 7px 18px #10274620;display:grid;place-items:center;color:#fff;position:relative;overflow:hidden;flex:none}
+.mark svg{width:26px;height:26px;opacity:.96}
+.identity strong{font-size:11px;letter-spacing:.45px;line-height:1.35;display:block;color:var(--navy)}
+.identity small{display:block;color:#8997aa;font-size:8px;letter-spacing:1.35px;font-weight:800;margin-top:5px}
+.nav-caption{font-size:9px;font-weight:900;letter-spacing:1.7px;color:#9aa7b8;padding:24px 11px 9px}
+.nav{width:100%;display:flex;align-items:center;gap:12px;padding:11px 12px;border:1px solid transparent;border-radius:12px;background:transparent;color:#6f7e92;text-align:left;font-size:11px;font-weight:720;margin:2px 0;transition:.18s}
+.nav svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.8;flex:none}
+.nav:hover{background:#fff9;color:var(--navy)}
+.nav.active{background:linear-gradient(110deg,rgba(33,62,99,.12),rgba(255,255,255,.62));border-color:#ffffffb8;color:var(--navy);box-shadow:inset 3px 0 #3b5b82,0 5px 16px #203b5b0a}
+.side-foot{margin-top:auto;border-top:1px solid var(--line);padding:14px 10px 0;color:#9aa6b6;font-size:9px;line-height:1.7}
+.side-foot button{border:0;background:none;padding:0;color:#607997;font-weight:800;font-size:10px}
+.main{min-width:0;padding:0 34px 60px}
+.topbar{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);margin-bottom:27px}
+.breadcrumb{font-size:9px;letter-spacing:1.45px;font-weight:850;color:#9aa7b7}.breadcrumb b{color:var(--navy)}
+.top-actions{display:flex;align-items:center;gap:9px}
+.date-chip,.icon-btn{border:1px solid #ffffffb8;background:rgba(255,255,255,.48);backdrop-filter:blur(16px);border-radius:11px;color:#718198}
+.date-chip{font-size:10px;padding:9px 12px}
+.icon-btn{width:36px;height:36px;display:grid;place-items:center}
+.icon-btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8}
+.avatar{width:34px;height:34px;border-radius:12px;background:linear-gradient(145deg,#dce6f2,#fff);border:1px solid white;color:#2b4566;font-size:10px;font-weight:900;display:grid;place-items:center}
+.page{display:none;animation:fade .22s ease}.page.active{display:block}
+@keyframes fade{from{opacity:.45;transform:translateY(4px)}to{opacity:1;transform:none}}
+.page-head{display:flex;align-items:flex-end;justify-content:space-between;gap:15px;margin-bottom:20px}
+.eyebrow{font-size:9px;color:#7188a7;letter-spacing:1.8px;font-weight:900}
+h1{font-size:28px;letter-spacing:-1.1px;color:var(--navy);margin:6px 0 5px;font-weight:820}
+.sub{font-size:11px;color:var(--muted);margin:0;line-height:1.6}
+.btn{border:1px solid transparent;border-radius:11px;padding:11px 15px;background:linear-gradient(145deg,#29496f,#142d4d);box-shadow:0 7px 17px rgba(20,45,77,.15);color:#fff;font-size:10px;font-weight:850;transition:.18s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 10px 22px rgba(20,45,77,.2)}
+.btn.secondary{background:rgba(255,255,255,.72);color:#304a6c;border-color:#fff;box-shadow:none}
+.btn.soft{background:#e5edf6;color:#294563;box-shadow:none}
+.btn.danger{background:#fff0f1;color:#a74f5b;box-shadow:none}
+.btn.small{padding:8px 10px;font-size:9px}
+.glass{background:var(--glass);border:1px solid rgba(255,255,255,.88);backdrop-filter:blur(24px) saturate(155%);-webkit-backdrop-filter:blur(24px) saturate(155%);box-shadow:var(--shadow);border-radius:var(--radius)}
+.hero{position:relative;overflow:hidden;padding:25px 28px;border-radius:20px;background:linear-gradient(112deg,#0b1d35 0%,#193657 65%,#385779 100%);color:#fff;min-height:150px;display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;box-shadow:0 16px 34px #142e4d22}
+.hero:before,.hero:after{content:"";position:absolute;border:1px solid #ffffff18;border-radius:50%;pointer-events:none}
+.hero:before{width:310px;height:310px;right:90px;top:-205px}.hero:after{width:210px;height:210px;right:-60px;bottom:-145px;border-width:26px}
+.hero-copy{position:relative;z-index:1}.hero-kicker{font-size:8px;letter-spacing:2px;color:#b9cbe0;font-weight:900}
+.hero h2{font-size:22px;letter-spacing:-.6px;margin:9px 0 6px}.hero p{font-size:10px;color:#d0ddec;margin:0}
+.hero-mark{width:65px;height:65px;border-radius:20px;border:1px solid #ffffff3b;background:#ffffff12;display:grid;place-items:center;position:relative;z-index:1}
+.hero-mark svg{width:36px;height:36px;stroke:#fff;fill:none;stroke-width:1.25}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:15px}
+.stat{padding:15px 16px;min-width:0}
+.stat-top{display:flex;align-items:center;justify-content:space-between;color:#7e8da1;font-size:9px;font-weight:800}
+.stat-icon{width:29px;height:29px;border-radius:10px;background:#e9eff7;color:#365578;display:grid;place-items:center}
+.stat-icon svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.8}
+.stat strong{font-size:26px;letter-spacing:-1px;color:var(--navy);display:block;margin:10px 0 2px}
+.stat small{font-size:9px;color:#a0abba}
+.grid-two{display:grid;grid-template-columns:1.12fr .88fr;gap:14px}
+.panel{padding:18px;min-width:0}
+.panel-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}
+.panel-head h3{font-size:12px;color:var(--navy);margin:0;font-weight:850}
+.panel-head small{font-size:9px;color:#9aa6b5}
+.upcoming-item{display:flex;align-items:center;gap:11px;padding:11px 0;border-top:1px solid #e9edf3}
+.upcoming-item:first-child{border-top:0}
+.date-block{width:42px;height:46px;border-radius:11px;background:#edf3fa;color:#294665;display:grid;align-content:center;justify-items:center;flex:none}
+.date-block b{font-size:16px;line-height:1}.date-block small{font-size:8px;text-transform:uppercase;margin-top:4px;font-weight:850}
+.upcoming-copy{min-width:0;flex:1}.upcoming-copy b{display:block;font-size:10px;color:#243a56;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.upcoming-copy small{display:block;font-size:9px;color:#8d9aac;margin-top:4px}
+.type-tag{font-size:8px;font-weight:850;border-radius:20px;padding:5px 7px;background:#eaf0f7;color:#45617f;white-space:nowrap}
+.type-tag.meeting{background:#e9eef9;color:#536a9a}.type-tag.activity{background:#e8f3ee;color:#3c8068}.type-tag.visit{background:#f7f0e4;color:#98743d}.type-tag.training{background:#f0eaf7;color:#80629a}
+.quick-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.quick{padding:14px;border-radius:13px;border:1px solid #fff;background:rgba(255,255,255,.55);text-align:left;color:#344e70;min-height:85px}
+.quick:hover{background:#fff;transform:translateY(-1px)}
+.quick svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8}
+.quick b{display:block;font-size:10px;margin-top:9px}.quick small{font-size:8px;color:#8b99aa;display:block;margin-top:4px}
+.calendar-layout{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(280px,.72fr);gap:14px;align-items:start}
+.calendar-panel{padding:18px}
+.calendar-toolbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:17px;gap:10px}
+.month-nav{display:flex;align-items:center;gap:11px}
+.month-nav h2{font-size:17px;color:var(--navy);margin:0;min-width:150px;text-align:center;letter-spacing:-.4px}
+.arrow{width:31px;height:31px;border:1px solid var(--line);border-radius:10px;background:#ffffffa8;color:#3a5577;font-size:20px;line-height:1}
+.weekdays,.calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}
+.weekdays{margin-bottom:7px}.weekdays span{text-align:center;color:#97a4b5;font-size:8px;font-weight:900;padding:7px 0;letter-spacing:.5px}
+.day{min-width:0;min-height:91px;padding:7px 6px;border:1px solid transparent;border-radius:11px;background:rgba(255,255,255,.40);text-align:left;color:#4b5e76;transition:.15s;overflow:hidden}
+.day:hover{background:#fff;border-color:#dce5f0}
+.day.outside{opacity:.35}.day.today{border-color:#91a7c3;background:#edf3fa}.day.selected{background:linear-gradient(145deg,#1c385b,#2c4c70);color:#fff;box-shadow:0 6px 15px #1b35552a}
+.day-number{font-size:10px;font-weight:900;display:flex;justify-content:space-between;align-items:center}
+.today-mark{width:5px;height:5px;background:#7196c1;border-radius:50%}
+.day.selected .today-mark{background:#fff}
+.day-events{display:grid;gap:3px;margin-top:7px}
+.day-event-chip{display:block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;border-radius:4px;padding:3px 4px;font-size:7px;font-weight:800;background:#e8eef6;color:#3d5879;border-left:2px solid #6d86a7}
+.day-event-chip.meeting{background:#e9edf8;color:#53699a;border-color:#7385b3}.day-event-chip.activity{background:#e7f2ed;color:#36775f;border-color:#5e9a7d}.day-event-chip.visit{background:#f6efe3;color:#98733c;border-color:#c49a55}.day-event-chip.training{background:#f0eaf6;color:#7d6198;border-color:#9b7cb5}
+.day.selected .day-event-chip{background:#ffffff22;color:#fff;border-color:#dce8f7}
+.more-events{font-size:7px;color:#8c9bae;padding-left:3px}.day.selected .more-events{color:#dbe7f4}
+.legend{display:flex;gap:13px;flex-wrap:wrap;margin-top:14px;color:#8997a9;font-size:8px}
+.legend span{display:flex;align-items:center;gap:5px}.legend i{width:6px;height:6px;border-radius:50%;display:inline-block}
+.legend .meeting{background:#7385b3}.legend .activity{background:#5e9a7d}.legend .visit{background:#c49a55}.legend .training{background:#9b7cb5}
+.agenda{padding:17px;position:sticky;top:15px}
+.agenda-date{font-size:10px;color:#8190a4;margin-top:-7px;margin-bottom:14px}
+.agenda-item{padding:12px;border:1px solid #e8edf3;border-radius:12px;background:#ffffff7a;margin-bottom:8px;cursor:pointer;transition:.15s}
+.agenda-item:hover{background:#fff;border-color:#cbd7e6}
+.agenda-item-top{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
+.agenda-item b{font-size:10px;color:#263d59;line-height:1.4}
+.agenda-item small{font-size:8px;color:#8d9aac;display:block;margin-top:5px}
+.agenda-item p{font-size:9px;color:#6f7e92;line-height:1.55;margin:8px 0 0;white-space:pre-wrap;overflow-wrap:anywhere}
+.empty{padding:24px 10px;text-align:center;color:#9aa6b6;font-size:10px;line-height:1.6}
+.form-panel{max-width:920px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 13px}
+.field{margin-bottom:13px;min-width:0}.field.full{grid-column:1/-1}
+.field label{display:block;font-size:8px;font-weight:900;letter-spacing:1px;color:#74849a;margin-bottom:7px}
+.field input,.field select,.field textarea,.setting-input{width:100%;border:1px solid #dfe6ef;border-radius:10px;background:rgba(255,255,255,.86);padding:11px 12px;color:#263951;outline:none;font-size:11px;min-height:40px}
+.field textarea{resize:vertical;min-height:104px;line-height:1.55}
+.field input:focus,.field select:focus,.field textarea:focus,.setting-input:focus{border-color:#8ca6c6;box-shadow:0 0 0 3px #42658b14}
+.form-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:5px}
+.checklist{display:grid;gap:7px}.check-row{display:flex;align-items:center;gap:8px;font-size:9px;color:#61728a}.check-row input{accent-color:#29496f}
+.filters{display:grid;grid-template-columns:1fr 1fr 1.3fr;gap:10px;margin-bottom:14px}
+.record-list{display:grid;gap:8px}.record{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px;border:1px solid #e6ebf2;border-radius:12px;background:#ffffff78}
+.record-main{min-width:0;flex:1}.record-title{font-size:10px;font-weight:850;color:#273d59}.record-meta{font-size:8px;color:#93a0b0;margin-top:5px}.record-note{font-size:9px;color:#65758b;margin-top:6px;white-space:pre-wrap}
+.pill{display:inline-block;padding:4px 7px;border-radius:30px;background:#edf2f8;color:#49617e;font-size:8px;font-weight:850;margin-left:4px}
+.record a{display:inline-block;font-size:9px;color:#526e91;text-decoration:none;margin-top:6px;overflow-wrap:anywhere}
+.settings-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.setting-row{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:12px 0;border-top:1px solid #e9edf3}
+.setting-row:first-of-type{border-top:0}.setting-row b{font-size:10px;color:#304761;display:block}.setting-row small{font-size:8px;color:#8c9aac;display:block;margin-top:4px;line-height:1.5}
+.switch{width:40px;height:23px;border:0;border-radius:30px;background:#d6deea;padding:3px;flex:none;transition:.2s}.switch:after{content:"";display:block;width:17px;height:17px;background:white;border-radius:50%;box-shadow:0 1px 4px #142b4d25;transition:.2s}.switch.on{background:#29496f}.switch.on:after{transform:translateX(17px)}
+.report-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}.report-summary .stat{box-shadow:none}
+.toast{position:fixed;z-index:60;left:50%;bottom:25px;transform:translate(-50%,20px);background:#102743;color:#fff;padding:11px 16px;border-radius:12px;font-size:10px;box-shadow:0 12px 30px #0b1d3540;opacity:0;pointer-events:none;transition:.25s;max-width:90vw;text-align:center}.toast.show{opacity:1;transform:translate(-50%,0)}
+.overlay{position:fixed;inset:0;background:rgba(7,19,35,.48);backdrop-filter:blur(9px);z-index:80;display:none;align-items:center;justify-content:center;padding:18px}
+.overlay.show{display:flex}
+.modal{width:min(760px,100%);max-height:min(92vh,900px);overflow:auto;padding:21px;border-radius:21px;background:rgba(248,251,255,.94);border:1px solid #ffffff;box-shadow:0 28px 80px #07172945;backdrop-filter:blur(30px)}
+.modal-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:15px}
+.modal-head h2{font-size:17px;color:var(--navy);margin:0}.modal-head p{font-size:9px;color:#8897aa;margin:5px 0 0}
+.close{width:31px;height:31px;border:0;border-radius:10px;background:#e9eff6;color:#536a86;font-size:18px}
+.login-screen{position:fixed;inset:0;z-index:100;background:radial-gradient(900px 600px at 50% 0%,#385779 0%,#142d4d 45%,#09182c 100%);display:none;align-items:center;justify-content:center;padding:20px}
+.login-screen.show{display:flex}
+.login-card{width:min(390px,100%);padding:30px;border-radius:24px;background:rgba(246,250,255,.94);border:1px solid #ffffff;box-shadow:0 30px 90px #0005;text-align:center}
+.login-logo{width:60px;height:60px;border-radius:19px;margin:0 auto 17px;background:linear-gradient(145deg,#0b1d35,#385779);display:grid;place-items:center;color:white}
+.login-logo svg{width:32px;height:32px;stroke:white;fill:none;stroke-width:1.3}
+.login-card h2{font-size:19px;color:var(--navy);margin:0}.login-card p{font-size:10px;color:#8795a8;line-height:1.6;margin:8px 0 20px}
+.login-card input{width:100%;text-align:center;letter-spacing:5px;font-size:18px;border:1px solid #dce4ee;border-radius:12px;padding:13px;background:#fff;color:#1b304b;outline:none}
+.login-card .btn{width:100%;margin-top:11px}
+.login-warning{font-size:8px!important;color:#9aa5b4!important;margin-top:17px!important}
+.mobile-brand{display:none}.mobile-nav{display:none}
+@media(max-width:1050px){.app{grid-template-columns:220px minmax(0,1fr)}.main{padding:0 22px 45px}.calendar-layout{grid-template-columns:1fr}.agenda{position:static}.day{min-height:80px}}
+@media(max-width:700px){
+ .app{display:block}.sidebar{display:none}.main{padding:0 13px 100px}
+ .topbar{height:57px;margin-bottom:18px}.breadcrumb{font-size:8px}.date-chip{display:none}.avatar{width:31px;height:31px}
+ .page-head{align-items:flex-start;flex-direction:column;margin-bottom:15px}h1{font-size:24px}
+ .hero{padding:19px;border-radius:16px;min-height:128px}.hero h2{font-size:18px}.hero-mark{width:52px;height:52px;border-radius:16px}
+ .stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.stat{padding:12px}.stat strong{font-size:23px}
+ .grid-two,.settings-grid{grid-template-columns:1fr}.panel{padding:14px}.calendar-panel{padding:11px}
+ .calendar-toolbar{margin-bottom:12px}.month-nav{gap:6px}.month-nav h2{font-size:15px;min-width:125px}
+ .weekdays,.calendar-grid{gap:3px}.weekdays span{font-size:7px}.day{min-height:65px;padding:5px 3px;border-radius:8px}.day-number{font-size:9px}.day-events{gap:2px;margin-top:5px}.day-event-chip{font-size:6px;padding:2px 3px}
+ .legend{gap:9px;font-size:7px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.filters{grid-template-columns:1fr 1fr}.filters .field:last-child{grid-column:1/-1}
+ .report-summary{grid-template-columns:1fr 1fr 1fr;gap:6px}.report-summary .stat{padding:9px}.report-summary .stat strong{font-size:19px}
+ .mobile-brand{display:flex;align-items:center;gap:8px;margin:11px 0 0}.mobile-brand .mark{width:31px;height:31px;border-radius:10px}.mobile-brand b{font-size:9px;letter-spacing:.3px}.mobile-brand small{display:block;font-size:7px;color:#93a1b2;letter-spacing:1px;margin-top:3px}
+ .mobile-nav{display:grid;position:fixed;z-index:30;bottom:0;left:0;right:0;grid-template-columns:repeat(5,1fr);padding:7px 4px calc(7px + env(safe-area-inset-bottom));background:rgba(247,250,254,.78);border-top:1px solid #ffffff;backdrop-filter:blur(25px) saturate(180%);-webkit-backdrop-filter:blur(25px) saturate(180%)}
+ .mobile-nav button{border:0;background:none;color:#8b98aa;font-size:7px;font-weight:800;display:grid;justify-items:center;gap:4px;padding:4px 1px}
+ .mobile-nav svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.8}.mobile-nav button.active{color:#183657}
+ .modal{padding:16px;border-radius:17px}.login-card{padding:25px}
+}
+@media(max-width:390px){.day{min-height:58px}.day-event-chip{font-size:5.5px}.hero p{max-width:210px}.hero-mark{width:45px;height:45px}}
+@media print{.sidebar,.topbar,.mobile-nav,.btn,.login-screen,.overlay{display:none!important}.app{display:block}.main{padding:0}.page{display:none!important}#reports{display:block!important}.glass{box-shadow:none;border:0;background:white}}
 </style>
-<style>
-/* Final visual cleanup */
-.brand, .brand-logo, .logo-placeholder, .prototype-notice, .info-notice, .notice-banner { display:none !important; }
-.topbar { min-height: 54px; }
-.page-header { padding-top: 8px; }
-.card, .panel, .stat-card { backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px); }
-button, .nav-item { -webkit-tap-highlight-color: transparent; }
-input, select, textarea { font-size: 16px; }
-</style>
-
 </head>
 <body>
-<div class="app">
-<aside class="sidebar">
+<div class="login-screen" id="loginScreen">
+ <div class="login-card">
+  <div class="login-logo"><svg viewBox="0 0 40 40"><path d="M8 28 20 7l12 21M13 20h14M10 31h20"/></svg></div>
+  <h2 id="loginTitle">Yönetim Merkezi</h2>
+  <p id="loginDesc">Devam etmek için panel PIN kodunu girin.</p>
+  <input id="pinInput" type="password" inputmode="numeric" maxlength="8" placeholder="••••" autocomplete="off">
+  <button class="btn" id="loginBtn">Panele giriş yap</button>
+  <p class="login-warning">Bu PIN yalnızca bu tarayıcıdaki yerel kilittir. Gerçek hesap güvenliği veya çevrimiçi erişim kontrolü sağlamaz.</p>
  </div>
- <div class="nav-title">YÖNETİM</div>
- <button class="nav active" data-page="overview"><span class="ico">⌂</span> Genel Bakış</button>
- <button class="nav" data-page="add"><span class="ico">＋</span> Yeni Faaliyet</button>
- <button class="nav" data-page="calendar"><span class="ico">▦</span> Faaliyet Takvimi</button>
- <button class="nav" data-page="records"><span class="ico">◫</span> Faaliyet Arşivi</button>
- <button class="nav" data-page="reports"><span class="ico">▱</span> Rapor Merkezi</button>
- <div class="side-bottom">ANAMUR / MERSİN<br><a href="https://www.akparti.org.tr/" target="_blank" rel="noopener">AK Parti resmî sitesi ↗</a><br>Yalnızca yönetim amaçlı yerel panel</div>
-</aside>
-<main class="main">
- <div class="mobile-head"><div><b>AK PARTİ ANAMUR GENÇLİK KOLLARI</b><small>MEDYA FAALİYET MERKEZİ</small></div></div>
- <div class="topbar"><div class="crumb">ANAMUR <span style="color:#7185a2">/</span> <b id="crumb">GENEL BAKIŞ</b></div><div class="top-right"><div class="today" id="today"></div><div class="avatar">YK</div></div></div>
- <div class="privacy" style="font-size:10px;color:#60718a;background:rgba(255,255,255,.55);border:1px solid rgba(143,160,184,.22);border-radius:8px;padding:9px 12px;margin-bottom:17px"></div>
-
- <section id="overview" class="page active">
-  <div class="pagehead"><div><div class="kicker">YÖNETİM PANELİ</div><h1>Genel Bakış</h1><p class="sub">Sosyal medya faaliyetlerinin genel özeti.</p></div><button class="btn" data-goto="add">＋ Faaliyet ekle</button></div>
-  <div class="banner"><div class="banner-copy"><div class="banner-label">ANAMUR AK GENÇLİK • MEDYA</div><h2>Faaliyet Yönetim Merkezi</h2><p>Kayıtlarınızı düzenleyin, dönemsel raporlarınızı hazırlayın.</p></div><div class="banner-seal">AK</div></div>
-  <div class="metrics">
-   <div class="metric"><div class="metric-head">Toplam faaliyet <span class="metric-icon">▤</span></div><strong id="total">0</strong><small>Kaydedilen toplam adet</small></div>
-   <div class="metric"><div class="metric-head">Instagram <span class="metric-icon">◎</span></div><strong id="ig">0</strong><small>Instagram kayıtları</small></div>
-   <div class="metric"><div class="metric-head">X platformu <span class="metric-icon">𝕏</span></div><strong id="x">0</strong><small>X kayıtları</small></div>
-   <div class="metric"><div class="metric-head">Kayıt sayısı <span class="metric-icon">＋</span></div><strong id="entryCount">0</strong><small>Arşivdeki kayıt</small></div>
-  </div>
-  <div class="content-grid">
-   <div class="panel"><div class="panel-head"><h3>Faaliyet türlerine göre dağılım</h3><span>Toplam adet</span></div><div id="breakdown"></div></div>
-   <div class="panel"><div class="panel-head"><h3>Son eklenen kayıtlar</h3><span>Son 5 kayıt</span></div><div id="recent"></div></div>
-  </div>
- </section>
-
- <section id="add" class="page">
-  <div class="pagehead"><div><div class="kicker">KAYIT İŞLEMLERİ</div><h1>Yeni Faaliyet</h1><p class="sub">Paylaşım bağlantısını ve faaliyet bilgilerini kaydedin.</p></div></div>
-  <div class="panel form-panel"><div class="panel-head"><h3>Faaliyet bilgileri</h3><span>Yeni kayıt</span></div>
-   <form id="entryForm"><div class="form-grid">
-    <div class="field"><label>PLATFORM</label><select id="platform"><option>Instagram</option><option>X</option></select></div>
-    <div class="field"><label>FAALİYET TÜRÜ</label><select id="kind"><option>Paylaşım</option><option>Yorum</option><option>Beğeni</option></select></div>
-    <div class="field"><label>FAALİYET TARİHİ</label><input id="date" type="date" required></div>
-    <div class="field"><label>ADET</label><input id="count" type="number" min="1" value="1" required></div>
-    <div class="field full"><label>İÇERİK BAĞLANTISI</label><input id="url" type="url" placeholder="https://..." required></div>
-    <div class="field full"><label>AÇIKLAMA <span style="color:#a5afbc;font-weight:500">(İSTEĞE BAĞLI)</span></label><input id="note" maxlength="140" placeholder="Kısa açıklama"></div>
-   </div><div class="form-actions"><button class="btn" type="submit">Kaydı kaydet</button><button class="btn light" type="reset">Temizle</button></div></form>
-  </div>
- </section>
-
-
- <section id="calendar" class="page">
-  <div class="pagehead">
-   <div><div class="kicker">PLANLAMA & TOPLANTI</div><h1>Faaliyet Takvimi</h1><p class="sub">Toplantıları, programları ve alınan kararları tek yerde planlayın.</p></div>
-   <button class="btn" id="newEventBtn">＋ Etkinlik ekle</button>
-  </div>
-  <div class="calendar-layout">
-   <div class="panel calendar-panel">
-    <div class="calendar-toolbar">
-     <div class="month-title"><button class="month-arrow" id="prevMonth" aria-label="Önceki ay">‹</button><h2 id="monthLabel"></h2><button class="month-arrow" id="nextMonth" aria-label="Sonraki ay">›</button></div>
-     <button class="btn light" id="todayBtn">Bugün</button>
-    </div>
-    <div class="calendar-weekdays"><span>Pzt</span><span>Sal</span><span>Çar</span><span>Per</span><span>Cum</span><span>Cmt</span><span>Paz</span></div>
-    <div class="calendar-grid" id="calendarGrid"></div>
-    <div class="calendar-legend"><span><i class="dot meeting"></i>Toplantı</span><span><i class="dot activity"></i>Faaliyet</span><span><i class="dot other"></i>Diğer</span></div>
-   </div>
-   <div class="panel day-panel">
-    <div class="panel-head"><h3 id="selectedDayTitle">Günün planı</h3><span id="selectedDayCount">0 kayıt</span></div>
-    <div id="dayEvents" class="day-events"></div>
-   </div>
-  </div>
-  <div class="panel event-editor" id="eventEditor">
-   <div class="panel-head"><h3 id="eventFormTitle">Yeni etkinlik / toplantı</h3><span>Takvime kaydet</span></div>
-   <form id="eventForm">
-    <input type="hidden" id="eventId">
-    <div class="form-grid">
-     <div class="field"><label>ETKİNLİK / TOPLANTI BAŞLIĞI</label><input id="eventTitle" maxlength="100" placeholder="Örn. Haftalık yönetim toplantısı" required></div>
-     <div class="field"><label>TÜR</label><select id="eventType"><option>Toplantı</option><option>Faaliyet</option><option>Ziyaret</option><option>Eğitim</option><option>Diğer</option></select></div>
-     <div class="field"><label>TARİH</label><input id="eventDate" type="date" required></div>
-     <div class="field"><label>SAAT</label><input id="eventTime" type="time"></div>
-     <div class="field full"><label>YER / KONUM</label><input id="eventPlace" maxlength="120" placeholder="Toplantı yeri veya adres"></div>
-     <div class="field full"><label>TOPLANTI NOTLARI / GÜNDEM / ALINAN KARARLAR</label><textarea id="eventNotes" rows="4" maxlength="4000" placeholder="Gündem maddeleri, alınan kararlar, sonraki adımlar..."></textarea></div>
-    </div>
-    <div class="form-actions"><button class="btn" type="submit">Kaydet</button><button class="btn light" type="button" id="clearEventForm">Temizle</button><button class="btn red" type="button" id="deleteEventBtn" style="display:none">Sil</button></div>
-   </form>
-  </div>
- </section>
-
- <section id="records" class="page">
-  <div class="pagehead"><div><div class="kicker">KAYIT ARŞİVİ</div><h1>Faaliyet Arşivi</h1><p class="sub">Eklenen faaliyet kayıtlarını görüntüleyin ve yönetin.</p></div></div>
-  <div class="panel"><div class="panel-head"><h3>Tüm kayıtlar</h3><span id="recordCount">0 kayıt</span></div>
-   <div class="filters"><div class="field"><label>PLATFORM</label><select id="filterPlatform"><option value="">Tüm platformlar</option><option>Instagram</option><option>X</option></select></div><div class="field"><label>FAALİYET TÜRÜ</label><select id="filterKind"><option value="">Tüm türler</option><option>Paylaşım</option><option>Yorum</option><option>Beğeni</option></select></div><div class="field"><label>ARAMA</label><input id="search" placeholder="Açıklama veya bağlantı ara"></div></div>
-   <div id="all" class="record-list"></div>
-  </div>
- </section>
-
- <section id="reports" class="page">
-  <div class="pagehead"><div><div class="kicker">RAPORLAMA</div><h1>Rapor Merkezi</h1><p class="sub">Seçtiğiniz dönem için PDF veya CSV raporu hazırlayın.</p></div></div>
-  <div class="panel"><div class="panel-head"><h3>Rapor dönemi</h3><span>Tarih aralığı</span></div>
-   <div class="report-tools"><div class="field"><label>BAŞLANGIÇ TARİHİ</label><input id="startDate" type="date"></div><div class="field"><label>BİTİŞ TARİHİ</label><input id="endDate" type="date"></div></div>
-   <div class="report-cards"><div class="metric"><div class="metric-head">Toplam faaliyet</div><strong id="mTotal">0</strong></div><div class="metric"><div class="metric-head">Instagram</div><strong id="mIg">0</strong></div><div class="metric"><div class="metric-head">X</div><strong id="mX">0</strong></div></div>
-   <div class="panel-head"><h3>Faaliyet dağılımı</h3><span>Seçilen dönem</span></div><div id="mBreakdown"></div>
-   <div class="form-actions" style="margin-top:20px"><button class="btn orange" id="exportPdf">PDF raporu oluştur</button><button class="btn light" id="exportCsv">CSV indir</button></div>
-   <p class="report-note">PDF oluştur seçeneği yazdırma penceresini açar. iPhone'da paylaş menüsünden Dosyalara Kaydet seçeneğiyle PDF olarak saklayabilirsiniz.</p>
-  </div>
- </section>
-</main>
 </div>
-<nav class="mobile-nav"><button class="active" data-page="overview"><span>⌂</span>Özet</button><button data-page="calendar"><span>▦</span>Takvim</button><button data-page="add"><span>＋</span>Ekle</button><button data-page="records"><span>◫</span>Arşiv</button><button data-page="reports"><span>▱</span>Rapor</button></nav>
+<div class="app" id="app">
+ <aside class="sidebar">
+  <div class="identity">
+   <div class="mark"><svg viewBox="0 0 40 40"><path d="M8 28 20 7l12 21M13 20h14M10 31h20" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></div>
+   <div><strong>ANAMUR GENÇLİK</strong><small>YÖNETİM MERKEZİ</small></div>
+  </div>
+  <div class="nav-caption">ÇALIŞMA ALANI</div>
+  <button class="nav active" data-page="overview"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-6v-7h-4v7H4a1 1 0 0 1-1-1z"/></svg>Genel Bakış</button>
+  <button class="nav" data-page="calendar"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18M8 14h3M8 17h7"/></svg>Faaliyet Takvimi</button>
+  <button class="nav" data-page="add"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Yeni Etkinlik</button>
+  <button class="nav" data-page="records"><svg viewBox="0 0 24 24"><path d="M5 4h14v17H5zM8 8h8M8 12h8M8 16h5"/></svg>Etkinlik Arşivi</button>
+  <button class="nav" data-page="reports"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h17M8 15v-4M13 15V7M18 15V3"/></svg>Raporlar</button>
+  <div class="nav-caption">ARAÇLAR</div>
+  <button class="nav" data-page="notes"><svg viewBox="0 0 24 24"><path d="M5 3h14v18H5zM8 8h8M8 12h8M8 16h5"/></svg>Not Defteri</button>
+  <button class="nav" data-page="settings"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="m19.4 15 .1.1 1.1 1.8-1.7 2.9-2.1-.4a8 8 0 0 1-1.5.9l-.7 2h-3.3l-.7-2a8 8 0 0 1-1.5-.9l-2.1.4-1.7-2.9 1.1-1.8A8 8 0 0 1 6.3 13l-2-1v-3l2-1a8 8 0 0 1 .9-1.5L6.1 5.7l1.7-2.9 2.1.4a8 8 0 0 1 1.5-.9l.7-2h3.3l.7 2a8 8 0 0 1 1.5.9l2.1-.4 1.7 2.9-1.1 1.8a8 8 0 0 1 .9 1.5l2 1v3l-2 1a8 8 0 0 1-.9 1.5z" transform="translate(-1 -1) scale(1.08)"/></svg>Ayarlar</button>
+  <div class="side-foot">ANAMUR · MERSİN<br><button id="lockBtn">Paneli kilitle ↗</button></div>
+ </aside>
+ <main class="main">
+  <div class="mobile-brand"><div class="mark"><svg viewBox="0 0 40 40"><path d="M8 28 20 7l12 21M13 20h14M10 31h20" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></div><div><b>ANAMUR GENÇLİK</b><small>YÖNETİM MERKEZİ</small></div></div>
+  <header class="topbar"><div class="breadcrumb">ANAMUR <span> / </span><b id="crumb">GENEL BAKIŞ</b></div><div class="top-actions"><div class="date-chip" id="todayLabel"></div><button class="icon-btn" id="quickLock" title="Paneli kilitle"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></button><div class="avatar">YK</div></div></header>
+
+  <section class="page active" id="overview">
+   <div class="page-head"><div><div class="eyebrow">KONTROL PANELİ</div><h1>Genel Bakış</h1><p class="sub">Takvim, toplantılar ve faaliyet planı tek ekranda.</p></div><button class="btn" data-goto="add">＋ Etkinlik oluştur</button></div>
+   <div class="hero"><div class="hero-copy"><div class="hero-kicker">ANAMUR GENÇLİK · PLANLAMA</div><h2>Günün planı, yarının hazırlığı.</h2><p>Toplantıları düzenle, kararları kaydet, faaliyetleri takip et.</p></div><div class="hero-mark"><svg viewBox="0 0 40 40"><path d="M8 28 20 7l12 21M13 20h14M10 31h20" stroke-linecap="round"/></svg></div></div>
+   <div class="stats">
+    <div class="stat glass"><div class="stat-top">Bu ayki etkinlik <span class="stat-icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4m8-4v4M3 10h18"/></svg></span></div><strong id="monthCount">0</strong><small>Takvimde kayıtlı</small></div>
+    <div class="stat glass"><div class="stat-top">Yaklaşan <span class="stat-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span></div><strong id="upcomingCount">0</strong><small>Gelecek etkinlik</small></div>
+    <div class="stat glass"><div class="stat-top">Toplantılar <span class="stat-icon"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2m7-10a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm11 10v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg></span></div><strong id="meetingCount">0</strong><small>Toplam kayıt</small></div>
+    <div class="stat glass"><div class="stat-top">Notlar <span class="stat-icon"><svg viewBox="0 0 24 24"><path d="M5 3h14v18H5zM8 8h8M8 12h8M8 16h5"/></svg></span></div><strong id="noteCount">0</strong><small>Kaydedilen not</small></div>
+   </div>
+   <div class="grid-two">
+    <div class="panel glass"><div class="panel-head"><h3>Yaklaşan etkinlikler</h3><button class="btn secondary small" data-goto="calendar">Takvimi aç</button></div><div id="upcomingList"></div></div>
+    <div class="panel glass"><div class="panel-head"><h3>Hızlı işlemler</h3><small>Pratik araçlar</small></div><div class="quick-actions">
+     <button class="quick" data-goto="add"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg><b>Etkinlik ekle</b><small>Toplantı veya program oluştur</small></button>
+     <button class="quick" data-goto="notes"><svg viewBox="0 0 24 24"><path d="M5 3h14v18H5zM8 8h8M8 12h8"/></svg><b>Not yaz</b><small>Hızlı notunu kaydet</small></button>
+     <button class="quick" data-goto="calendar"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4m8-4v4M3 10h18"/></svg><b>Takvimi görüntüle</b><small>Aylık planı incele</small></button>
+     <button class="quick" data-goto="reports"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h17M8 15v-4M13 15V7M18 15V3"/></svg><b>Rapor hazırla</b><small>Dönemlik çıktı al</small></button>
+    </div></div>
+   </div>
+  </section>
+
+  <section class="page" id="calendar">
+   <div class="page-head"><div><div class="eyebrow">PLANLAMA</div><h1>Faaliyet Takvimi</h1><p class="sub">Etkinlikler takvim üzerinde görünür. Bir güne dokunarak o günün ajandasını aç.</p></div><button class="btn" id="newEventTop">＋ Yeni etkinlik</button></div>
+   <div class="calendar-layout">
+    <div class="calendar-panel glass">
+     <div class="calendar-toolbar"><div class="month-nav"><button class="arrow" id="prevMonth" aria-label="Önceki ay">‹</button><h2 id="monthLabel"></h2><button class="arrow" id="nextMonth" aria-label="Sonraki ay">›</button></div><button class="btn secondary small" id="todayBtn">Bugün</button></div>
+     <div class="weekdays"><span>PAZARTESİ</span><span>SALI</span><span>ÇARŞAMBA</span><span>PERŞEMBE</span><span>CUMA</span><span>CUMARTESİ</span><span>PAZAR</span></div>
+     <div class="calendar-grid" id="calendarGrid"></div>
+     <div class="legend"><span><i class="meeting"></i>Toplantı</span><span><i class="activity"></i>Faaliyet</span><span><i class="visit"></i>Ziyaret</span><span><i class="training"></i>Eğitim / Diğer</span></div>
+    </div>
+    <aside class="agenda glass"><div class="panel-head"><h3 id="agendaTitle">Günün ajandası</h3><small id="agendaCount">0 kayıt</small></div><div class="agenda-date" id="agendaDate"></div><div id="agendaList"></div><button class="btn secondary" style="width:100%;margin-top:8px" id="addForDay">＋ Bu güne etkinlik ekle</button></aside>
+   </div>
+  </section>
+
+  <section class="page" id="add">
+   <div class="page-head"><div><div class="eyebrow">KAYIT İŞLEMİ</div><h1 id="formPageTitle">Yeni Etkinlik</h1><p class="sub">Etkinlik ayrıntılarını ve toplantı notlarını kaydet.</p></div></div>
+   <div class="panel glass form-panel">
+    <div class="panel-head"><h3>Etkinlik bilgileri</h3><small>Takvim kaydı</small></div>
+    <form id="eventForm">
+     <input type="hidden" id="eventId">
+     <div class="form-grid">
+      <div class="field"><label>ETKİNLİK BAŞLIĞI *</label><input id="eventTitle" maxlength="120" placeholder="Örn. Haftalık yönetim toplantısı" required></div>
+      <div class="field"><label>ETKİNLİK TÜRÜ</label><select id="eventType"><option>Toplantı</option><option>Faaliyet</option><option>Ziyaret</option><option>Eğitim</option><option>Diğer</option></select></div>
+      <div class="field"><label>TARİH *</label><input id="eventDate" type="date" required></div>
+      <div class="field"><label>BAŞLANGIÇ SAATİ</label><input id="eventTime" type="time"></div>
+      <div class="field"><label>BİTİŞ SAATİ</label><input id="eventEndTime" type="time"></div>
+      <div class="field"><label>YER / KONUM</label><input id="eventPlace" maxlength="140" placeholder="Toplantı salonu, mahalle, adres..."></div>
+      <div class="field full"><label>AÇIKLAMA</label><input id="eventDescription" maxlength="300" placeholder="Etkinliğin kısa açıklaması"></div>
+      <div class="field full"><label>TOPLANTI NOTLARI / GÜNDEM / ALINAN KARARLAR</label><textarea id="eventNotes" maxlength="6000" placeholder="• Görüşülecek konular&#10;• Alınan kararlar&#10;• Takip edilecek işler"></textarea></div>
+      <div class="field full"><label>HATIRLATMA</label><select id="eventReminder"><option value="0">Hatırlatma yok</option><option value="15">15 dakika önce (paneli açınca)</option><option value="30">30 dakika önce (paneli açınca)</option><option value="60">1 saat önce (paneli açınca)</option><option value="1440">1 gün önce (paneli açınca)</option></select></div>
+     </div>
+     <div class="form-actions"><button class="btn" type="submit">Etkinliği kaydet</button><button class="btn secondary" type="button" id="resetEvent">Temizle</button><button class="btn danger" type="button" id="deleteEvent" style="display:none">Etkinliği sil</button><span id="editHint" class="sub"></span></div>
+    </form>
+   </div>
+  </section>
+
+  <section class="page" id="records">
+   <div class="page-head"><div><div class="eyebrow">GEÇMİŞ KAYITLAR</div><h1>Etkinlik Arşivi</h1><p class="sub">Tüm planlanmış ve tamamlanmış etkinlikleri ara, filtrele ve düzenle.</p></div></div>
+   <div class="panel glass"><div class="panel-head"><h3>Tüm etkinlikler</h3><small id="recordCount">0 kayıt</small></div>
+    <div class="filters"><div class="field"><label>TÜR</label><select id="filterType"><option value="">Tüm türler</option><option>Toplantı</option><option>Faaliyet</option><option>Ziyaret</option><option>Eğitim</option><option>Diğer</option></select></div><div class="field"><label>DURUM</label><select id="filterStatus"><option value="">Tüm durumlar</option><option>Planlandı</option><option>Tamamlandı</option><option>İptal</option></select></div><div class="field"><label>ARAMA</label><input id="recordSearch" placeholder="Başlık, yer veya not ara"></div></div>
+    <div class="record-list" id="recordList"></div>
+   </div>
+  </section>
+
+  <section class="page" id="notes">
+   <div class="page-head"><div><div class="eyebrow">KİŞİSEL ÇALIŞMA ALANI</div><h1>Not Defteri</h1><p class="sub">Toplantı dışındaki fikirleri, hatırlatmaları ve taslakları sakla.</p></div><button class="btn" id="newNoteBtn">＋ Yeni not</button></div>
+   <div class="grid-two">
+    <div class="panel glass"><div class="panel-head"><h3>Not oluştur / düzenle</h3><small>Otomatik kayıt</small></div>
+     <input type="hidden" id="noteId">
+     <div class="field"><label>NOT BAŞLIĞI</label><input id="noteTitle" placeholder="Not başlığı"></div>
+     <div class="field"><label>NOT İÇERİĞİ</label><textarea id="noteBody" rows="8" placeholder="Fikirlerini ve hatırlatmalarını buraya yaz..."></textarea></div>
+     <div class="form-actions"><button class="btn" id="saveNote">Notu kaydet</button><button class="btn secondary" id="clearNote">Temizle</button></div>
+    </div>
+    <div class="panel glass"><div class="panel-head"><h3>Kaydedilen notlar</h3><small id="notesCount">0 not</small></div><div id="notesList" class="record-list"></div></div>
+   </div>
+  </section>
+
+  <section class="page" id="reports">
+   <div class="page-head"><div><div class="eyebrow">DÖNEMSEL ÖZET</div><h1>Rapor Merkezi</h1><p class="sub">Seçtiğin tarih aralığındaki etkinlikleri raporla.</p></div></div>
+   <div class="panel glass"><div class="panel-head"><h3>Rapor aralığı</h3><small>PDF / CSV</small></div>
+    <div class="form-grid"><div class="field"><label>BAŞLANGIÇ</label><input id="reportStart" type="date"></div><div class="field"><label>BİTİŞ</label><input id="reportEnd" type="date"></div></div>
+    <div class="report-summary"><div class="stat glass"><div class="stat-top">Toplam etkinlik</div><strong id="reportTotal">0</strong></div><div class="stat glass"><div class="stat-top">Toplantı</div><strong id="reportMeetings">0</strong></div><div class="stat glass"><div class="stat-top">Tamamlanan</div><strong id="reportDone">0</strong></div></div>
+    <div class="panel-head"><h3>Etkinlik dökümü</h3><small>Seçilen tarih aralığı</small></div><div id="reportList" class="record-list"></div>
+    <div class="form-actions" style="margin-top:17px"><button class="btn" id="pdfBtn">PDF / Yazdır</button><button class="btn secondary" id="csvBtn">CSV indir</button></div>
+   </div>
+  </section>
+
+  <section class="page" id="settings">
+   <div class="page-head"><div><div class="eyebrow">KİŞİSELLEŞTİRME</div><h1>Ayarlar</h1><p class="sub">Panel tercihlerini, kilidi ve veri yedeklerini yönet.</p></div></div>
+   <div class="settings-grid">
+    <div class="panel glass"><div class="panel-head"><h3>Panel tercihleri</h3><small>Görünüm</small></div>
+     <div class="setting-row"><div><b>Haftanın ilk günü</b><small>Takvimde haftanın hangi gün başlayacağı</small></div><select id="weekStart" class="setting-input" style="width:120px"><option value="1">Pazartesi</option><option value="0">Pazar</option></select></div>
+     <div class="setting-row"><div><b>Varsayılan hatırlatma</b><small>Yeni etkinlikler için başlangıç tercihi</small></div><select id="defaultReminder" class="setting-input" style="width:120px"><option value="0">Yok</option><option value="15">15 dk</option><option value="30">30 dk</option><option value="60">1 saat</option><option value="1440">1 gün</option></select></div>
+     <div class="setting-row"><div><b>Günlük özet bildirimi</b><small>Paneli açtığında bugünkü programı göster</small></div><button class="switch on" id="dailySummary" aria-label="Günlük özet"></button></div>
+    </div>
+    <div class="panel glass"><div class="panel-head"><h3>Erişim ve kilit</h3><small>Yerel PIN</small></div>
+     <div class="setting-row"><div><b>PIN kilidi</b><small>Bu cihazda panel açılışında PIN iste</small></div><button class="switch" id="pinEnabled" aria-label="PIN kilidi"></button></div>
+     <div class="field" style="margin-top:12px"><label>YENİ / GÜNCEL PIN (4-8 RAKAM)</label><input id="newPin" type="password" inputmode="numeric" maxlength="8" placeholder="Yeni PIN kodu"></div>
+     <button class="btn secondary" id="savePin">PIN ayarını kaydet</button>
+     <p class="sub" style="font-size:9px;margin-top:10px">Not: Bu kilit yalnızca tarayıcı arayüzünü sınırlar. Teknik bilgisi olan biri yerel dosya verilerine erişebilir. Gerçek kullanıcı hesabı için sunucu ve güvenli kimlik doğrulama gerekir.</p>
+    </div>
+    <div class="panel glass"><div class="panel-head"><h3>Veri yedekleme</h3><small>Önemli</small></div>
+     <p class="sub">Takvim, notlar, ayarlar ve varsa eski medya faaliyet kayıtlarını tek dosyada yedekle.</p>
+     <div class="form-actions" style="margin-top:13px"><button class="btn" id="backupBtn">Yedek indir (JSON)</button><label class="btn secondary" for="restoreFile">Yedek yükle</label><input id="restoreFile" type="file" accept="application/json,.json" hidden></div>
+    </div>
+    <div class="panel glass"><div class="panel-head"><h3>Veri ve sıfırlama</h3><small>Dikkatli kullan</small></div>
+     <p class="sub">Tüm veriler bu tarayıcıda saklanır. Tarayıcı verileri temizlenirse kayıtlar silinebilir. Önce yedek indir.</p>
+     <div class="form-actions" style="margin-top:13px"><button class="btn danger" id="clearAll">Tüm panel verilerini sil</button></div>
+    </div>
+   </div>
+  </section>
+ </main>
+</div>
+<nav class="mobile-nav">
+ <button class="active" data-page="overview"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10h-7v-7h-4v7H3z"/></svg>Özet</button>
+ <button data-page="calendar"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4m8-4v4M3 10h18"/></svg>Takvim</button>
+ <button data-page="add"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Ekle</button>
+ <button data-page="notes"><svg viewBox="0 0 24 24"><path d="M5 3h14v18H5zM8 8h8M8 12h8"/></svg>Notlar</button>
+ <button data-page="settings"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19 13.5 21 15l-2 3-2.2-.4a7 7 0 0 1-1.5.8L14.5 21h-4l-.8-2.6a7 7 0 0 1-1.5-.8L6 18l-2-3 2-1.5a7 7 0 0 1 0-1.8L4 10l2-3 2.2.4a7 7 0 0 1 1.5-.8L10.5 4h4l.8 2.6a7 7 0 0 1 1.5.8L19 7l2 3-2 1.5a7 7 0 0 1 0 2z"/></svg>Ayarlar</button>
+</nav>
+<div class="overlay" id="eventModal">
+ <div class="modal">
+  <div class="modal-head"><div><h2>Etkinlik düzenle</h2><p>Etkinlik detaylarını görüntüle veya değiştir.</p></div><button class="close" id="closeModal">×</button></div>
+  <div id="modalContent"></div>
+ </div>
+</div>
+<div class="toast" id="toast"></div>
 <script>
-const KEY='anamur_social_activity_v1';
-const EVENT_KEY='anamur_calendar_events_v1';
-let calendarEvents=[];try{calendarEvents=JSON.parse(localStorage.getItem(EVENT_KEY)||'[]')}catch(e){calendarEvents=[]}
-let entries=[];try{entries=JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){entries=[]}
-const $=id=>document.getElementById(id),fmt=n=>Number(n||0).toLocaleString('tr-TR');
-const today=new Date(),iso=today.toISOString().slice(0,10);
-$('date').value=iso;$('startDate').value=new Date(today.getFullYear(),today.getMonth(),1).toISOString().slice(0,10);$('endDate').value=iso;
-$('today').textContent=today.toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric'});
-const titles={overview:'GENEL BAKIŞ',add:'YENİ FAALİYET',calendar:'FAALİYET TAKVİMİ',records:'FAALİYET ARŞİVİ',reports:'RAPOR MERKEZİ'};
-function go(id){if(id==='calendar' && typeof renderCalendar==='function')renderCalendar();document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));$(id).classList.add('active');document.querySelectorAll('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===id));$('crumb').textContent=titles[id];render();window.scrollTo({top:0,behavior:'smooth'})}
+(()=> {
+'use strict';
+const EVENT_KEY='anamur_calendar_events_v1', NOTE_KEY='anamur_private_notes_v1', SETTINGS_KEY='anamur_panel_settings_v1', OLD_MEDIA_KEY='anamur_social_activity_v1';
+const $=id=>document.getElementById(id);
+const now=new Date(),todayKey=keyDate(now);
+let events=read(EVENT_KEY,[]),notes=read(NOTE_KEY,[]),settings=Object.assign({weekStart:1,defaultReminder:0,dailySummary:true,pinEnabled:false,pin:''},read(SETTINGS_KEY,{}));
+let cursor=new Date(now.getFullYear(),now.getMonth(),1),selectedDate=todayKey,editingId=null,toastTimer=null;
+function read(k,f){try{const x=JSON.parse(localStorage.getItem(k)||'null');return x??f}catch(e){return f}}
+function write(k,v){localStorage.setItem(k,JSON.stringify(v))}
+function keyDate(d){return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`}
+function parseDate(s){return new Date(s+'T12:00:00')}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function fmtDate(s,opt={day:'numeric',month:'long',year:'numeric'}){return parseDate(s).toLocaleDateString('tr-TR',opt)}
+function typeClass(t){return t==='Toplantı'?'meeting':t==='Faaliyet'?'activity':t==='Ziyaret'?'visit':'training'}
+function persist(){write(EVENT_KEY,events)}
+function persistSettings(){write(SETTINGS_KEY,settings)}
+function toast(msg){const el=$('toast');el.textContent=msg;el.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('show'),2600)}
+const pageTitles={overview:'GENEL BAKIŞ',calendar:'FAALİYET TAKVİMİ',add:'YENİ ETKİNLİK',records:'ETKİNLİK ARŞİVİ',notes:'NOT DEFTERİ',reports:'RAPORLAR',settings:'AYARLAR'};
+function go(id){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===id));$('crumb').textContent=pageTitles[id]||'';if(id==='calendar')renderCalendar();if(id==='overview')renderDashboard();if(id==='records')renderRecords();if(id==='notes')renderNotes();if(id==='reports')renderReport();if(id==='settings')loadSettings();window.scrollTo({top:0,behavior:'smooth'})}
 document.querySelectorAll('[data-page]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.page)));
 document.querySelectorAll('[data-goto]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.goto)));
-function sum(a){return a.reduce((n,e)=>n+Number(e.count||1),0)}
-function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function rec(e,withDelete=false){return `<div class="record"><div class="record-main"><div class="record-title">${esc(e.platform)} · ${esc(e.kind)} <span class="pill">${fmt(e.count)} adet</span></div><div class="record-meta">${esc(e.date)}${e.note?' · '+esc(e.note):''}</div><a href="${esc(e.url)}" target="_blank" rel="noopener">Bağlantıyı aç ↗</a></div>${withDelete?`<button class="btn red" onclick="removeEntry('${e.id}')">Sil</button>`:''}</div>`}
-function render(){
- $('total').textContent=fmt(sum(entries));$('ig').textContent=fmt(sum(entries.filter(e=>e.platform==='Instagram')));$('x').textContent=fmt(sum(entries.filter(e=>e.platform==='X')));$('entryCount').textContent=fmt(entries.length);
- const vals=['Paylaşım','Yorum','Beğeni'].map(k=>[k,sum(entries.filter(e=>e.kind===k))]),max=Math.max(1,...vals.map(v=>v[1]));
- $('breakdown').innerHTML=vals.map(([k,n])=>`<div class="barrow"><span>${k}</span><div class="bar"><i style="width:${n/max*100}%"></i></div><b>${fmt(n)}</b></div>`).join('');
- $('recent').innerHTML=entries.length?entries.slice().sort((a,b)=>b.created-a.created).slice(0,5).map(e=>`<div class="recent-item"><div class="recent-icon">${e.platform==='X'?'𝕏':'◎'}</div><div class="recent-text"><b>${esc(e.platform)} · ${esc(e.kind)}</b><small>${esc(e.date)} · ${fmt(e.count)} adet</small></div><a href="${esc(e.url)}" target="_blank" rel="noopener">Aç ↗</a></div>`).join(''):'<div class="empty">Henüz faaliyet kaydı eklenmedi.</div>';
- const q=($('search').value||'').toLocaleLowerCase('tr-TR');
- const filtered=entries.filter(e=>(!$('filterPlatform').value||e.platform===$('filterPlatform').value)&&(!$('filterKind').value||e.kind===$('filterKind').value)&&(!q||(e.note||'').toLocaleLowerCase('tr-TR').includes(q)||(e.url||'').toLocaleLowerCase('tr-TR').includes(q))).sort((a,b)=>b.date.localeCompare(a.date));
- $('recordCount').textContent=filtered.length+' kayıt';$('all').innerHTML=filtered.length?filtered.map(e=>rec(e,true)).join(''):'<div class="empty">Aramanızla eşleşen kayıt bulunamadı.</div>';
- report();
+$('todayLabel').textContent=now.toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric'});
+function sortedEvents(list){return [...list].sort((a,b)=>(a.date||'').localeCompare(b.date||'')||(a.time||'').localeCompare(b.time||''))}
+function renderDashboard(){
+ const month=keyDate(new Date(now.getFullYear(),now.getMonth(),1)).slice(0,7);
+ $('monthCount').textContent=events.filter(e=>(e.date||'').startsWith(month)&&e.status!=='İptal').length;
+ $('upcomingCount').textContent=events.filter(e=>e.date>=todayKey&&e.status!=='İptal'&&e.status!=='Tamamlandı').length;
+ $('meetingCount').textContent=events.filter(e=>e.type==='Toplantı').length;
+ $('noteCount').textContent=notes.length;
+ const upcoming=sortedEvents(events.filter(e=>e.date>=todayKey&&e.status!=='İptal'&&e.status!=='Tamamlandı')).slice(0,5);
+ $('upcomingList').innerHTML=upcoming.length?upcoming.map(e=>`<div class="upcoming-item"><div class="date-block"><b>${parseDate(e.date).getDate()}</b><small>${parseDate(e.date).toLocaleDateString('tr-TR',{month:'short'})}</small></div><div class="upcoming-copy"><b>${esc(e.title)}</b><small>${esc(e.time||'Saat belirtilmedi')}${e.place?' · '+esc(e.place):''}</small></div><span class="type-tag ${typeClass(e.type)}">${esc(e.type)}</span></div>`).join(''):'<div class="empty">Yaklaşan etkinlik bulunmuyor.<br>Takvime yeni bir kayıt ekleyebilirsin.</div>';
 }
-function report(){
- const s=$('startDate').value,e=$('endDate').value,a=entries.filter(x=>(!s||x.date>=s)&&(!e||x.date<=e));
- $('mTotal').textContent=fmt(sum(a));$('mIg').textContent=fmt(sum(a.filter(x=>x.platform==='Instagram')));$('mX').textContent=fmt(sum(a.filter(x=>x.platform==='X')));
- const kinds=['Paylaşım','Yorum','Beğeni'],mx=Math.max(1,...kinds.map(k=>sum(a.filter(x=>x.kind===k))));
- $('mBreakdown').innerHTML=kinds.map(k=>`<div class="barrow"><span>${k}</span><div class="bar"><i style="width:${sum(a.filter(x=>x.kind===k))/mx*100}%"></i></div><b>${fmt(sum(a.filter(x=>x.kind===k)))}</b></div>`).join('');
-}
-function save(){localStorage.setItem(KEY,JSON.stringify(entries));render()}
-$('entryForm').addEventListener('submit',ev=>{ev.preventDefault();const url=$('url').value.trim();if(!/^https?:\/\//i.test(url)){alert('Geçerli bir bağlantı girin.');return}entries.push({id:Date.now().toString(36)+Math.random().toString(36).slice(2,6),platform:$('platform').value,kind:$('kind').value,date:$('date').value,count:Math.max(1,Number($('count').value)),url,note:$('note').value,created:Date.now()});ev.target.reset();$('date').value=iso;$('count').value=1;save();go('overview')});
-window.removeEntry=id=>{if(confirm('Bu kaydı silmek istediğinizden emin misiniz?')){entries=entries.filter(x=>x.id!==id);save()}};
-['filterPlatform','filterKind','search'].forEach(id=>$(id).addEventListener(id==='search'?'input':'change',render));
-['startDate','endDate'].forEach(id=>$(id).addEventListener('change',report));
-function selected(){const s=$('startDate').value,e=$('endDate').value;return entries.filter(x=>(!s||x.date>=s)&&(!e||x.date<=e)).sort((a,b)=>a.date.localeCompare(b.date))}
-$('exportCsv').onclick=()=>{const a=selected(),rows=[['Tarih','Platform','Faaliyet','Adet','Bağlantı','Açıklama'],...a.map(x=>[x.date,x.platform,x.kind,x.count,x.url,x.note])],csv='\ufeff'+rows.map(r=>r.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(';')).join('\r\n'),u=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'})),el=document.createElement('a');el.href=u;el.download='anamur-faaliyet-raporu.csv';el.click();URL.revokeObjectURL(u)};
-$('exportPdf').onclick=()=>{
- const a=selected(),s=$('startDate').value||'Belirtilmedi',e=$('endDate').value||'Belirtilmedi';
- const safe=esc,detail=a.map(x=>`<tr><td>${safe(x.date)}</td><td>${safe(x.platform)}</td><td>${safe(x.kind)}</td><td>${fmt(x.count)}</td><td class="url">${safe(x.url)}</td></tr>`).join('');
- const w=window.open('','_blank');if(!w){alert('Yeni pencere açılamadı. Safari açılır pencere iznini kontrol edin.');return}
- w.document.write(`<!doctype html><html lang="tr"><head><meta charset="utf-8"><title>Anamur Faaliyet Raporu</title><style>
- body{font-family:Arial,sans-serif;color:#18263b;margin:34px}h1{color:#003875;font-size:21px;margin:0 0 5px}p{font-size:11px;color:#6d7a8c}.line{height:4px;background:linear-gradient(90deg,#142b4d,#8396b1);margin:17px 0}.meta{background:#f3f6fa;padding:12px;border-radius:7px;font-size:11px;margin:15px 0}.stats{display:flex;gap:10px}.stat{border:1px solid #e3e9f0;border-radius:8px;padding:12px;flex:1}.stat small{display:block;color:#78869a;font-size:10px}.stat b{display:block;font-size:22px;color:#003875;margin-top:5px}h2{font-size:14px;color:#003875;margin:23px 0 8px}table{width:100%;border-collapse:collapse;font-size:10px}th,td{text-align:left;border-bottom:1px solid #e7ebf1;padding:8px 6px}th{background:#f1f5fa;color:#42536b}.url{overflow-wrap:anywhere;max-width:250px}.foot{margin-top:25px;border-top:1px solid #e7ebf1;padding-top:9px;font-size:9px;color:#8b96a5}@media print{body{margin:16mm}.noprint{display:none}}
-.nav,.btn,.mobile-nav button,.record,.metric,.panel{transition:background .2s ease,border-color .2s ease,box-shadow .2s ease,transform .2s ease}
-.metric:hover{transform:translateY(-2px);box-shadow:0 16px 38px rgba(24,43,70,.10)}
-.btn{border-radius:10px;background:linear-gradient(180deg,#29476f,#172f52);box-shadow:0 5px 14px rgba(16,39,69,.14)}
-.btn:hover{background:linear-gradient(180deg,#365783,#1c385f);transform:translateY(-1px)}
-.btn.orange{background:#dce4ef;color:#172b49;box-shadow:none}
-.record:hover{border-color:rgba(82,109,145,.35);background:rgba(255,255,255,.88)}
-@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.panel,.metric,.sidebar,.mobile-nav{background:#fff}}
-</style>
-<style>
-/* Final visual cleanup */
-.brand, .brand-logo, .logo-placeholder, .prototype-notice, .info-notice, .notice-banner { display:none !important; }
-.topbar { min-height: 54px; }
-.page-header { padding-top: 8px; }
-.card, .panel, .stat-card { backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px); }
-button, .nav-item { -webkit-tap-highlight-color: transparent; }
-input, select, textarea { font-size: 16px; }
-</style>
-
-</head><body>
- <h1>AK PARTİ ANAMUR GENÇLİK KOLLARI</h1><p>SOSYAL MEDYA FAALİYET RAPORU</p><div class="line"></div>
- <div class="meta"><b>Rapor aralığı:</b> ${safe(s)} – ${safe(e)}<br><b>Oluşturulma tarihi:</b> ${new Date().toLocaleDateString('tr-TR')}</div>
- <div class="stats"><div class="stat"><small>Toplam faaliyet</small><b>${fmt(sum(a))}</b></div><div class="stat"><small>Instagram</small><b>${fmt(sum(a.filter(x=>x.platform==='Instagram')))}</b></div><div class="stat"><small>X</small><b>${fmt(sum(a.filter(x=>x.platform==='X')))}</b></div></div>
- <h2>Faaliyet türleri</h2><table><tr><th>Faaliyet</th><th>Toplam adet</th></tr>${['Paylaşım','Yorum','Beğeni'].map(k=>`<tr><td>${k}</td><td>${fmt(sum(a.filter(x=>x.kind===k)))}</td></tr>`).join('')}</table>
- <h2>Kayıt dökümü</h2><table><tr><th>Tarih</th><th>Platform</th><th>Tür</th><th>Adet</th><th>Bağlantı</th></tr>${detail||'<tr><td colspan="5">Bu tarih aralığında kayıt bulunamadı.</td></tr>'}</table>
- <div class="foot">Bu belge, yönetim paneline girilen faaliyet kayıtlarının dönemsel özetidir.</div><button class="noprint" onclick="window.print()">Yazdır / PDF olarak kaydet</button><script>setTimeout(()=>window.print(),450)<\/script></body></html>`);
- w.document.close();
-};
-
-// Takvim ve toplantı notları
-let calendarCursor=new Date(today.getFullYear(),today.getMonth(),1);
-let selectedCalendarDate=iso;
-const pad=n=>String(n).padStart(2,'0');
-const dateKey=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
 const monthNames=['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'];
-function saveCalendar(){localStorage.setItem(EVENT_KEY,JSON.stringify(calendarEvents));renderCalendar()}
 function renderCalendar(){
- $('monthLabel').textContent=monthNames[calendarCursor.getMonth()]+' '+calendarCursor.getFullYear();
- const first=new Date(calendarCursor.getFullYear(),calendarCursor.getMonth(),1);
- const offset=(first.getDay()+6)%7;
- const start=new Date(first);start.setDate(first.getDate()-offset);
- let cells='';
- for(let i=0;i<42;i++){
-  const d=new Date(start);d.setDate(start.getDate()+i);const key=dateKey(d);
-  const dayEvents=calendarEvents.filter(x=>x.date===key);
-  const classes=['cal-day',d.getMonth()!==calendarCursor.getMonth()?'muted':'',key===iso?'today':'',key===selectedCalendarDate?'selected':''].filter(Boolean).join(' ');
-  const dots=dayEvents.slice(0,4).map(x=>`<i class="dot ${x.type==='Toplantı'?'meeting':x.type==='Faaliyet'?'activity':'other'}"></i>`).join('');
-  cells+=`<button class="${classes}" data-caldate="${key}"><span class="day-num">${d.getDate()}</span><span class="cal-dots">${dots}</span></button>`;
- }
- $('calendarGrid').innerHTML=cells;
- $('calendarGrid').querySelectorAll('[data-caldate]').forEach(b=>b.addEventListener('click',()=>{selectedCalendarDate=b.dataset.caldate;renderCalendar()}));
- const chosen=new Date(selectedCalendarDate+'T12:00:00');
- $('selectedDayTitle').textContent=chosen.toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric'});
- const list=calendarEvents.filter(x=>x.date===selectedCalendarDate).sort((a,b)=>(a.time||'').localeCompare(b.time||''));
- $('selectedDayCount').textContent=list.length+' kayıt';
- $('dayEvents').innerHTML=list.length?list.map(x=>`<div class="day-event" data-eventid="${esc(x.id)}"><b>${esc(x.title)}</b><small>${esc(x.type)} · ${esc(x.time||'Saat belirtilmedi')}${x.place?' · '+esc(x.place):''}</small>${x.notes?`<p>${esc(x.notes)}</p>`:''}</div>`).join(''):'<div class="empty">Bu gün için planlanmış etkinlik yok.</div>';
- $('dayEvents').querySelectorAll('[data-eventid]').forEach(el=>el.addEventListener('click',()=>editCalendarEvent(el.dataset.eventid)));
+ $('monthLabel').textContent=monthNames[cursor.getMonth()]+' '+cursor.getFullYear();
+ const first=new Date(cursor.getFullYear(),cursor.getMonth(),1),offset=(first.getDay()-Number(settings.weekStart)+7)%7,start=new Date(first);
+ start.setDate(first.getDate()-offset);
+ const list=Array.from({length:42},(_,i)=>{const d=new Date(start);d.setDate(start.getDate()+i);return d});
+ $('calendarGrid').innerHTML=list.map(d=>{
+  const k=keyDate(d),dayEvents=sortedEvents(events.filter(e=>e.date===k&&e.status!=='İptal')),isOutside=d.getMonth()!==cursor.getMonth();
+  const cls=['day',isOutside?'outside':'',k===todayKey?'today':'',k===selectedDate?'selected':''].filter(Boolean).join(' ');
+  const chips=dayEvents.slice(0,2).map(e=>`<span class="day-event-chip ${typeClass(e.type)}" title="${esc(e.title)}">${esc(e.time?e.time+' ':'')}${esc(e.title)}</span>`).join('');
+  return `<button class="${cls}" data-day="${k}"><span class="day-number">${d.getDate()}${k===todayKey?'<i class="today-mark"></i>':''}</span><span class="day-events">${chips}${dayEvents.length>2?`<span class="more-events">+${dayEvents.length-2} etkinlik</span>`:''}</span></button>`;
+ }).join('');
+ $('calendarGrid').querySelectorAll('[data-day]').forEach(b=>b.addEventListener('click',()=>{selectedDate=b.dataset.day;renderCalendar()}));
+ $('agendaTitle').textContent='Günün ajandası';$('agendaDate').textContent=fmtDate(selectedDate);
+ const todays=sortedEvents(events.filter(e=>e.date===selectedDate&&e.status!=='İptal'));
+ $('agendaCount').textContent=todays.length+' kayıt';
+ $('agendaList').innerHTML=todays.length?todays.map(e=>`<div class="agenda-item" data-open="${esc(e.id)}"><div class="agenda-item-top"><b>${esc(e.title)}</b><span class="type-tag ${typeClass(e.type)}">${esc(e.type)}</span></div><small>${esc(e.time||'Saat belirtilmedi')}${e.endTime?' – '+esc(e.endTime):''}${e.place?' · '+esc(e.place):''}</small>${e.description?`<p>${esc(e.description)}</p>`:''}${e.notes?`<p><b>Not:</b> ${esc(e.notes.slice(0,220))}${e.notes.length>220?'…':''}</p>`:''}</div>`).join(''):'<div class="empty">Bu gün için etkinlik yok.<br>İlk etkinliği ekleyerek planını oluştur.</div>';
+ $('agendaList').querySelectorAll('[data-open]').forEach(el=>el.addEventListener('click',()=>openEvent(el.dataset.open)));
 }
-function resetEventForm(){
- $('eventForm').reset();$('eventId').value='';$('eventDate').value=selectedCalendarDate;$('eventFormTitle').textContent='Yeni etkinlik / toplantı';$('deleteEventBtn').style.display='none';
-}
-function editCalendarEvent(id){
- const x=calendarEvents.find(e=>e.id===id);if(!x)return;
- $('eventId').value=x.id;$('eventTitle').value=x.title;$('eventType').value=x.type;$('eventDate').value=x.date;$('eventTime').value=x.time||'';$('eventPlace').value=x.place||'';$('eventNotes').value=x.notes||'';
- $('eventFormTitle').textContent='Etkinliği düzenle';$('deleteEventBtn').style.display='inline-block';
- $('eventEditor').scrollIntoView({behavior:'smooth',block:'start'});
-}
-$('prevMonth').addEventListener('click',()=>{calendarCursor.setMonth(calendarCursor.getMonth()-1);renderCalendar()});
-$('nextMonth').addEventListener('click',()=>{calendarCursor.setMonth(calendarCursor.getMonth()+1);renderCalendar()});
-$('todayBtn').addEventListener('click',()=>{calendarCursor=new Date(today.getFullYear(),today.getMonth(),1);selectedCalendarDate=iso;resetEventForm();renderCalendar()});
-$('newEventBtn').addEventListener('click',()=>{resetEventForm();$('eventEditor').scrollIntoView({behavior:'smooth',block:'start'});$('eventTitle').focus()});
-$('clearEventForm').addEventListener('click',resetEventForm);
+$('prevMonth').addEventListener('click',()=>{cursor.setMonth(cursor.getMonth()-1);renderCalendar()});
+$('nextMonth').addEventListener('click',()=>{cursor.setMonth(cursor.getMonth()+1);renderCalendar()});
+$('todayBtn').addEventListener('click',()=>{cursor=new Date(now.getFullYear(),now.getMonth(),1);selectedDate=todayKey;renderCalendar()});
+$('addForDay').addEventListener('click',()=>{resetEventForm();$('eventDate').value=selectedDate;go('add')});
+$('newEventTop').addEventListener('click',()=>{resetEventForm();$('eventDate').value=selectedDate;go('add')});
+function resetEventForm(){editingId=null;$('eventForm').reset();$('eventId').value='';$('eventDate').value=selectedDate||todayKey;$('eventReminder').value=String(settings.defaultReminder||0);$('deleteEvent').style.display='none';$('formPageTitle').textContent='Yeni Etkinlik';$('editHint').textContent=''}
+function editEvent(id){const e=events.find(x=>x.id===id);if(!e)return;editingId=id;$('eventId').value=id;$('eventTitle').value=e.title||'';$('eventType').value=e.type||'Faaliyet';$('eventDate').value=e.date||todayKey;$('eventTime').value=e.time||'';$('eventEndTime').value=e.endTime||'';$('eventPlace').value=e.place||'';$('eventDescription').value=e.description||'';$('eventNotes').value=e.notes||'';$('eventReminder').value=String(e.reminder||0);$('deleteEvent').style.display='inline-block';$('formPageTitle').textContent='Etkinliği Düzenle';$('editHint').textContent='Son düzenleme: '+new Date(e.updated||e.created||Date.now()).toLocaleString('tr-TR');go('add')}
 $('eventForm').addEventListener('submit',ev=>{
  ev.preventDefault();
- const id=$('eventId').value||Date.now().toString(36)+Math.random().toString(36).slice(2,6);
- const item={id,title:$('eventTitle').value.trim(),type:$('eventType').value,date:$('eventDate').value,time:$('eventTime').value,place:$('eventPlace').value.trim(),notes:$('eventNotes').value.trim(),updated:Date.now()};
- if(!item.title||!item.date)return;
- const index=calendarEvents.findIndex(x=>x.id===id);if(index>=0)calendarEvents[index]=item;else calendarEvents.push(item);
- selectedCalendarDate=item.date;calendarCursor=new Date(item.date+'T12:00:00');resetEventForm();saveCalendar();
+ const title=$('eventTitle').value.trim(),date=$('eventDate').value,time=$('eventTime').value,endTime=$('eventEndTime').value;
+ if(!title||!date){toast('Başlık ve tarih zorunludur.');return}
+ if(time&&endTime&&endTime<time){toast('Bitiş saati başlangıçtan önce olamaz.');return}
+ const old=events.find(x=>x.id===editingId);
+ const item={id:editingId||Date.now().toString(36)+Math.random().toString(36).slice(2,7),title,type:$('eventType').value,date,time,endTime,place:$('eventPlace').value.trim(),description:$('eventDescription').value.trim(),notes:$('eventNotes').value.trim(),reminder:Number($('eventReminder').value),status:old?.status||'Planlandı',created:old?.created||Date.now(),updated:Date.now()};
+ events=events.filter(x=>x.id!==item.id);events.push(item);persist();selectedDate=date;cursor=new Date(date+'T12:00:00');resetEventForm();renderDashboard();toast('Etkinlik takvime kaydedildi.');go('calendar');
 });
-$('deleteEventBtn').addEventListener('click',()=>{
- const id=$('eventId').value;if(!id)return;
- if(confirm('Bu etkinliği ve toplantı notlarını silmek istiyor musunuz?')){calendarEvents=calendarEvents.filter(x=>x.id!==id);resetEventForm();saveCalendar()}
+$('resetEvent').addEventListener('click',resetEventForm);
+$('deleteEvent').addEventListener('click',()=>{if(!editingId)return;if(confirm('Bu etkinlik ve toplantı notları silinsin mi?')){events=events.filter(x=>x.id!==editingId);persist();resetEventForm();renderDashboard();go('calendar');toast('Etkinlik silindi.')}});
+function openEvent(id){
+ const e=events.find(x=>x.id===id);if(!e)return;
+ $('modalContent').innerHTML=`<div class="form-grid"><div class="field"><label>BAŞLIK</label><input value="${esc(e.title)}" readonly></div><div class="field"><label>TÜR / DURUM</label><input value="${esc(e.type)} · ${esc(e.status||'Planlandı')}" readonly></div><div class="field"><label>TARİH / SAAT</label><input value="${esc(fmtDate(e.date))} · ${esc(e.time||'Saat belirtilmedi')}${e.endTime?' – '+esc(e.endTime):''}" readonly></div><div class="field"><label>YER</label><input value="${esc(e.place||'Belirtilmedi')}" readonly></div><div class="field full"><label>AÇIKLAMA</label><textarea readonly>${esc(e.description||'Açıklama yok')}</textarea></div><div class="field full"><label>TOPLANTI NOTLARI / KARARLAR</label><textarea readonly>${esc(e.notes||'Henüz not eklenmemiş.')}</textarea></div></div><div class="form-actions"><button class="btn" id="modalEdit">Düzenle</button><button class="btn secondary" id="modalDone">${e.status==='Tamamlandı'?'Yeniden planlandı':'Tamamlandı olarak işaretle'}</button><button class="btn danger" id="modalCancel">İptal et</button></div>`;
+ $('eventModal').classList.add('show');
+ $('modalEdit').onclick=()=>{$('eventModal').classList.remove('show');editEvent(id)};
+ $('modalDone').onclick=()=>{e.status=e.status==='Tamamlandı'?'Planlandı':'Tamamlandı';e.updated=Date.now();persist();$('eventModal').classList.remove('show');renderCalendar();renderDashboard();renderRecords();toast('Etkinlik durumu güncellendi.')};
+ $('modalCancel').onclick=()=>{if(confirm('Etkinlik iptal edilsin mi?')){e.status='İptal';persist();$('eventModal').classList.remove('show');renderCalendar();renderDashboard();renderRecords();toast('Etkinlik iptal edildi.')}};
+}
+$('closeModal').addEventListener('click',()=>$('eventModal').classList.remove('show'));
+$('eventModal').addEventListener('click',e=>{if(e.target===$('eventModal'))$('eventModal').classList.remove('show')});
+function renderRecords(){
+ const q=$('recordSearch').value.trim().toLocaleLowerCase('tr-TR'),type=$('filterType').value,status=$('filterStatus').value;
+ const list=sortedEvents(events.filter(e=>(!type||e.type===type)&&(!status||(e.status||'Planlandı')===status)&&(!q||[e.title,e.place,e.notes,e.description].join(' ').toLocaleLowerCase('tr-TR').includes(q)))).reverse();
+ $('recordCount').textContent=list.length+' kayıt';
+ $('recordList').innerHTML=list.length?list.map(e=>`<div class="record"><div class="record-main"><div class="record-title">${esc(e.title)} <span class="pill">${esc(e.type)}</span><span class="pill">${esc(e.status||'Planlandı')}</span></div><div class="record-meta">${esc(fmtDate(e.date))} · ${esc(e.time||'Saat belirtilmedi')}${e.place?' · '+esc(e.place):''}</div>${e.notes?`<div class="record-note">${esc(e.notes.slice(0,160))}${e.notes.length>160?'…':''}</div>`:''}</div><button class="btn secondary small" data-edit="${esc(e.id)}">Aç / düzenle</button></div>`).join(''):'<div class="empty">Bu filtrelerle eşleşen etkinlik bulunamadı.</div>';
+ $('recordList').querySelectorAll('[data-edit]').forEach(b=>b.addEventListener('click',()=>editEvent(b.dataset.edit)));
+}
+['filterType','filterStatus'].forEach(id=>$(id).addEventListener('change',renderRecords));$('recordSearch').addEventListener('input',renderRecords);
+function renderNotes(){
+ $('notesCount').textContent=notes.length+' not';
+ $('notesList').innerHTML=notes.length?[...notes].sort((a,b)=>b.updated-a.updated).map(n=>`<div class="record"><div class="record-main"><div class="record-title">${esc(n.title||'Başlıksız not')}</div><div class="record-meta">${new Date(n.updated).toLocaleString('tr-TR')}</div><div class="record-note">${esc((n.body||'').slice(0,140))}</div></div><button class="btn secondary small" data-note="${esc(n.id)}">Aç</button></div>`).join(''):'<div class="empty">Henüz not eklenmedi.</div>';
+ $('notesList').querySelectorAll('[data-note]').forEach(b=>b.addEventListener('click',()=>{const n=notes.find(x=>x.id===b.dataset.note);if(n){$('noteId').value=n.id;$('noteTitle').value=n.title;$('noteBody').value=n.body}}));
+}
+$('saveNote').addEventListener('click',()=>{const title=$('noteTitle').value.trim(),body=$('noteBody').value.trim();if(!title&&!body){toast('Önce not başlığı veya içerik gir.');return}const id=$('noteId').value||Date.now().toString(36),item={id,title:title||'Başlıksız not',body,updated:Date.now()};notes=notes.filter(n=>n.id!==id);notes.push(item);write(NOTE_KEY,notes);$('noteId').value='';$('noteTitle').value='';$('noteBody').value='';renderNotes();renderDashboard();toast('Not kaydedildi.')});
+$('clearNote').addEventListener('click',()=>{$('noteId').value='';$('noteTitle').value='';$('noteBody').value=''});
+$('newNoteBtn').addEventListener('click',()=>{$('noteId').value='';$('noteTitle').value='';$('noteBody').value='';$('noteTitle').focus()});
+function reportEvents(){const s=$('reportStart').value,e=$('reportEnd').value;return sortedEvents(events.filter(x=>(!s||x.date>=s)&&(!e||x.date<=e)&&x.status!=='İptal'))}
+function renderReport(){
+ const a=reportEvents();$('reportTotal').textContent=a.length;$('reportMeetings').textContent=a.filter(x=>x.type==='Toplantı').length;$('reportDone').textContent=a.filter(x=>x.status==='Tamamlandı').length;
+ $('reportList').innerHTML=a.length?a.map(x=>`<div class="record"><div class="record-main"><div class="record-title">${esc(x.title)} <span class="pill">${esc(x.type)}</span></div><div class="record-meta">${esc(fmtDate(x.date))} · ${esc(x.time||'Saat belirtilmedi')} · ${esc(x.status||'Planlandı')}</div></div></div>`).join(''):'<div class="empty">Seçilen tarih aralığında etkinlik yok.</div>';
+}
+$('reportStart').value=keyDate(new Date(now.getFullYear(),now.getMonth(),1));$('reportEnd').value=todayKey;
+$('reportStart').addEventListener('change',renderReport);$('reportEnd').addEventListener('change',renderReport);
+$('csvBtn').addEventListener('click',()=>{
+ const rows=[['Tarih','Saat','Başlık','Tür','Durum','Yer','Açıklama','Toplantı notları'],...reportEvents().map(e=>[e.date,e.time,e.title,e.type,e.status||'Planlandı',e.place,e.description,e.notes])];
+ const csv='\ufeff'+rows.map(r=>r.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(';')).join('\r\n');
+ const a=document.createElement('a'),url=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));a.href=url;a.download='anamur-etkinlik-raporu.csv';a.click();URL.revokeObjectURL(url);toast('CSV raporu indirildi.');
 });
-
-render();renderCalendar();
-</script></body></html>
+$('pdfBtn').addEventListener('click',()=>{
+ const a=reportEvents(),s=$('reportStart').value||'—',e=$('reportEnd').value||'—',w=window.open('','_blank');
+ if(!w){toast('Açılır pencere engellendi. Safari izinlerini kontrol et.');return}
+ const rows=a.map(x=>`<tr><td>${esc(x.date)}</td><td>${esc(x.time||'—')}</td><td>${esc(x.title)}</td><td>${esc(x.type)}</td><td>${esc(x.status||'Planlandı')}</td><td>${esc(x.place||'—')}</td></tr>`).join('');
+ w.document.write(`<!doctype html><html lang="tr"><meta charset="utf-8"><title>Etkinlik Raporu</title><style>body{font-family:Arial,sans-serif;margin:32px;color:#1b2d45}h1{font-size:22px;color:#102b4b}p{font-size:11px;color:#66768b}.rule{height:4px;background:#203e62;margin:15px 0}table{border-collapse:collapse;width:100%;font-size:10px;margin-top:20px}th,td{padding:8px;border-bottom:1px solid #dfe5ed;text-align:left}th{background:#edf2f8;color:#2d4766}.summary{background:#f2f5f9;padding:12px;border-radius:8px;font-size:11px}@media print{body{margin:15mm}}</style><h1>ANAMUR GENÇLİK · ETKİNLİK RAPORU</h1><p>Rapor dönemi: ${esc(s)} – ${esc(e)} · Oluşturulma: ${new Date().toLocaleDateString('tr-TR')}</p><div class="rule"></div><div class="summary">Toplam etkinlik: <b>${a.length}</b> · Toplantı: <b>${a.filter(x=>x.type==='Toplantı').length}</b> · Tamamlanan: <b>${a.filter(x=>x.status==='Tamamlandı').length}</b></div><table><tr><th>Tarih</th><th>Saat</th><th>Etkinlik</th><th>Tür</th><th>Durum</th><th>Yer</th></tr>${rows||'<tr><td colspan="6">Kayıt bulunamadı.</td></tr>'}</table><script>window.onload=()=>window.print()<\/script></html>`);
+ w.document.close();
+});
+function loadSettings(){$('weekStart').value=String(settings.weekStart);$('defaultReminder').value=String(settings.defaultReminder);$('dailySummary').classList.toggle('on',!!settings.dailySummary);$('pinEnabled').classList.toggle('on',!!settings.pinEnabled)}
+$('weekStart').addEventListener('change',()=>{settings.weekStart=Number($('weekStart').value);persistSettings();renderCalendar();toast('Takvim tercihi kaydedildi.')});
+$('defaultReminder').addEventListener('change',()=>{settings.defaultReminder=Number($('defaultReminder').value);persistSettings();toast('Varsayılan hatırlatma güncellendi.')});
+$('dailySummary').addEventListener('click',()=>{settings.dailySummary=!settings.dailySummary;persistSettings();loadSettings()});
+$('pinEnabled').addEventListener('click',()=>{settings.pinEnabled=!settings.pinEnabled;if(settings.pinEnabled&&!settings.pin){settings.pinEnabled=false;toast('Önce bir PIN belirlemelisin.')}persistSettings();loadSettings()});
+$('savePin').addEventListener('click',()=>{const pin=$('newPin').value.trim();if(!/^\d{4,8}$/.test(pin)){toast('PIN 4-8 rakam olmalı.');return}settings.pin=pin;persistSettings();$('newPin').value='';toast('PIN kaydedildi.');loadSettings()});
+function backupData(){return {product:'Anamur Gençlik Yönetim Merkezi',version:2,exportedAt:new Date().toISOString(),events,notes,settings,legacyMedia:read(OLD_MEDIA_KEY,[])}}
+$('backupBtn').addEventListener('click',()=>{const blob=new Blob([JSON.stringify(backupData(),null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='anamur-yonetim-yedegi-'+todayKey+'.json';a.click();URL.revokeObjectURL(url);toast('Yedek dosyası indirildi.')});
+$('restoreFile').addEventListener('change',async ev=>{const f=ev.target.files[0];if(!f)return;try{const d=JSON.parse(await f.text());if(!d||!Array.isArray(d.events)||!Array.isArray(d.notes))throw Error('format');if(!confirm('Yedek mevcut panel verilerinin üzerine yazılsın mı?'))return;events=d.events;notes=d.notes;settings=Object.assign(settings,d.settings||{});persist();write(NOTE_KEY,notes);persistSettings();renderDashboard();renderCalendar();renderNotes();toast('Yedek başarıyla yüklendi.')}catch(e){toast('Yedek dosyası okunamadı veya formatı geçersiz.')}finally{ev.target.value=''}});
+$('clearAll').addEventListener('click',()=>{if(!confirm('Tüm etkinlikleri, notları ve ayarları silmek istediğine emin misin? Önce yedek alman önerilir.'))return;if(!confirm('Bu işlem geri alınamaz. Devam edilsin mi?'))return;events=[];notes=[];settings={weekStart:1,defaultReminder:0,dailySummary:true,pinEnabled:false,pin:''};persist();write(NOTE_KEY,notes);persistSettings();renderDashboard();renderCalendar();renderNotes();loadSettings();toast('Panel verileri temizlendi.')});
+function showLogin(){if(settings.pinEnabled&&settings.pin){$('loginTitle').textContent='Yönetim Merkezi';$('loginDesc').textContent='Devam etmek için PIN kodunu gir.';$('loginBtn').textContent='Panele giriş yap';$('loginScreen').classList.add('show')}else{$('loginScreen').classList.remove('show')}}
+$('loginBtn').addEventListener('click',()=>{if($('pinInput').value===settings.pin){$('loginScreen').classList.remove('show');$('pinInput').value='';sessionStorage.setItem('anamur_unlocked','1')}else toast('PIN kodu hatalı.')});
+$('pinInput').addEventListener('keydown',e=>{if(e.key==='Enter')$('loginBtn').click()});
+function lock(){if(settings.pinEnabled&&settings.pin){sessionStorage.removeItem('anamur_unlocked');$('pinInput').value='';showLogin()}}
+$('lockBtn').addEventListener('click',lock);$('quickLock').addEventListener('click',lock);
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'&&settings.pinEnabled&&settings.pin&&sessionStorage.getItem('anamur_unlocked')!=='1')showLogin()});
+function checkReminders(){
+ if(!settings.dailySummary)return;
+ const todays=events.filter(e=>e.date===todayKey&&e.status==='Planlandı');
+ if(todays.length)toast('Bugün '+todays.length+' etkinliğin var. Takvimden ayrıntılarına bakabilirsin.');
+}
+function init(){
+ // Migrate earlier calendar prototype records without discarding existing fields.
+ events=events.map(e=>Object.assign({status:'Planlandı',endTime:'',description:'',reminder:0},e));
+ persist();renderDashboard();renderCalendar();renderRecords();renderNotes();renderReport();loadSettings();
+ if(settings.pinEnabled&&sessionStorage.getItem('anamur_unlocked')!=='1')showLogin();
+ setTimeout(checkReminders,900);
+}
+init();
+})();
+</script>
+</body>
+</html>
